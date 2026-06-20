@@ -1,0 +1,85 @@
+{
+  "schema": "boundary.agda_runtime_roundtrip.v1",
+  "authority": "agda_boundary_runtime_roundtrip",
+  "source_id": "effective_corridor_modulus_synthesis_20260619",
+  "outcome": "accepted_agda_runtime_roundtrip",
+  "expected_steps": 84,
+  "positive_control": {
+    "modules_safe_compiled": true,
+    "postulate_free": true,
+    "witnesses_extracted": true,
+    "readback_nontrivial": true,
+    "module_count": 5,
+    "witness_program_count": 5,
+    "modules": [
+      {
+        "module": "Foundations/FiniteCohesion.agda",
+        "safe_compiled": true,
+        "postulate_free": true,
+        "source_sha256": "sha256:b7e96f2db5a3267f3ea18764bbbb3af77349d2b5f898b7b5b0b919596cb0d23e",
+        "witness_program": "faithful_cohesion_witness.boundary.program.json",
+        "program_sha256": "sha256:d2f50b0134a22008557f76825b26f3fbf703ae905709d0c3a77674ff343d6e27",
+        "program_nodes": 9,
+        "compile_stderr_tail": ""
+      },
+      {
+        "module": "Corridor/CrossingCorridor.agda",
+        "safe_compiled": true,
+        "postulate_free": true,
+        "source_sha256": "sha256:12b8b20410337df085837360633c754d64935a3b66a65487932dcc3528c959d1",
+        "witness_program": "crossing_corridor_witness.boundary.program.json",
+        "program_sha256": "sha256:0103743438ec8871539930c9780268a2712b69a0ebc3cb335826e542ccb5a1ba",
+        "program_nodes": 15,
+        "compile_stderr_tail": ""
+      },
+      {
+        "module": "Corridor/FaithfulModulus.agda",
+        "safe_compiled": true,
+        "postulate_free": true,
+        "source_sha256": "sha256:5b0c68ac3c25c2d055cff7a136fafe7078f4bfb4c5010d421f944e058666a776",
+        "witness_program": "golden_modulus.boundary.program.json",
+        "program_sha256": "sha256:0564a949e35a95a53def513ab2fa7cb66c3005880226f1adb5e319f685123585",
+        "program_nodes": 13,
+        "compile_stderr_tail": ""
+      },
+      {
+        "module": "Corridor/GoldenAFColimit.agda",
+        "safe_compiled": true,
+        "postulate_free": true,
+        "source_sha256": "sha256:bce3115a281fb721aa7ce0169a7645878ef06c3c00d91f8cf197d5cae47dfafd",
+        "witness_program": "golden_af_witness.boundary.program.json",
+        "program_sha256": "sha256:95a2f30a6af3a200fa37e03c68ffcd6fe0dfa0437836d87321d455183e4b74d0",
+        "program_nodes": 5,
+        "compile_stderr_tail": ""
+      },
+      {
+        "module": "Corridor/EntropyScreen.agda",
+        "safe_compiled": true,
+        "postulate_free": true,
+        "source_sha256": "sha256:8d4b9482e535693bffabcb78b667b624bf0072dd69414c208e2602a49619882d",
+        "witness_program": "entropy_screen_witness.boundary.program.json",
+        "program_sha256": "sha256:57f5b92688f2a3dd4a98a631baf2ddc178367fd0b85d91783c3d7bd867b7a05d",
+        "program_nodes": 42,
+        "compile_stderr_tail": ""
+      }
+    ]
+  },
+  "negative_control": {
+    "forced_true_substitution_must_fail": true,
+    "degenerate_rejected": true,
+    "fixture": "Corridor/negative_controls/BadForcedTrueCollapse.agda",
+    "fixture_source_sha256": "sha256:625c72040728412907d16c65687f83df16059d2827e6cdb3a6784aba713ba415",
+    "agda_exit_nonzero": true,
+    "rejection_reason": "true != false"
+  },
+  "negative_controls": [
+    "Corridor/negative_controls/BadForcedTrueCollapse.agda"
+  ],
+  "route_order": [
+    "agda_boundary"
+  ],
+  "logical_shadow": "the_complete_corridor",
+  "remaining_gaps": [],
+  "commit": "",
+  "errors": []
+}

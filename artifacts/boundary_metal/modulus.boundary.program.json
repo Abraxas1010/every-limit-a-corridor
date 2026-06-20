@@ -1,0 +1,6 @@
+{
+  "decls": [
+
+  ],
+  "main": {"tag":"lam","param":"x0","paramTy":{"tag":"unit"},"body":{"tag":"var","name":"x0"}}
+}

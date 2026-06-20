@@ -1,0 +1,6 @@
+{
+  "decls": [
+
+  ],
+  "main": {"tag":"app","fn":{"tag":"app","fn":{"tag":"app","fn":{"tag":"app","fn":{"tag":"unit"},"arg":{"tag":"var","name":"shape_realLine_isContr"}},"arg":{"tag":"var","name":"flat_realLine_not_isContr"}},"arg":{"tag":"var","name":"shape_not_flat"}},"arg":{"tag":"var","name":"shapeFlatIso"}}
+}

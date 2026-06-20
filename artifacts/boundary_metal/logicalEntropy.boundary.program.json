@@ -1,0 +1,6 @@
+{
+  "decls": [
+
+  ],
+  "main": {"tag":"lam","param":"x0","paramTy":{"tag":"unit"},"body":{"tag":"if","cond":{"tag":"var","name":"x0"},"then":{"tag":"int","value":"2","ty":{"tag":"i64"}},"else":{"tag":"int","value":"0","ty":{"tag":"i64"}}}}
+}

@@ -1,0 +1,8 @@
+{
+  "decls": [
+    {"name": "logicalEntropy", "body": {"tag":"lam","param":"x0","paramTy":{"tag":"unit"},"body":{"tag":"if","cond":{"tag":"var","name":"x0"},"then":{"tag":"int","value":"2","ty":{"tag":"i64"}},"else":{"tag":"int","value":"0","ty":{"tag":"i64"}}}}},
+    {"name": "δ⁰_vanishes", "body": {"tag":"lam","param":"x0","paramTy":{"tag":"unit"},"body":{"tag":"let","name":"seq1","value":{"tag":"var","name":"x0"},"body":{"tag":"lam","param":"x1","paramTy":{"tag":"unit"},"body":{"tag":"app","fn":{"tag":"var","name":"δ⁰"},"arg":{"tag":"var","name":"x0"}}}}}}
+
+  ],
+  "main": {"tag":"lam","param":"x0","paramTy":{"tag":"unit"},"body":{"tag":"lam","param":"x1","paramTy":{"tag":"unit"},"body":{"tag":"app","fn":{"tag":"var","name":"logicalEntropy"},"arg":{"tag":"app","fn":{"tag":"app","fn":{"tag":"var","name":"δ⁰_vanishes"},"arg":{"tag":"var","name":"x0"}},"arg":{"tag":"var","name":"x1"}}}}}
+}

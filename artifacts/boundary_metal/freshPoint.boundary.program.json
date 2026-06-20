@@ -1,0 +1,6 @@
+{
+  "decls": [
+
+  ],
+  "main": {"tag":"lam","param":"x0","paramTy":{"tag":"unit"},"body":{"tag":"app","fn":{"tag":"app","fn":{"tag":"unit"},"arg":{"tag":"app","fn":{"tag":"var","name":"w"},"arg":{"tag":"var","name":"x0"}}},"arg":{"tag":"app","fn":{"tag":"var","name":"w_narrows"},"arg":{"tag":"var","name":"x0"}}}}
+}

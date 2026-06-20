@@ -1,0 +1,6 @@
+{
+  "decls": [
+
+  ],
+  "main": {"tag":"app","fn":{"tag":"app","fn":{"tag":"app","fn":{"tag":"app","fn":{"tag":"app","fn":{"tag":"unit"},"arg":{"tag":"var","name":"unmarked_marked"}},"arg":{"tag":"var","name":"upper_wall_transports"}},"arg":{"tag":"var","name":"crossing_path_nontrivial"}},"arg":{"tag":"lam","param":"x0","paramTy":{"tag":"unit"},"body":{"tag":"lam","param":"x1","paramTy":{"tag":"unit"},"body":{"tag":"var","name":"x0"}}}},"arg":{"tag":"var","name":"reentry_loop_transports"}}
+}

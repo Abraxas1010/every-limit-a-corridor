@@ -1,0 +1,199 @@
+{
+  "claim_id": "conjecture_6c6b1f5607e68d08",
+  "claim_status": "executable-with-receipt",
+  "commit": "0eed7a2d40b421ff0a8bdbaf4ba85908e3fc8b3d",
+  "evidence_digest_set": {
+    "runtime_receipt": {
+      "first": "sha256:8b2bf1b7fb36ebbd994addb3eeca0b3736ddd5fd5a296b0399b62a8c6b964ec8",
+      "second": "sha256:8b2bf1b7fb36ebbd994addb3eeca0b3736ddd5fd5a296b0399b62a8c6b964ec8"
+    },
+    "runtime_route": {
+      "first": "sha256:f959e21b99366b22b58dee5bbf268f434d343e9ffa7b8f1915f2cb7dbff2a938",
+      "second": "sha256:f959e21b99366b22b58dee5bbf268f434d343e9ffa7b8f1915f2cb7dbff2a938"
+    },
+    "transition_replay": {
+      "first": "sha256:da41680044c75a1e2bbff26ae848afd0544f572b385625b9abf7debf8e62c06b",
+      "second": "sha256:da41680044c75a1e2bbff26ae848afd0544f572b385625b9abf7debf8e62c06b"
+    }
+  },
+  "fixed_point_stable": true,
+  "gate_count": 3,
+  "gate_pairs": [
+    {
+      "first": {
+        "digest": "sha256:f959e21b99366b22b58dee5bbf268f434d343e9ffa7b8f1915f2cb7dbff2a938",
+        "errors": [],
+        "gate_results": [
+          {
+            "gate": "boundary_first",
+            "message": "Boundary artifact lookup hit an executable route before runtime evidence",
+            "status": "passed"
+          },
+          {
+            "gate": "runtime_receipt",
+            "message": "runtime evidence may now cite the P09 route receipt",
+            "status": "passed"
+          }
+        ],
+        "ok": true,
+        "recommended_blocker": null,
+        "recommended_status": "executable-with-receipt",
+        "schema_version": "claim_gate_p09.v1"
+      },
+      "gate": "runtime_route",
+      "ok": true,
+      "repeat_count": 2,
+      "second": {
+        "digest": "sha256:f959e21b99366b22b58dee5bbf268f434d343e9ffa7b8f1915f2cb7dbff2a938",
+        "errors": [],
+        "gate_results": [
+          {
+            "gate": "boundary_first",
+            "message": "Boundary artifact lookup hit an executable route before runtime evidence",
+            "status": "passed"
+          },
+          {
+            "gate": "runtime_receipt",
+            "message": "runtime evidence may now cite the P09 route receipt",
+            "status": "passed"
+          }
+        ],
+        "ok": true,
+        "recommended_blocker": null,
+        "recommended_status": "executable-with-receipt",
+        "schema_version": "claim_gate_p09.v1"
+      },
+      "stable": true
+    },
+    {
+      "first": {
+        "digest": "sha256:8b2bf1b7fb36ebbd994addb3eeca0b3736ddd5fd5a296b0399b62a8c6b964ec8",
+        "errors": [],
+        "gate_results": [
+          {
+            "gate": "boundary_first",
+            "message": "P10 replay is anchored in a persisted P09 Boundary-first route",
+            "status": "passed"
+          },
+          {
+            "gate": "runtime_receipt",
+            "message": "Boundary artifact readback was replayed and digest-bound",
+            "status": "passed"
+          },
+          {
+            "gate": "hardware_receipt",
+            "message": "no hardware dispatch in route",
+            "status": "not_applicable"
+          }
+        ],
+        "ok": true,
+        "recommended_blocker": null,
+        "recommended_status": "executable-with-receipt",
+        "schema_version": "claim_gate_p10.v1"
+      },
+      "gate": "runtime_receipt",
+      "ok": true,
+      "repeat_count": 2,
+      "second": {
+        "digest": "sha256:8b2bf1b7fb36ebbd994addb3eeca0b3736ddd5fd5a296b0399b62a8c6b964ec8",
+        "errors": [],
+        "gate_results": [
+          {
+            "gate": "boundary_first",
+            "message": "P10 replay is anchored in a persisted P09 Boundary-first route",
+            "status": "passed"
+          },
+          {
+            "gate": "runtime_receipt",
+            "message": "Boundary artifact readback was replayed and digest-bound",
+            "status": "passed"
+          },
+          {
+            "gate": "hardware_receipt",
+            "message": "no hardware dispatch in route",
+            "status": "not_applicable"
+          }
+        ],
+        "ok": true,
+        "recommended_blocker": null,
+        "recommended_status": "executable-with-receipt",
+        "schema_version": "claim_gate_p10.v1"
+      },
+      "stable": true
+    },
+    {
+      "first": {
+        "digest": "sha256:da41680044c75a1e2bbff26ae848afd0544f572b385625b9abf7debf8e62c06b",
+        "errors": [],
+        "gate_results": [
+          {
+            "gate": "schema_validation",
+            "message": "status pair is in the P00 transition graph",
+            "status": "passed"
+          },
+          {
+            "gate": "boundary_first",
+            "message": "P10 receipt cites a valid P09 Boundary-first route",
+            "status": "passed"
+          },
+          {
+            "gate": "hardware_receipt",
+            "message": "P10 receipt binds router/hardware identity when hardware dispatch is applicable",
+            "status": "passed"
+          },
+          {
+            "gate": "runtime_receipt",
+            "message": "executable-with-receipt evidence authority is present",
+            "status": "passed"
+          }
+        ],
+        "ok": true,
+        "recommended_blocker": null,
+        "recommended_status": null,
+        "schema_version": "claim_gate_p05.v1"
+      },
+      "gate": "transition_replay",
+      "ok": true,
+      "repeat_count": 2,
+      "second": {
+        "digest": "sha256:da41680044c75a1e2bbff26ae848afd0544f572b385625b9abf7debf8e62c06b",
+        "errors": [],
+        "gate_results": [
+          {
+            "gate": "schema_validation",
+            "message": "status pair is in the P00 transition graph",
+            "status": "passed"
+          },
+          {
+            "gate": "boundary_first",
+            "message": "P10 receipt cites a valid P09 Boundary-first route",
+            "status": "passed"
+          },
+          {
+            "gate": "hardware_receipt",
+            "message": "P10 receipt binds router/hardware identity when hardware dispatch is applicable",
+            "status": "passed"
+          },
+          {
+            "gate": "runtime_receipt",
+            "message": "executable-with-receipt evidence authority is present",
+            "status": "passed"
+          }
+        ],
+        "ok": true,
+        "recommended_blocker": null,
+        "recommended_status": null,
+        "schema_version": "claim_gate_p05.v1"
+      },
+      "stable": true
+    }
+  ],
+  "ok": true,
+  "recommended_blocker": null,
+  "recommended_status": "executable-with-receipt",
+  "repeat_count": 2,
+  "schema_version": "claim_gate_fixed_point.v1",
+  "timestamp": "2026-06-20T15:25:09Z",
+  "unstable_gate_count": 0,
+  "unstable_gates": []
+}

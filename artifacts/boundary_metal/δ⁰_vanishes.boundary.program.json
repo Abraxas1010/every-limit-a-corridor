@@ -1,0 +1,6 @@
+{
+  "decls": [
+
+  ],
+  "main": {"tag":"lam","param":"x0","paramTy":{"tag":"unit"},"body":{"tag":"let","name":"seq1","value":{"tag":"var","name":"x0"},"body":{"tag":"lam","param":"x1","paramTy":{"tag":"unit"},"body":{"tag":"app","fn":{"tag":"var","name":"δ⁰"},"arg":{"tag":"var","name":"x0"}}}}}
+}

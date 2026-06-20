@@ -1,0 +1,6 @@
+{
+  "decls": [
+
+  ],
+  "main": {"tag":"app","fn":{"tag":"app","fn":{"tag":"unit"},"arg":{"tag":"var","name":"w_narrows"}},"arg":{"tag":"var","name":"inclusion_not_surjective"}}
+}

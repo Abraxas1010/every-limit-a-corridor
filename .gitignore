@@ -1,0 +1,11 @@
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.toc
+*.fls
+*.fdb_latexmk
+_audit/
+__pycache__/
+*.agdai

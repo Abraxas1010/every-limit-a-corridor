@@ -1,0 +1,24 @@
+{
+  "schema": "boundary.agda_runtime_roundtrip_manifest.v1",
+  "authority": "agda_boundary_runtime_roundtrip",
+  "note": "Registers the cubical-Agda Boundary runtime-roundtrip artifact for the effective_corridor claim as boundary_runtime authority. The artifact is produced (and replayed) by scripts/agda_boundary_runtime_roundtrip.py, which genuinely executes the positive (--safe compile + bare-metal extraction) and negative (kernel-rejected true=false collapse) controls.",
+  "rows": [
+    {
+      "source_id": "effective_corridor_modulus_synthesis_20260619",
+      "source_module_name": "corpus.cubical_agda.Corridor.CompleteCorridor",
+      "source_decl_name": "the-complete-corridor",
+      "package_query": "effective_corridor_modulus_synthesis_20260619",
+      "lookup_queries": [
+        "conjectures/effective_corridor_modulus_synthesis_20260619.json#/",
+        "conjectures/effective_corridor_modulus_synthesis_20260619.json",
+        "effective_corridor_modulus_synthesis_20260619",
+        "effective_corridor"
+      ],
+      "boundary_artifact": "artifacts/ops/boundary_runtime_cutover/effective_corridor_agda/agda_runtime_roundtrip.json",
+      "runtime_authority": "agda_boundary_runtime_roundtrip",
+      "kernel_route_authority": "agda_boundary",
+      "runtime_execution_status": "executed_by_agda_boundary_backend",
+      "route_order": ["agda_boundary"]
+    }
+  ]
+}

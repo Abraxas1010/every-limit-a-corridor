@@ -1,0 +1,96 @@
+{
+  "claim_id": "conjecture_6c6b1f5607e68d08",
+  "evidence": [
+    {
+      "authority": "runtime",
+      "receipt": {
+        "checked_at": "2026-06-20T00:00:00Z",
+        "command": "python3 scripts/claim_gate.py runtime-receipt --claim conjecture_6c6b1f5607e68d08 --json",
+        "digest": "sha256:5566f20ae855f18c246dbb30623a7e5909e1b48eba39f8c1cdf0bba39302b783",
+        "path": "artifacts/ops/claim_graph/runtime_receipts/20260620_conjecture_6c6b1f5607e68d08_543ef22073.json"
+      }
+    }
+  ],
+  "evidence_authority_mode": "post_transition_replay",
+  "from_status": "partial",
+  "gate_results": [
+    {
+      "gate": "schema_validation",
+      "receipt": {
+        "checked_at": "2026-06-20T15:24:54Z",
+        "command": null,
+        "digest": null,
+        "path": "p05://schema_validation"
+      },
+      "status": "passed"
+    },
+    {
+      "gate": "boundary_first",
+      "receipt": {
+        "checked_at": "2026-06-20T15:24:54Z",
+        "command": null,
+        "digest": null,
+        "path": "p05://boundary_first"
+      },
+      "status": "passed"
+    },
+    {
+      "gate": "hardware_receipt",
+      "receipt": {
+        "checked_at": "2026-06-20T15:24:54Z",
+        "command": null,
+        "digest": null,
+        "path": "p05://hardware_receipt"
+      },
+      "status": "passed"
+    },
+    {
+      "gate": "runtime_receipt",
+      "receipt": {
+        "checked_at": "2026-06-20T15:24:54Z",
+        "command": null,
+        "digest": null,
+        "path": "p05://runtime_receipt"
+      },
+      "status": "passed"
+    }
+  ],
+  "performed_at": "2026-06-20T15:24:54Z",
+  "proof_tree": {
+    "id": "heyting_fixed_point_research_engine_20260521",
+    "next_outcome": "accepted",
+    "node_id": "n_d37bee56",
+    "previous_outcome": null
+  },
+  "provenance": {
+    "base_commit": "0eed7a2d40b421ff0a8bdbaf4ba85908e3fc8b3d",
+    "head_commit": "0eed7a2d40b421ff0a8bdbaf4ba85908e3fc8b3d",
+    "receipts": [
+      {
+        "checked_at": "2026-06-20T00:00:00Z",
+        "command": "python3 scripts/claim_gate.py runtime-receipt --claim conjecture_6c6b1f5607e68d08 --json",
+        "digest": "sha256:5566f20ae855f18c246dbb30623a7e5909e1b48eba39f8c1cdf0bba39302b783",
+        "path": "artifacts/ops/claim_graph/runtime_receipts/20260620_conjecture_6c6b1f5607e68d08_543ef22073.json"
+      }
+    ],
+    "scope_delta": [
+      "artifacts/ops/claim_graph/claim_graph.sqlite3",
+      "artifacts/ops/claim_graph/claim_graph.sqlite3.expected_digest",
+      "artifacts/ops/claim_graph/claim_graph_export.json"
+    ]
+  },
+  "reason": "cubical-Agda Boundary runtime-roundtrip closure: the full 7-module corridor substrate extracts to bare-metal Boundary; positive control (--safe compile + extraction) and negative control (kernel-rejected true=false collapse) both genuinely executed",
+  "requested_by": {
+    "agent_label": "abraxas@spark-305b",
+    "base_commit": "0eed7a2d40b421ff0a8bdbaf4ba85908e3fc8b3d",
+    "head_commit": "0eed7a2d40b421ff0a8bdbaf4ba85908e3fc8b3d",
+    "role": "executor",
+    "session_id": "effective_corridor_modulus_synthesis_20260619_2026-06-19-234159",
+    "worktree_path": "/tmp/heyting-corridor"
+  },
+  "retirement": null,
+  "schema_version": "claim_transition.v1",
+  "successor_claim_id": null,
+  "to_status": "executable-with-receipt",
+  "transition_id": "tr_20260620_executable_with_receipt_a1d0f7b909"
+}

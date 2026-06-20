@@ -1,0 +1,6 @@
+{
+  "decls": [
+
+  ],
+  "main": {"tag":"app","fn":{"tag":"app","fn":{"tag":"app","fn":{"tag":"app","fn":{"tag":"app","fn":{"tag":"unit"},"arg":{"tag":"var","name":"width"}},"arg":{"tag":"lam","param":"x0","paramTy":{"tag":"unit"},"body":{"tag":"var","name":"x0"}}},"arg":{"tag":"var","name":"modulus_sound"}},"arg":{"tag":"var","name":"ladder_narrows"}},"arg":{"tag":"var","name":"modulus_forced"}}
+}
