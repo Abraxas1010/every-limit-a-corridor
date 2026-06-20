@@ -116,7 +116,7 @@ A Constructive Engine for Effective Mathematics\par}
 
 \vspace{0.5em}
 {\large\itshape Generating Veselov's Spectrum-with-a-Modulus in Cohesive Homotopy
-Type Theory,\\ Measuring It, and Running It on Bare Metal\par}
+Type Theory,\\ Measuring It, and Lowering It to Bare Metal\par}
 
 \vspace{0.6em}
 \includegraphics[width=0.16\textwidth]{figures/IAOM_logo.png}
@@ -169,7 +169,7 @@ than imposed by hand. We take a concrete proposal---synthesize a point-free
 ``$\QQ$-free ladder,'' a bi-Lipschitz spectral corridor, and the computability
 certificates of Eagle and McNicholl---and realize it as one instance of the
 Institute's build-from-Nothing engine, in \emph{cohesive homotopy type theory},
-then discharge it to a running bare-metal artifact. Five constructions carry the
+then lower it to a bare-metal artifact. Five constructions carry the
 result, each a genuine mathematical object. \textbf{(i)} A faithful real-cohesion
 in which the two walls are genuinely different functors: the continuity wall
 ($\shapeM$) collapses the corridor's endpoints to a single connected point, while
@@ -190,10 +190,12 @@ charge no continuous deformation removes, measured in the same logical-entropy
 currency the engine uses to weigh a number's provenance. One identity binds them:
 the colimit's approximants \emph{are} the modulus's brackets. The whole programme
 then leaves the page: every construction lowers to a bare-metal interaction-net
-program, and the result is admitted as executable closure through a lane gated by
-a \emph{negative control}---a degenerate witness the kernel provably rejects---so
-the certificate records that the object \emph{runs}, not merely that it
-type-checks. We argue throughout that homotopy type theory is not incidental but
+program, and the result is admitted as executable-form closure through a lane
+gated by a \emph{negative control}---a degenerate witness the kernel provably
+rejects---so the certificate records that the object reaches executable bare-metal
+form past a discriminating gate, not merely that it type-checks (and its key
+computation, the univalence transport, reduces in the kernel besides). We argue
+throughout that homotopy type theory is not incidental but
 essential: univalence supplies the computing identification, cohesion supplies the
 two walls without a metric, and higher inductive types supply the loop, the
 quotient, and the colimit as first-class objects rather than encodings.
@@ -262,7 +264,8 @@ dissolving the one piece of the original proposal---a bi-Lipschitz constant---th
 sat awkwardly between a metric-free ontology and a metric estimate. And higher
 inductive types give the loop, the quotient, and the colimit as objects you can
 compute with rather than codes you must decode. The payoff is concrete: the whole
-construction compiles to a program and runs, and a machine certifies that it ran.
+construction lowers to a bare-metal program past a discriminating gate, and its
+central computation---the re-entry transport---reduces in the kernel besides.
 
 \Cref{fig:point-corridor} is the entire idea in one picture, legible before any
 definition.
@@ -359,10 +362,11 @@ four observables, and we will weigh the corridor by the same four.
 For a from-Nothing construction the engine records
 \begin{enumerate}[label=(\roman*), nosep, leftmargin=2.2em]
   \item \emph{algebraic behaviour}---which operations close on the carrier;
-  \item \emph{provenance cost}---the Conway birthday, read off the trace;
+  \item \emph{provenance cost}---the depth of the construction trace (the Conway
+        birthday, for a number; the ladder depth, for the corridor);
   \item \emph{logical entropy}---the Ellerman logical entropy of the history; and
-  \item \emph{bare-metal execution}---the value as computed through a verified
-        interaction-net reducer, with readback equal to route.
+  \item \emph{bare-metal realization}---the value lowered to an interaction-net
+        program, ready for a verified reducer whose readback equals its route.
 \end{enumerate}
 \end{definition}
 
@@ -409,14 +413,16 @@ corridor's obstruction are the same coin.
 \end{tikzpicture}
 \caption{\textbf{The engine in one line.} Every object is built from the empty
 distinction's two seeds, \emph{measured} by four observables (one of them logical
-entropy), and \emph{run} on a bare-metal interaction net. This paper feeds one new
-object---the effective corridor---through the same three stations.}
+entropy), and lowered to (the engine runs) a bare-metal interaction net. This paper
+feeds one new object---the effective corridor---through the same stations, reaching
+the third as a lowering (\cref{sec:metal}).}
 \label{fig:engine}
 \end{figure}
 
 \paragraph{What we inherit, precisely.}
 From the engine we take the discipline that an object is not finished when it
-type-checks but when it \emph{runs and is measured}. From the from-Nothing
+type-checks but when it \emph{reaches executable bare-metal form and is measured}.
+From the from-Nothing
 companion we take the starting point literally: our corridor will be built from
 the same two seeds---the void and the mark---and its first nontrivial structure,
 the re-entry of \cref{sec:univalence}, is the Laws-of-Form crossing itself. The
@@ -812,11 +818,14 @@ Hence no finite stage exhausts $\mathrm{St}_\infty$.
 
 \noindent\emph{Picture.} Each rung adds a genuinely new point the previous rung
 could not name; the staircase never stops climbing. \emph{Statement.}
-\cref{eq:nonsurj}. \emph{Meaning.} This is an approximately-finite structure in
-the operator-algebraic sense---a Bratteli tower whose connecting maps are proper
-inclusions---so the continuous object is the honest limit of finite data, and a
-degenerate ``AF'' colimit whose maps were equivalences (a tower that secretly
-stopped) is excluded. \emph{Proof.} Every point of stage $n$ has value strictly
+\cref{eq:nonsurj}. \emph{Meaning.} This is the combinatorial skeleton of an
+approximately-finite approximation---a Bratteli tower of finite stages with proper
+inclusions, the shape the dimension data of an AF $C^\ast$-algebra would carry---so
+the continuous object is the honest limit of finite data, and a degenerate ``AF''
+colimit whose maps were equivalences (a tower that secretly stopped) is excluded.
+We claim the skeleton, not the $C^\ast$-algebraic object: the finite-dimensional
+matrix algebras and the operator-norm limit are the content named as future work in
+\cref{sec:hott}. \emph{Proof.} Every point of stage $n$ has value strictly
 below $w(n)$; the inclusion preserves value; so the fresh value $w(n)$ is missed.
 \hfill$\square$
 
@@ -956,8 +965,9 @@ apply to it directly, and the most informative is the third. The corridor's
 $\Llog=\tfrac12$ (\cref{thm:h1})---the same quantity that reads $4/9$ for the
 number $2$ in $\NN$ and $36/49$ in the Gaussian integers. The corridor's
 \emph{provenance cost} is the depth of the golden ladder needed to pin a given
-precision, $\modulus(D)=D$ rungs. Its \emph{bare-metal execution} is the run of
-\cref{sec:metal}. Its \emph{algebraic behaviour} is the cohesion structure
+precision, $\modulus(D)=D$ rungs---the construction depth that plays the role a
+Conway birthday plays for a number. Its \emph{bare-metal realization} is the
+lowering of \cref{sec:metal}. Its \emph{algebraic behaviour} is the cohesion structure
 itself. The effective corridor is, in the precise sense the engine gives the
 phrase, a constructive number whose history we can weigh---and whose most
 characteristic weight, its topological obstruction, is literally an entropy.
@@ -974,8 +984,8 @@ characteristic weight, its topological obstruction, is literally an entropy.
 \midrule
 $2$ in $\NN$ (successor ratchet)        & $4/9$   & birthday $2$ & net reduces \\
 $2$ in $\Gi$ (Gaussian ring datum)      & $36/49$ & birthday $2$ & net reduces \\
-$2$ in surreals (simplest-day cut)      & $12/25$ & rank $3$     & net reduces \\
-\textbf{the corridor} (boundary screen) & $\bm{1/2}$ & golden depth $\modulus(D){=}D$ & $84$ steps \\
+$2$ in surreals (simplest-day cut)      & $12/25$ & birthday $2$ & net reduces \\
+\textbf{the corridor} (boundary screen) & $\bm{1/2}$ & golden depth $\modulus(D){=}D$ & $84$-node program \\
 \bottomrule
 \end{tabular}
 \caption{\textbf{The corridor, weighed beside a number.} The engine's four
@@ -983,53 +993,66 @@ observables (\cref{def:observables}) apply to the corridor as to any from-Nothin
 construction. Its logical entropy is the distinction content of its $H^1$ screen,
 $\tfrac12$ (\cref{thm:h1})---the same Ellerman currency that separates the number
 $2$ across its histories ($4/9$ in $\NN$, $36/49$ in the Gaussians, $12/25$ in the
-surreals~\citep{iaom_every_number}). The corridor's characteristic weight, its
-topological obstruction, \emph{is} a logical entropy: topology and distinction,
-one quantity.}
+surreals~\citep{iaom_every_number}). Across these histories the birthday is the
+same ($2$); the \emph{logical entropy} is what tells them apart---hence its place
+at the centre. The construction cost is read as the Conway birthday for a number
+and as the golden ladder depth for the corridor. The number rows are reduced by the
+engine's verified reducer; the corridor row is \emph{lowered} to an $84$-node
+interaction-net program (\cref{sec:metal}), not run to a normal form here. The
+corridor's characteristic weight, its topological obstruction, \emph{is} a logical
+entropy: topology and distinction, one quantity.}
 \label{fig:measure}
 \end{figure}
 
 % =========================================================================
-\section{Running on bare metal}\label{sec:metal}
+\section{Lowering to bare metal}\label{sec:metal}
 
 \paragraph{Hook.}
-A theorem that only type-checks is a theorem you have to trust. A theorem that
-\emph{runs} is a theorem you can audit by watching it work. The Institute's
-standard is the second: every result lowers to Boundary, an operator-native
-substrate that reduces by local rewriting, and the closure of a result records not
-that it was believed but that it ran. The corridor meets this standard, and meeting
-it surfaces the one genuinely new piece of machinery in the paper.
+A theorem that only type-checks is a theorem you have to trust about everything
+except its conclusion. The Institute's standard goes one step further: a result is
+not finished until it \emph{lowers} to Boundary, an operator-native substrate that
+reduces by local rewriting, in a form a machine can later run. The corridor meets
+this standard---and meeting it surfaces the one genuinely new piece of machinery in
+the paper, a closure that certifies the lowering past a control it could fail.
 
-\paragraph{The whole programme lowers.}
+\paragraph{The whole programme lowers, and the kernel already reduces.}
 Each of the five constructions extracts to a bare-metal interaction-net program: a
-term tree in the universal combinator alphabet, reduced by active-pair
-rewriting~\citep{lafont1997interaction}. The cohesion witness, the re-entry
-witness, the modulus, the colimit, and the screen all compile---the genuine
-constructions extract to genuine programs, with a total of $84$ reduction nodes
-across the five witnesses. ``Every theorem returns a program''~\citep{iaom_spectrum}
-is here not a slogan but the literal output.
+term tree in the universal combinator alphabet, the alphabet whose active-pair
+rewriting is the substrate's dynamics~\citep{lafont1997interaction}. The cohesion
+witness, the re-entry witness, the modulus, the colimit, and the screen all
+compile to non-trivial programs---a total of $84$ term-tree nodes across the five.
+We are precise about what this establishes and what it does not: the constructions
+are \emph{lowered} to executable form (this is verified, and the programs are ready
+for the reducer), and the one computation we depend on, the re-entry transport of
+\cref{thm:ua}, already \emph{reduces} in the kernel (\cref{eq:ua-transport} takes a
+step). We do not here claim a completed interaction-net reduction of the lowered
+programs to normal form---that is the substrate's run, which the lowered programs
+are prepared for. ``Every theorem returns a program''~\citep{iaom_spectrum} is here
+the literal output; running that program through the reducer is the engine's
+machinery, not a claim of this paper.
 
 \paragraph{Closure with a negative control.}
-The result is admitted as \emph{executable closure} only through a gate that does
-something a pure type-check cannot: it carries a \emph{negative control}. The gate
-demands two things at once. \emph{Positive:} every witness module compiles under
-\texttt{-{}-cubical -{}-safe}, postulate-free, and extracts to a non-trivial
-program. \emph{Negative:} the degenerate collapse---forcing the boundary's two
-states to be equal, $\unmk\equiv\mkd$, the one move that would make the whole
-corridor vacuous---must be \emph{rejected by the kernel}. It is: the term asserting
-$\mathrm{true}\equiv\mathrm{false}$ by reflexivity does not type-check, for the
-plain reason that the two constructors are distinct. A degenerate witness therefore
-\emph{cannot} manufacture admissibility, because the very gate that admits the
-genuine object is the gate that the degenerate one fails.
+The lowered result is admitted as \emph{executable-form closure} only through a
+gate that does something a pure type-check cannot: it carries a \emph{negative
+control}. The gate demands two things at once. \emph{Positive:} every witness
+module compiles under \texttt{-{}-cubical -{}-safe}, postulate-free, and extracts
+to a non-trivial program. \emph{Negative:} the degenerate collapse---forcing the
+boundary's two states to be equal, $\unmk\equiv\mkd$, the one move that would make
+the whole corridor vacuous---must be \emph{rejected by the kernel}. It is: the term
+asserting $\mathrm{true}\equiv\mathrm{false}$ by reflexivity does not type-check,
+for the plain reason that the two constructors are distinct. A degenerate witness
+therefore \emph{cannot} manufacture admissibility, because the very gate that
+admits the genuine object is the gate that the degenerate one fails.
 
-\begin{theorem}[Admissibility certifies running, and rejects the degenerate]
+\begin{theorem}[Admissibility certifies the lowering, and rejects the degenerate]
 \label{thm:closure}
 The corridor's closure is admitted iff the positive control holds (kernel-checked
 compilation and non-trivial extraction of all five witnesses) and the negative
 control holds (the kernel rejects $\unmk\equiv\mkd$). The genuine object satisfies
 both; any object that collapses the boundary fails the second. Closure is therefore
-evidence that the object \emph{runs}, gated by a discriminator the substrate
-enforces on every replay.
+evidence that the object reaches executable bare-metal form past a discriminator
+the substrate enforces on every replay---not, we stress, evidence of a completed
+run, which the lowered programs are merely prepared for.
 \end{theorem}
 
 \noindent\emph{Picture.} A turnstile that opens only when the real key turns it
@@ -1037,10 +1060,11 @@ enforces on every replay.
 \cref{thm:closure}. \emph{Meaning.} This is the epistemic heart of the paper. A
 verification regime that cannot exhibit a failure it would catch is not a regime;
 the negative control is what makes ``it passed'' informative. Admitting the
-corridor as executable, gated by a kernel-rejected degeneracy, is closure on the
-strongest evidence the system recognizes: construction \emph{and} execution, with
-a built-in proof that the gate discriminates. \emph{Proof.} The positive controls
-are the extraction runs of \cref{sec:metal}; the negative control is the kernel's
+corridor in executable bare-metal form, gated by a kernel-rejected degeneracy, is
+closure on the strongest evidence the system recognizes short of a completed run:
+construction \emph{and} lowering, with a built-in proof that the gate
+discriminates. \emph{Proof.} The positive controls are the kernel-checked
+compilation and extraction of \cref{sec:metal}; the negative control is the kernel's
 refusal of $\mathrm{true}\equiv\mathrm{false}$. Both are replayable; the gate
 re-checks them on every closure receipt.\hfill$\square$
 
@@ -1050,13 +1074,13 @@ re-checks them on every closure receipt.\hfill$\square$
 \begin{tikzpicture}[node distance=6mm and 10mm]
   \node[boxBlue] (agda) {five witnesses\\[1pt]\scriptsize cohesion $\cdot$ re-entry\\\scriptsize modulus $\cdot$ colimit $\cdot$ screen};
   \node[boxGreen, right=of agda] (kernel) {kernel\\[1pt]\scriptsize \texttt{-{}-cubical -{}-safe}\\\scriptsize no postulates};
-  \node[boxOrange, right=of kernel] (metal) {bare metal\\[1pt]\scriptsize interaction-net\\\scriptsize programs ($84$ steps)};
+  \node[boxOrange, right=of kernel] (metal) {bare metal\\[1pt]\scriptsize interaction-net\\\scriptsize programs ($84$ nodes)};
   % gate
   \node[draw, diamond, aspect=2, fill=okPurple!18, draw=okPurple, font=\sffamily\scriptsize,
         align=center, right=of metal] (gate) {closure\\ gate};
   \node[boxGreen, above right=4mm and 10mm of gate] (pos) {\textbf{positive}\\[1pt]\scriptsize compiles\,+\,extracts\\\scriptsize (all five)};
   \node[boxOrange, below right=4mm and 10mm of gate] (neg) {\textbf{negative}\\[1pt]\scriptsize kernel rejects\\\scriptsize $\unmk\equiv\mkd$};
-  \node[box, fill=okPurple!10, draw=okPurple, right=26mm of gate] (close) {\textsc{executable}\\\textsc{with receipt}\\[1pt]\scriptsize it ran};
+  \node[box, fill=okPurple!10, draw=okPurple, right=26mm of gate] (close) {\textsc{executable}\\\textsc{form, with receipt}\\[1pt]\scriptsize lowered + guarded};
   \draw[arr] (agda) -- (kernel);
   \draw[arr] (kernel) -- (metal);
   \draw[arr] (metal) -- (gate);
@@ -1065,12 +1089,13 @@ re-checks them on every closure receipt.\hfill$\square$
   \draw[arr, okPurple] (gate.east) -- (close.west);
 \end{tikzpicture}%
 }
-\caption{\textbf{Closure as evidence of running, gated by a negative control.} The
+\caption{\textbf{Closure as evidence of lowering, gated by a negative control.} The
 five witnesses pass the kernel, lower to bare-metal interaction-net programs, and
-are admitted as executable closure only by a gate carrying \emph{both} a positive
-control (genuine compilation and extraction) and a negative control (the kernel
-provably rejects the degenerate collapse $\unmk\equiv\mkd$). A degenerate witness
-cannot pass the gate that admits the genuine one (\cref{thm:closure}).}
+are admitted in executable bare-metal form only by a gate carrying \emph{both} a
+positive control (genuine compilation and extraction) and a negative control (the
+kernel provably rejects the degenerate collapse $\unmk\equiv\mkd$). A degenerate
+witness cannot pass the gate that admits the genuine one (\cref{thm:closure}). The
+certificate is of the lowering and its discriminator, not of a completed run.}
 \label{fig:closure}
 \end{figure}
 
@@ -1139,12 +1164,12 @@ cohomological obstruction. That these coincide (\cref{thm:h1}) hints at a genera
 principle: the topological complexity of a constructive object and its
 distinction-content are one measurable quantity. Cataloguing the logical entropy
 of cohesive constructions is a concrete programme.
-\item \emph{Verified physics that runs.} The proposal's Part~III reads the screen as
+\item \emph{Auditable physics.} The proposal's Part~III reads the screen as
 the observer's screening boundary and the lower modulus as the impossibility of a
 UV-divergence---a gap that never collapses. With the screen and the forced modulus
-now kernel-checked and executable, the physical claim becomes auditable rather than
-asserted: a computable-process account of spectral finiteness in which the
-certificate is a program one can run.
+now kernel-checked and lowered to executable form, the physical claim becomes
+auditable rather than asserted: a computable-process account of spectral finiteness
+in which the certificate is a program one can run.
 \end{enumerate}
 
 % =========================================================================
@@ -1185,9 +1210,9 @@ mathematics is on the page, not hidden behind a proof-assistant. Second, the
 discriminators: every genuine theorem is paired with a degeneracy it rules out (a
 constant modulus, a reflexive re-entry, a collapsed boundary, an equivalence-only
 colimit), and these are the substitution tests that distinguish content from
-naming. Third, the run: the artifact extracts to bare-metal programs and the
+naming. Third, the lowering: the artifact extracts to bare-metal programs and the
 closure is gated by the negative control of \cref{thm:closure}, which any
-re-execution re-checks. Belief is not required at any step.
+re-run of the lane re-checks. Belief is not required at any step.
 
 % =========================================================================
 \section{Realization}\label{sec:realization}

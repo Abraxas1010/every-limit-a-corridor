@@ -43,17 +43,19 @@ else
   fi
 fi
 
-echo "== 3. the authority lane (producer + 27-check test suite) =="
+echo "== 3. the authority lane discriminates (standalone, vendored validator) =="
 if command -v python3 >/dev/null; then
-  # the test/producer expect the repo layout; run them in best-effort standalone mode
-  python3 realization/test_agda_runtime_roundtrip_authority.py 2>/dev/null \
-    && echo "  [OK]   authority test suite passed" \
-    || echo "  [INFO] run the test from the full repo for the live 27/27 (artifact is included for inspection)"
+  if python3 realization/verify_lane.py >/tmp/_l.log 2>&1; then
+    echo "  [OK]   $(tail -1 /tmp/_l.log)"
+  else
+    echo "  [FAIL] lane discrimination"; tail -6 /tmp/_l.log; fail=1
+  fi
+  echo "  [note] the full 27/27 suite (incl. producer-replay T13/T14) runs from the full repo"
 else
-  echo "  [INFO] python3 not found; skipping the lane (artifact included for inspection)"
+  echo "  [INFO] python3 not found; skipping the lane checks"
 fi
 
 echo
-[[ "$fail" -eq 0 ]] && echo "VERIFY OK: the seven modules are kernel-checked and the negative control is rejected." \
+[[ "$fail" -eq 0 ]] && echo "VERIFY OK: 7 modules kernel-checked, negative control rejected, lane discriminates." \
                      || echo "VERIFY FAILED (see [FAIL] above)."
 exit "$fail"
