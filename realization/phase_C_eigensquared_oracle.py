@@ -109,6 +109,30 @@ def main() -> int:
     if adj_ok:
         print("  [OK]   adjoint C*-bridge ‖Mx‖²=⟨M*Mx,x⟩ for arbitrary 2×2 M and x (any M, toward n×n)")
 
+    # 7. the GENERAL-n adjoint bridge ⟨Mx,Mx⟩=⟨MᵀM·x,x⟩ (AdjointFormN, all dimensions).
+    def matvec(M, x): return [sum(M[i][j] * x[j] for j in range(len(x))) for i in range(len(M))]
+    def dot(u, v): return sum(a * b for a, b in zip(u, v))
+    def transp(M): return [[M[j][i] for j in range(len(M))] for i in range(len(M[0]))]
+    def matmul(A, B): return [[sum(A[i][k] * B[k][j] for k in range(len(B))) for j in range(len(B[0]))] for i in range(len(A))]
+    nd_ok = True
+    mats = [
+        [[Q(1), Q(2), Q(0)], [Q(2), Q(3), Q(1)], [Q(0), Q(1), Q(4)]],          # 3×3
+        [[Q(2), Q(-1), Q(0), Q(1)], [Q(-1), Q(3), Q(2), Q(0)],
+         [Q(0), Q(2), Q(1), Q(-2)], [Q(1), Q(0), Q(-2), Q(5)]],                # 4×4 symmetric
+        [[Q(1), Q(2), Q(3)], [Q(0), Q(1), Q(4)], [Q(5), Q(0), Q(1)]],          # 3×3 NON-symmetric
+    ]
+    vecs3 = [[Q(1), Q(0), Q(0)], [Q(1), Q(1), Q(1)], [Q(2), Q(-1), Q(3)]]
+    vecs4 = [[Q(1), Q(1), Q(1), Q(1)], [Q(2), Q(0), Q(-1), Q(3)]]
+    for M in mats:
+        vs = vecs4 if len(M) == 4 else vecs3
+        MtM = matmul(transp(M), M)
+        for x in vs:
+            Mx = matvec(M, x)
+            if dot(Mx, Mx) != dot(matvec(MtM, x), x):     # ‖Mx‖² = ⟨MᵀM x, x⟩
+                print(f"  [FAIL] n={len(M)} adjoint bridge ⟨Mx,Mx⟩≠⟨MᵀMx,x⟩"); nd_ok = ok = False
+    if nd_ok:
+        print("  [OK]   general-n adjoint bridge ⟨Mx,Mx⟩=⟨MᵀM·x,x⟩ for n=3,4 (incl. non-symmetric)")
+
     print("Phase-C oracle:", "ALL CHECKS PASS" if ok else "FAILED")
     return 0 if ok else 1
 
