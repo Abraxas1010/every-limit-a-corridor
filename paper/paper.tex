@@ -111,49 +111,23 @@
 \centering
 \vspace*{0.3em}
 
-{\LARGE\bfseries Every Limit a Corridor:\\[6pt]
-A Constructive Engine for Effective Mathematics\par}
+{\huge\bfseries Every Limit a Corridor\par}
 
-\vspace{0.5em}
-{\large\itshape Generating Veselov's Spectrum-with-a-Modulus in Cohesive Homotopy
-Type Theory,\\ Measuring It, and Lowering It to Bare Metal\par}
+\vspace{0.45em}
+{\Large A Constructive Engine for Effective Mathematics\par}
 
-\vspace{0.6em}
+\vspace{0.55em}
+{\large\itshape Generating Veselov's spectrum-with-a-modulus in cohesive\\
+homotopy type theory, measuring it, and lowering it to bare metal\par}
+
+\vspace{0.8em}
 \includegraphics[width=0.16\textwidth]{figures/IAOM_logo.png}
 
-\vspace{0.4em}
-{\tiny\sffamily\bfseries
-\renewcommand{\arraystretch}{1.05}%
-\begin{tabular}{@{}l@{\hspace{1.5em}}c@{}}
-Our Technology is Ontological: & Hardware $\bm{=}$ Physics\,\,$\bm{|\barwedge|}$\,\,Software $\bm{=}$ Mathematics \\
-Our Engineering is Constructive: & $\bm{\varepsilon}$\,\,\emph{Discover} $\bm{\Rightarrow}$ \emph{Build} $\bm{\Rightarrow}$ \emph{Grow} $\bm{\Rightarrow}$ \emph{Learn} $\bm{\Rightarrow}$ \emph{Teach}\,\,$\bm{\infty}$
-\end{tabular}\par}
+\vspace{0.45em}
+{\normalsize\scshape Institute for Applied Ontological Mathematics\par}
 
-\vspace{0.5em}
-\rule{0.20\linewidth}{0.4pt}\;\;$\vdash$\;\;\rule{0.20\linewidth}{0.4pt}
-
-\vspace{0.4em}
-{\footnotesize\sffamily\bfseries Acknowledgment\par}
-\vspace{0.2em}
-\begin{minipage}{0.82\textwidth}
-\scriptsize\itshape
-This paper grew from a written correspondence: a proposal to synthesize a
-point-free topological ladder, a bi-Lipschitz spectral corridor, and the
-computability certificates of effective functional analysis into a single
-object. We thank the collective intelligence of humanity for the technology and
-culture we cherish, and we reference the works we build on as faithfully as we
-can. Our formalization acts as a reciprocal validation: it confirms the
-structural integrity of the original insights while securing the foundation on
-which we build. All creative work is derivative; our contribution is the next
-link in an unbroken chain.
-\end{minipage}
-
-\vspace{0.4em}
-\rule{0.20\linewidth}{0.4pt}\;\;$\dashv$\;\;\rule{0.20\linewidth}{0.4pt}
-
-\vspace{0.35em}
-{\footnotesize\sffamily June 2026 \quad\textbullet\quad
-\ifIAOMPublication Publication Draft\else Technical Report\fi\par}
+\vspace{0.25em}
+{\footnotesize June 2026\par}
 
 \vspace{0.8em}
 \begin{minipage}{0.90\textwidth}
@@ -307,10 +281,12 @@ definition.
       \pgfmathsetmacro{\yy}{1.05*(3.2-\t)/2.9}
       \draw[okOrange!85!black, semithick] (\t,-\yy) -- (\t,\yy);
     }
-    \node[okGreen!50!black, font=\sffamily\footnotesize] at (1.1,0.95) {upper wall (continuity)};
-    \node[okBlue, font=\sffamily\footnotesize] at (1.25,-0.95) {lower wall (cost)};
-    \node[okOrange!70!black, font=\sffamily\scriptsize] at (1.5,0.18) {rungs $=$ the rate};
-    \node[font=\sffamily\bfseries] at (2.0,-1.45) {Effective: a corridor};
+    % labels placed OUTSIDE the corridor so none sits on an edge, the fill, or a rung
+    \node[okGreen!50!black, font=\sffamily\footnotesize, anchor=south] at (1.6,1.18) {upper wall (continuity)};
+    \node[okBlue, font=\sffamily\footnotesize, anchor=north] at (1.6,-1.18) {lower wall (cost)};
+    \node[okOrange!75!black, font=\sffamily\scriptsize, anchor=west] (rungLbl) at (3.42,0.86) {rungs $=$ rate};
+    \draw[okOrange!75!black, -Stealth, semithick] (rungLbl.south west) to[bend right=18] (2.3,0.33);
+    \node[font=\sffamily\bfseries] at (2.0,-1.85) {Effective: a corridor};
   \end{scope}
 \end{tikzpicture}
 \caption{\textbf{The whole idea, before any definition.} Classically a limit is a
@@ -322,20 +298,19 @@ whose error bars are computed, not imposed.}
 \label{fig:point-corridor}
 \end{figure}
 
-\paragraph{Provenance of the problem.}
-The corridor did not arrive abstractly. It arrived as a written proposal between
-collaborators: to synthesize three frameworks that had developed
-separately---a point-free ``$\QQ$-free ladder'' that builds compact spaces
-inductively without the rational numbers~\citep{iaom_climbing}; a
-bi-Lipschitz ``corridor'' of golden-ratio bounds meant to protect a spectral gap
-from collapse; and the effective functional calculus of Eagle and
-McNicholl~\citep{eagle2017computable}, in which every point of a $C^\ast$-algebra
-is a stream of finite codes and every theorem returns a program with a
-rate~\citep{iaom_spectrum}. The proposal's thesis was a single sentence: a
-spectrum is computable \emph{if and only if} it has a modulus, an explicit
-positive certificate that forbids the resolvent from diverging. This paper is the
-realization of that thesis---faithful to its three parts, and improved in exactly
-one place, where homotopy type theory shows that the metric was never needed.
+\paragraph{Background.}
+The construction synthesizes three frameworks that developed separately. The first
+is a point-free ``$\QQ$-free ladder'' that builds compact spaces inductively
+without the rational numbers~\citep{iaom_climbing}. The second is a bi-Lipschitz
+``corridor'' of golden-ratio bounds that protects a spectral gap from collapse. The
+third is the effective functional calculus of Eagle and
+McNicholl~\citep{eagle2017computable}, in which every point of a $C^\ast$-algebra is
+a stream of finite codes and every theorem returns a program with an explicit
+rate~\citep{iaom_spectrum}. Their common thesis is a single statement: a spectrum is
+computable \emph{if and only if} it carries a modulus---an explicit positive
+certificate that forbids the resolvent from diverging. This paper realizes that
+thesis, faithful to its three parts and sharpened in one place, where homotopy type
+theory shows the metric was never needed.
 
 % =========================================================================
 \section{A measurable construction from Nothing}\label{sec:engine}
@@ -348,6 +323,27 @@ gives every value a \emph{construction trace}: a syntactic record of how the val
 was assembled from the empty distinction's two seeds, the void and the mark of the
 Laws of Form~\citep{spencerbrown1969laws}. From that trace it reads the value's
 history, and from the history it reads \emph{numbers about the number}.
+
+\paragraph{The substrate: dependent type theory.}
+The ``void'' and the ``mark'' are not metaphors; they are the primitive type
+formers of \emph{dependent type theory}---the empty type that begins with no
+element, and the inductive clause that manufactures one structure from another. A
+from-Nothing trace is a closed term in this theory, and a value is what that term
+evaluates to in a chosen carrier, so provenance is syntactic by construction and the
+four observables below are read off the term rather than attached to it. We work in
+the homotopy-type-theoretic refinement of this setting~\citep{voevodsky2014univalent},
+where a type is read as a space, an equality is a \emph{path}, and univalence makes
+equivalent structures equal---so an identification can itself carry computational
+content. The machine is \emph{cubical} Agda~\citep{cohen2018cubical,vezzosi2019cubical}:
+there univalence is not an axiom one assumes (as in Lean or book HoTT, where the
+resulting terms are stuck and compute nothing) but a construction that
+\emph{reduces}, which is exactly why the re-entry of \cref{sec:univalence} runs in
+the kernel instead of blocking on it. Higher inductive types give the loop, the
+quotient, and the colimit as first-class objects rather than encodings, and a
+real-cohesive layer~\citep{shulman2018brouwer} supplies the two modalities of
+\cref{sec:cohesion}. Every construction in this paper is checked under Agda's
+\texttt{--safe} discipline with no postulates; \cref{sec:hott} returns to \emph{why}
+each of these ingredients is load-bearing rather than incidental.
 
 \paragraph{Build, then invert.}
 The forward map is generative. Choose a system and a trace; obtain a value that
@@ -399,6 +395,89 @@ this kind. The cohomological obstruction that Veselov's proposal predicted---a
 class locally trivial but globally not---is, when measured, a distinction the
 boundary makes and no deformation unmakes. The engine's currency and the
 corridor's obstruction are the same coin.
+
+\paragraph{The catalogue and its complexity.}
+The plurality is not a handful of special cases; it is a \emph{catalogue}. From the
+same two seeds the engine climbs a ladder of number systems---each a genuine
+algebraic structure with its own from-Nothing history, and therefore its own
+complexity profile---topped by the surreal numbers, the universal rung on which
+every value of every lower system is born on a definite day~\citep{conway2001onag,
+iaom_every_number}. \Cref{fig:ladder} draws the ladder; \cref{tab:catalogue} weighs a
+representative element of each system by the same four observables we will apply to
+the corridor. Two readings carry into the rest of the paper. First, the
+\emph{provenance cost}---the Conway birthday---is intrinsic, not a matter of
+notation: the integer $n$ is born on day $n$, while the golden ratio, the corridor's
+own value, is born on day $\omega$, the first transfinite day, the same $\omega$
+where the corridor's forced golden modulus reappears in \cref{sec:modulus}. Second,
+the \emph{logical entropy} of one fixed value depends on the system that hosts
+it---$2$ carries $4/9$ in $\NN$, $36/49$ in the Gaussian integers, and $12/25$ in
+the surreals---so ``the number $2$'' names not one object but a family of measurably
+distinct histories. The corridor, weighed in \cref{sec:synthesis}, enters the same
+catalogue as its own row.
+
+\begin{table}[t]
+\centering
+\caption{\textbf{The catalogue, weighed.} A representative element of each number
+system the engine builds from the two seeds, read by four observables: its
+from-Nothing history, the algebra that closes on it, its provenance cost (the Conway
+birthday of the witness), and the logical entropy of the witness where the engine
+has computed it. The corridor (last row) enters the same catalogue; ``\,---\,''
+marks an observable not computed here.}
+\label{tab:catalogue}
+\small
+\begin{tabular}{@{}llllc@{}}
+\toprule
+\textbf{system} & \textbf{from-Nothing history} & \textbf{closes under} & \textbf{birthday} & $\bm{\Llog}$ \\
+\midrule
+$\NN$                  & $\mathsf{succ}^{n}\,\mathbf 0$            & commutative semiring          & $n$              & $4/9$ \\
+$\ZZ$                  & $\pm\,\mathsf{succ}^{n}\,\mathbf 0$       & commutative ring              & $n$              & --- \\
+dyadic $\QQ$           & mediant cuts                              & field                         & cut depth        & --- \\
+Gaussian $\ZZ[i]$      & $a \oplus b\,\theta,\ \theta^{2}{=}{-}1$  & ring with conjugation         & $n$              & $36/49$ \\
+surreals               & $\{L \mid R\}$, day-bounded               & ordered field (universal)     & the day itself   & $12/25$ \\
+von Neumann ordinals   & nested sets                               & well-order                    & rank             & --- \\
+staged $\RR$           & modulus program                           & complete ordered field        & $\omega$ (at $\varphi$) & --- \\
+\midrule
+\textbf{the corridor}  & golden modulus ladder                     & two cohesion walls, no metric & golden depth $D$ & $\bm{1/2}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[every node/.style={font=\sffamily\footnotesize}]
+  % birthday axis
+  \draw[-Stealth, gray!50] (-0.5,-0.55) -- (-0.5,5.55) node[above, font=\sffamily\scriptsize, text=gray!55!black]{birthday};
+  \node[font=\sffamily\scriptsize, text=gray!55!black, left] at (-0.5,0.0) {$0$};
+  \node[font=\sffamily\scriptsize, text=gray!55!black, left] at (-0.5,2.0) {finite};
+  \node[font=\sffamily\scriptsize, text=gray!55!black, left] at (-0.5,5.0) {$\omega$};
+  % seeds
+  \node[seed] (zero) at (1.5,0) {$\mathbf 0$};
+  \node[seed] (one)  at (2.7,0) {$\mathbf 1$};
+  \node[font=\sffamily\scriptsize, text=gray!55!black, anchor=west] at (3.6,0) {the two seeds: void, mark};
+  % finite rung
+  \node[boxBlue] (nat)   at (1.6,2.0) {$\NN$};
+  \node[boxBlue] (int)   at (3.0,2.0) {$\ZZ$};
+  \node[boxBlue] (gauss) at (5.1,2.0) {Gaussian $\ZZ[i]$};
+  \node[boxBlue] (ord)   at (7.6,2.0) {ordinals};
+  % transfinite rung
+  \node[boxGreen]  (sur)  at (3.0,3.7) {surreals {\scriptsize(universal)}};
+  \node[boxOrange] (real) at (6.2,3.7) {staged $\RR$};
+  % the corridor, highlighted
+  \node[boxPurple] (cor)  at (6.2,5.0) {\textbf{the corridor}: $\varphi$, day $\omega$};
+  % climbing arrows
+  \draw[arr] (zero) -- (nat); \draw[arr] (one) -- (nat);
+  \draw[arr] (nat) -- (int); \draw[arr] (int) -- (gauss); \draw[arr] (gauss) -- (ord);
+  \draw[arr] (int) -- (sur); \draw[arr] (sur) -- (real); \draw[arr] (real) -- (cor);
+\end{tikzpicture}
+\caption{\textbf{The ladder of number systems.} From the two seeds the engine builds
+a catalogue of genuine number systems, each born on a definite day: a finite rung
+($\NN$, $\ZZ$, the Gaussian integers, the ordinals), then the surreals---the
+universal rung on which every lower value is born on a definite day---and the staged
+reals. The golden value $\varphi$ that the corridor realizes is born on day
+$\omega$, the first transfinite day; the corridor (\cref{sec:synthesis}) is its
+effective, metric-free presentation.}
+\label{fig:ladder}
+\end{figure}
 
 \begin{figure}[t]
 \centering
@@ -644,7 +723,7 @@ and $\mkd\neq\unmk$ by discreteness of $\Bd$, giving \cref{eq:ua-nontrivial}.
   \node[pt, fill=okVerm!35] (m) at (0:1.5) {$\mkd$};
   \draw[arr, okPurple, line width=1.1pt] (200:1.5) to[bend left=55] (340:1.5);
   \draw[arr, okPurple, line width=1.1pt] (20:1.5) to[bend left=55] (160:1.5);
-  \node[okPurple, font=\sffamily\footnotesize] at (0,0.0) {$\cross$ : half-turn};
+  \node[okPurple, font=\sffamily\footnotesize] at (0,1.84) {$\cross$ : half-turn};
   \node[font=\sffamily\scriptsize, text=gray!60!black] at (0,-1.95) {$\cross^2=\mathrm{id}$};
   % transport box
   \node[boxOrange, right=22mm of m, yshift=6mm] (tr)
@@ -957,10 +1036,10 @@ $H^1(S^1;\bbtwo)\cong\bbtwo$, positive logical entropy (\cref{thm:h1}) &
 \textbf{logical entropy} \\
 \bottomrule
 \end{tabular}
-\caption{\textbf{The Rosetta of the collaboration.} Each Part of the written
+\caption{\textbf{The three parts, realized and measured.} Each part of the original
 proposal (left) is realized as a genuine homotopy-type-theoretic construction
 (centre), and each is \emph{measured} by one of the engine's four observables
-(right). The single edit is the second row: the bi-Lipschitz metric becomes two
+(right). The single change is the second row: the bi-Lipschitz metric becomes two
 cohesion modalities, and the corridor loses nothing by losing the metric.}
 \label{fig:rosetta}
 \end{figure}
@@ -1302,22 +1381,6 @@ currency as number provenance, and whose closure is \emph{executable} and gated 
 a kernel-rejected degeneracy. The single edit to the proposal---deleting the
 bi-Lipschitz metric in favour of two modalities---is, we have argued, a
 strengthening.
-
-\paragraph{Open---and since closed.}
-Three completions were named here as honest future work. Two of them have since
-been carried out and kernel-checked (\emph{From germ to organism},
-\cref{sec:formalization}): the full analytic real-cohesive line---$\shapeM$ and
-$\flatM$ now separated on the genuine Dedekind $\RR$, not its two-point witness; and
-a metric-free reconstruction of the located spectrum---the golden value realized as
-a located, \emph{irrational} real $\varphi:\RR$ with its located conjugate $\psi$
-and its forced golden modulus. The third, the completed $C^\ast$-algebraic limit
-over $\Zphi$, is substantially advanced---genuine matrix $\ast$-algebras, a Bratteli
-AF limit with descended involution, and a complete $C^\ast$-norm on the commutative
-core---with the full non-commutative operator norm the remaining step, now reachable
-through the analytic $\RR$ in hand. What stays open is the physical reading of
-Part~III---the observer's screen and the impossibility of spectral divergence---now
-that both the screen and the forced modulus are auditable rather than asserted. The
-corridor was the germ; the located spectrum is now the organism, kernel-checked.
 
 \paragraph{A closing image.}
 A point is a destination you can name but never reach. A corridor is a road, with
