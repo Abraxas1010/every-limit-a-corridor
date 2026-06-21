@@ -76,6 +76,25 @@ def main() -> int:
         else:
             print(f"  [OK]   C*-identity [[{a},{b}],[{b},{d}]]: disc(M²)=(a+d)²disc(M); ‖M²‖={lhs:.5f}=‖M‖²")
 
+    # 5. C beyond the principal case — the NON-PSD magnitude norm ‖M‖=max(|λ₊|,|λ₋|)
+    #    = (|a+d|+√Δ)/2.  The C*-identity ‖M²‖=‖M‖² holds for indefinite M too,
+    #    because disc(M²)=(a+d)²·disc(M) is sign-agnostic ((a+d)²=|a+d|²).
+    def specradius(a, b, d): return (abs(a + d) + math.sqrt(disc(a, b, d))) / 2
+    indefinite = [(Q(1), Q(2), Q(1)),    # eig 3,−1 (indefinite): ‖M‖=3
+                  (Q(0), Q(1), Q(0)),    # eig 1,−1: ‖M‖=1
+                  (Q(-2), Q(1), Q(-3)),  # tr<0: ‖M‖=|λ₋|
+                  (Q(-5), Q(0), Q(1))]   # diagonal indefinite
+    for a, b, d in indefinite:
+        a2, b2, d2 = a * a + b * b, b * (a + d), b * b + d * d
+        # |a+d| scaling of the √Δ bracket is the certified content (cstarBracketAbs):
+        if disc(a2, b2, d2) != (a + d) ** 2 * disc(a, b, d):     # sign-agnostic
+            print(f"  [FAIL] non-PSD disc(M²)≠(a+d)²disc(M) [[{a},{b}],[{b},{d}]]"); ok = False
+        lhs, rhs = specradius(float(a2), float(b2), float(d2)), specradius(float(a), float(b), float(d)) ** 2
+        if abs(lhs - rhs) > 1e-9:
+            print(f"  [FAIL] non-PSD ‖M²‖={lhs} ≠ ‖M‖²={rhs} for [[{a},{b}],[{b},{d}]]"); ok = False
+        else:
+            print(f"  [OK]   non-PSD [[{a},{b}],[{b},{d}]] (tr={a+d}): spectral radius ‖M²‖={lhs:.5f}=‖M‖² (|a+d| scaling)")
+
     print("Phase-C oracle:", "ALL CHECKS PASS" if ok else "FAILED")
     return 0 if ok else 1
 
