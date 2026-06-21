@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+"""Phase-C external oracle — the algebraic core of the C*-identity ‖M²‖=‖M‖².
+
+Checks `eigenSquared`: for a symmetric 2×2 matrix M=[[a,b],[b,d]], if λ satisfies
+the characteristic equation  λ² = (a+d)λ − (ad−b²),  then μ=λ² satisfies M²'s
+characteristic equation  μ² = tr(M²)·μ − det(M²),  with tr(M²)=a²+2b²+d² and
+det(M²)=(ad−b²)².  This is "λ eigenvalue of M ⟹ λ² eigenvalue of M²".
+
+Verified symbolically (sympy if available) AND on concrete rational matrices,
+including the spectral-edge eigenvalues from Phases A/F (φ, the [[2,1],[1,2]] case).
+"""
+from fractions import Fraction as Q
+import math, sys
+
+def charM(a, b, d, l):   # λ² − ((a+d)λ − (ad−b²))
+    return l * l - ((a + d) * l - (a * d - b * b))
+
+def traceSq(a, b, d): return a * a + 2 * (b * b) + d * d
+def detSq(a, b, d):   return (a * d - b * b) ** 2
+def charM2(a, b, d, mu):  # μ² − (tr(M²)μ − det(M²))
+    return mu * mu - (traceSq(a, b, d) * mu - detSq(a, b, d))
+
+def main() -> int:
+    ok = True
+    # 1. symbolic identity (if sympy present): charM(λ)=0 ⟹ charM2(λ²)=0, via factorisation.
+    try:
+        import sympy as sp
+        a, b, d, l = sp.symbols("a b d l")
+        quartic = (l*l)*(l*l) - (traceSq(a, b, d) * (l*l) - detSq(a, b, d))
+        f1 = (l*l) - (a + d) * l + (a * d - b * b)      # charpoly_M(λ)
+        f2 = (l*l) + (a + d) * l + (a * d - b * b)
+        if sp.expand(quartic - f1 * f2) != 0:
+            print("  [FAIL] quartic factorisation charM·cofactor is wrong"); ok = False
+        else:
+            print("  [OK]   symbolic: λ⁴ − tr(M²)λ² + det(M²) = charpoly_M(λ)·(λ²+trλ+det)")
+    except ImportError:
+        print("  [note] sympy absent; symbolic factorisation check skipped")
+
+    # 2. concrete rational matrices with rational eigenvalues.
+    cases = [
+        # (a, b, d, eigenvalues)
+        (Q(2), Q(1), Q(2), [Q(3), Q(1)]),     # M²=[[5,4],[4,5]], eig 9,1
+        (Q(3), Q(2), Q(3), [Q(5), Q(1)]),     # eig (6±√(0+16))/2 = 5,1
+        (Q(5), Q(0), Q(2), [Q(5), Q(2)]),     # diagonal-ish, eig 5,2
+        (Q(1), Q(2), Q(1), [Q(3), Q(-1)]),    # eig (2±4)/2 = 3,−1
+    ]
+    for a, b, d, eigs in cases:
+        for l in eigs:
+            if charM(a, b, d, l) != 0:
+                print(f"  [FAIL] {l} not an eigenvalue of [[{a},{b}],[{b},{d}]]"); ok = False
+            if charM2(a, b, d, l * l) != 0:   # eigenSquared: λ² is an eigenvalue of M²
+                print(f"  [FAIL] eigenSquared: {l}²={l*l} not eigenvalue of M²"); ok = False
+        print(f"  [OK]   [[{a},{b}],[{b},{d}]]: eigenvalues {[str(e) for e in eigs]} → squares {[str(e*e) for e in eigs]} are eigenvalues of M²")
+
+    # 3. tie to Phase A/F: φ is an eigenvalue of [[1,1],[1,0]] (the Fibonacci matrix);
+    #    φ² is an eigenvalue of its square [[2,1],[1,1]] (the φ² spectral demo).
+    phi = (1 + math.sqrt(5)) / 2
+    a, b, d = 1.0, 1.0, 0.0
+    assert abs(charM(a, b, d, phi)) < 1e-9, "φ eigenvalue of [[1,1],[1,0]]"
+    assert abs(charM2(a, b, d, phi * phi)) < 1e-9, "φ² eigenvalue of [[1,1],[1,0]]²"
+    print(f"  [OK]   φ={phi:.6f} eigenvalue of [[1,1],[1,0]]; φ²={phi*phi:.6f} eigenvalue of its square (ties A/F)")
+
+    print("Phase-C oracle:", "ALL CHECKS PASS" if ok else "FAILED")
+    return 0 if ok else 1
+
+if __name__ == "__main__":
+    sys.exit(main())
