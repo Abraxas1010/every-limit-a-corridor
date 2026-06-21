@@ -86,7 +86,18 @@ else
   echo "  [INFO] python3 not found; skipping the lane checks"
 fi
 
+echo "== 4. the Rust realization (second substrate) executes + checks the same theorems =="
+if command -v rustc >/dev/null; then
+  if rustc -O realization/rust/corridor_running.rs -o /tmp/_corridor_rust >/tmp/_rs.log 2>&1 && /tmp/_corridor_rust >/tmp/_rsrun.log 2>&1; then
+    echo "  [OK]   $(head -1 /tmp/_rsrun.log)"
+  else
+    echo "  [FAIL] Rust realization"; tail -4 /tmp/_rs.log /tmp/_rsrun.log; fail=1
+  fi
+else
+  echo "  [INFO] rustc not found; skipping the Rust realization"
+fi
+
 echo
-[[ "$fail" -eq 0 ]] && echo "VERIFY OK: 7 germ + organism (18) + running-convergent (8) modules kernel-checked, all negative controls rejected, lane discriminates." \
+[[ "$fail" -eq 0 ]] && echo "VERIFY OK: 7 germ + organism (18) + running-convergent (8) modules kernel-checked, all negative controls rejected, lane discriminates, Rust realization passes." \
                      || echo "VERIFY FAILED (see [FAIL] above)."
 exit "$fail"
