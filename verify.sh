@@ -32,6 +32,22 @@ for m in "${MODS[@]}"; do
   grep -qE "^\s*postulate" "agda/$m.agda" && { echo "  [FAIL] ${m#$P/} contains postulate"; fail=1; }
 done
 
+echo "== 1b. compile the ORGANISM capstone (analytic R, located irrational phi + conjugate, AF C*-algebra) =="
+if "$AGDA" "${INC[@]}" "agda/$P/RealCohesion/CorridorOrganism.agda" >/tmp/_o.log 2>&1; then
+  echo "  [OK]   RealCohesion/CorridorOrganism  (--safe transitively typechecks all 18 organism modules)"
+else
+  echo "  [FAIL] RealCohesion/CorridorOrganism"; tail -5 /tmp/_o.log; fail=1
+fi
+
+echo "== 1c. the organism negative controls MUST be kernel-rejected =="
+for c in BadTrisection BadQuadMono BadCStarNonneg; do
+  if "$AGDA" "${INC[@]}" "agda/$P/RealCohesion/negative_controls/$c.agda" >/tmp/_oc.log 2>&1; then
+    echo "  [FAIL] $c COMPILED -- discriminator broken"; fail=1
+  else
+    echo "  [OK]   $c kernel-rejected"
+  fi
+done
+
 echo "== 2. the negative control MUST be kernel-rejected (true != false) =="
 if "$AGDA" "${INC[@]}" "agda/$P/Corridor/negative_controls/BadForcedTrueCollapse.agda" >/tmp/_n.log 2>&1; then
   echo "  [FAIL] the degenerate collapse COMPILED -- the discriminator is broken"; fail=1
@@ -56,6 +72,6 @@ else
 fi
 
 echo
-[[ "$fail" -eq 0 ]] && echo "VERIFY OK: 7 modules kernel-checked, negative control rejected, lane discriminates." \
+[[ "$fail" -eq 0 ]] && echo "VERIFY OK: 7 germ + organism (18) modules kernel-checked, all negative controls rejected, lane discriminates." \
                      || echo "VERIFY FAILED (see [FAIL] above)."
 exit "$fail"

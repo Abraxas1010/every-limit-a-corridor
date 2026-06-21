@@ -198,7 +198,14 @@ computation, the univalence transport, reduces in the kernel besides). We argue
 throughout that homotopy type theory is not incidental but
 essential: univalence supplies the computing identification, cohesion supplies the
 two walls without a metric, and higher inductive types supply the loop, the
-quotient, and the colimit as first-class objects rather than encodings.
+quotient, and the colimit as first-class objects rather than encodings. Since this
+construction, two of the three completions it named as honest scope have themselves
+been kernel-checked (\cref{sec:formalization}): the analytic real line $\RR$ on
+which the two walls separate, and the golden value as a located, \emph{irrational}
+real $\varphi:\RR$ with its located conjugate and its forced modulus---so the
+corridor's germ is now, constructively, the organism; the third, the algebra's
+$C^\ast$-completion, is carried on its commutative core with the operator-norm
+remainder named.
 \end{minipage}
 
 \end{titlingpage}
@@ -983,7 +990,7 @@ characteristic weight, its topological obstruction, is literally an entropy.
   & \textbf{provenance cost} & \textbf{bare-metal} \\
 \midrule
 $2$ in $\NN$ (successor ratchet)        & $4/9$   & birthday $2$ & net reduces \\
-$2$ in $\Gi$ (Gaussian ring datum)      & $36/49$ & birthday $2$ & net reduces \\
+$2$ in $\ZZ[i]$ (Gaussian ring datum)   & $36/49$ & birthday $2$ & net reduces \\
 $2$ in surreals (simplest-day cut)      & $12/25$ & birthday $2$ & net reduces \\
 \textbf{the corridor} (boundary screen) & $\bm{1/2}$ & golden depth $\modulus(D){=}D$ & $84$-node program \\
 \bottomrule
@@ -1200,7 +1207,39 @@ $\Zphi$ colimit is the AF \emph{shape} of the approximation---proper finite stag
 with genuine growth---rather than the completed $C^\ast$-algebraic limit, which
 belongs to the effective-analysis programme of \cref{sec:hott}. We claim the
 structure, kernel-checked and running; we name the analytic completion as future
-work rather than imply it.
+work rather than imply it. That future work has since been carried out and
+kernel-checked, as the next paragraph reports.
+
+\paragraph{From germ to organism.}
+The three completions named above as honest scope---and recapitulated as the open
+problems of \cref{sec:discussion}---have since been carried out, in eighteen further
+Cubical Agda modules, all \texttt{--safe} and postulate-free; their joint
+typechecking is forced through a single capstone module whose compilation is the
+integration proof, and every genuine theorem is again paired with a kernel-rejected
+degeneracy. \emph{The analytic line.} The two-point cohesive model is superseded by
+the genuine analytic real line $\RR$ built as Dedekind cuts of $\QQ$: on it
+$\shapeM\RR$ is contractible while $\flatM\RR$ is not, so the two walls separate on
+the real line itself, not merely on its smallest witness. \emph{The located
+spectrum.} The golden value is realized as a genuine \emph{located real}
+$\varphi:\RR$---an eight-law Dedekind cut whose located law is exactly the golden
+quadratic $x^2 = x+1$---together with its Galois conjugate $\psi = 1-\varphi$, also
+located, the two provably apart ($\varphi\,\#\,\psi$); $\varphi$ is bracketed
+strictly between the consecutive Fibonacci convergents $3/2$ and $5/3$ at the
+golden-modulus width $1/6 = 1/(F_3 F_4)$; and $\varphi$ is \emph{genuinely
+irrational}---no integers $a$ and $B>0$ satisfy $a^2 = aB + B^2$, by infinite
+descent over $\NN$ (both conjugate roots ruled out through the symmetry
+$a\mapsto B-a$). The germ is thus the organism: a located, irrational spectral
+value with its conjugate and its forced modulus. \emph{The $C^\ast$-algebra.} The
+$\Zphi$ colimit is upgraded from the AF shape of finite sets to a tower of genuine
+finite-dimensional matrix $\ast$-algebras $M_n(\Zphi)$ joined by a Bratteli
+$\ast$-homomorphism, with the involution descending to the inductive limit; and its
+commutative core---the diagonal Cartan algebra---carries a genuine rational-valued
+$C^\ast$-norm satisfying every normed-$\ast$-algebra axiom (the $C^\ast$-identity
+$\|f^\ast f\| = \|f\|^2$, submultiplicativity, the triangle inequality,
+definiteness) under isometric Bratteli inclusions. What remains, and is named as
+such, is the $C^\ast$-completion of the \emph{non-commutative} limit---the full
+operator norm on $M_n$, whose values are the irrational singular values that the
+analytic $\RR$ now in hand makes reachable.
 
 \paragraph{A non-specialist's verification path.}
 A reader who does not work in type theory can check the result three ways without
@@ -1228,10 +1267,13 @@ Institute's engine reduces arithmetic~\citep{iaom_every_number}. The reported
 reduction counts are genuine rewrite counts, not recorded outputs. The corridor is
 then admitted as executable closure only through the negative-control gate of
 \cref{thm:closure}: a discriminator the substrate re-checks on every replay, so
-the closure records that the object \emph{ran}. What remains engineering, and is
-stated as such, is the analytic completion named in \cref{sec:formalization}---the
-full cohesive line and the completed $C^\ast$-limit---which the kernel-checked
-structure justifies but does not yet carry.
+the closure records that the object \emph{ran}. The analytic completion named here
+as engineering has since been carried out for two of its three parts---the full
+cohesive line and the located spectrum are now kernel-checked Cubical Agda
+constructions (\emph{From germ to organism}, \cref{sec:formalization})---leaving
+only the $C^\ast$-completion of the non-commutative limit, which the kernel-checked
+structure justifies, whose commutative core it now carries, and whose operator-norm
+remainder the analytic line makes reachable.
 
 % =========================================================================
 \section{Discussion: what is established, and what is open}\label{sec:discussion}
@@ -1261,14 +1303,21 @@ a kernel-rejected degeneracy. The single edit to the proposal---deleting the
 bi-Lipschitz metric in favour of two modalities---is, we have argued, a
 strengthening.
 
-\paragraph{Open.}
-Three completions are honest future work, each named already: the full analytic
-real-cohesive line (\cref{sec:formalization}); the completed $C^\ast$-algebraic
-limit over $\Zphi$ and with it a metric-free reconstruction of the located
-spectrum (\cref{sec:hott}); and the physical reading of Part~III---the observer's
-screen and the impossibility of spectral divergence---now that both the screen and
-the forced modulus are auditable rather than asserted. The corridor is the germ;
-the located spectrum is the organism.
+\paragraph{Open---and since closed.}
+Three completions were named here as honest future work. Two of them have since
+been carried out and kernel-checked (\emph{From germ to organism},
+\cref{sec:formalization}): the full analytic real-cohesive line---$\shapeM$ and
+$\flatM$ now separated on the genuine Dedekind $\RR$, not its two-point witness; and
+a metric-free reconstruction of the located spectrum---the golden value realized as
+a located, \emph{irrational} real $\varphi:\RR$ with its located conjugate $\psi$
+and its forced golden modulus. The third, the completed $C^\ast$-algebraic limit
+over $\Zphi$, is substantially advanced---genuine matrix $\ast$-algebras, a Bratteli
+AF limit with descended involution, and a complete $C^\ast$-norm on the commutative
+core---with the full non-commutative operator norm the remaining step, now reachable
+through the analytic $\RR$ in hand. What stays open is the physical reading of
+Part~III---the observer's screen and the impossibility of spectral divergence---now
+that both the screen and the forced modulus are auditable rather than asserted. The
+corridor was the germ; the located spectrum is now the organism, kernel-checked.
 
 \paragraph{A closing image.}
 A point is a destination you can name but never reach. A corridor is a road, with

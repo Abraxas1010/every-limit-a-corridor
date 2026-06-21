@@ -17,9 +17,22 @@ This bundle lets a professional **verify every claim from primitives** and
 > bare-metal programs; the closure lane accepts the genuine evidence and rejects
 > every degenerate variant. What is **not** claimed: a completed interaction-net
 > reduction of the lowered programs to a normal form — that is the substrate's run,
-> which the lowered programs are prepared for. The finite cohesive model is the
-> smallest space on which the two modalities provably differ, not the full analytic
-> real-cohesive line. See the paper, §10 and §12.
+> which the lowered programs are prepared for.
+>
+> **From germ to organism (since first release).** The three completions the paper
+> named as future work have since been carried out and kernel-checked, in eighteen
+> further modules under `agda/corpus/cubical_agda/RealCohesion/` (all `--cubical
+> --safe`, postulate-free; their joint typechecking is forced through the single
+> capstone `CorridorOrganism.agda`, and `verify.sh` runs it): **(1)** the genuine
+> analytic Dedekind real line `R` — shape ≠ flat on `R` itself, not its two-point
+> witness; **(2)** the golden value as a located, **irrational** real `phi:R` with
+> its located Galois conjugate `psi`, the two provably apart, `phi` bracketed by
+> consecutive Fibonacci convergents at the golden-modulus width, and `phi`
+> irrational by infinite descent (both roots ruled out); **(3)** a tower of genuine
+> matrix `*`-algebras over `Z[phi]` with a Bratteli AF limit and a complete
+> `C*`-norm on its commutative core. **Open:** the `C*`-completion of the
+> non-commutative limit (the full operator norm). See the paper, §10
+> (*From germ to organism*) and §12.
 
 ## What is here
 
@@ -35,6 +48,17 @@ agda/corpus/cubical_agda/   the genuine constructions, cubical Agda (--cubical -
   Corridor/CompleteCorridor.agda         synthesis + cross-part identity (Thm 7.1)
   Corridor/negative_controls/            BadForcedTrueCollapse.agda  (kernel-REJECTED control)
   HottLane/                              supporting genuine univalence (primGlue ua, the crossing)
+  Theory/GoldenRing.agda                 Z[phi]: phi^2=phi+1, Fibonacci, the golden minimal polynomial
+  RealCohesion/CorridorOrganism.agda     ★ ORGANISM CAPSTONE: the three completions (transitively typechecks 18 modules)
+  RealCohesion/DedekindReal.agda         the genuine analytic real line R (Dedekind cuts of Q)
+  RealCohesion/ShapeNullification.agda   shape != flat on the analytic R itself (D3, overcome)
+  RealCohesion/GoldenCut.agda            phi:R as a located real (8-law Dedekind cut, golden quadratic)
+  RealCohesion/GoldenConjugate.agda      psi=1-phi, the conjugate located root; phi # psi (the spectral pair)
+  RealCohesion/GoldenIrrational[Z].agda  phi irrational: no integer ratio a^2=aB+B^2 (infinite descent)
+  RealCohesion/GoldenSpectrum.agda       the two-sided golden modulus (reaches any precision, never collapses)
+  RealCohesion/{GoldenMatrixAlgebra,GoldenAFAlgebra}.agda   matrix *-algebras M_n(Z[phi]) + Bratteli AF limit
+  RealCohesion/DiagonalCStar.agda        a complete C*-norm on the commutative core (C*-identity, submult, triangle)
+  RealCohesion/negative_controls/        BadTrisection, BadQuadMono, BadCStarNonneg (kernel-REJECTED)
 realization/     the bare-metal authority lane
   verify_lane.py                         STANDALONE: vendored validator, 23 accept/reject checks
   agda_boundary_runtime_roundtrip.py     producer: runs positive + negative controls, emits the artifact
