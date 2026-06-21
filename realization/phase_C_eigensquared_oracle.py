@@ -95,6 +95,20 @@ def main() -> int:
         else:
             print(f"  [OK]   non-PSD [[{a},{b}],[{b},{d}]] (tr={a+d}): spectral radius ‖M²‖={lhs:.5f}=‖M‖² (|a+d| scaling)")
 
+    # 6. the adjoint C*-bridge ‖Mx‖²=⟨M*Mx,x⟩ (any 2×2 M, any x) — toward general n×n.
+    def normMx_sq(a, b, c, d, x0, x1):
+        return (a * x0 + b * x1) ** 2 + (c * x0 + d * x1) ** 2
+    def adjForm(a, b, c, d, x0, x1):   # ⟨MᵀM x, x⟩
+        return (x0 * ((a * a + c * c) * x0 + (a * b + c * d) * x1)
+                + x1 * ((a * b + c * d) * x0 + (b * b + d * d) * x1))
+    adj_ok = True
+    for (a, b, c, d) in ((Q(1), Q(2), Q(3), Q(4)), (Q(2), Q(-1), Q(0), Q(5)), (Q(1), Q(1), Q(1), Q(0))):
+        for (x0, x1) in ((Q(1), Q(0)), (Q(1), Q(1)), (Q(2), Q(-3)), (Q(-1), Q(4))):
+            if normMx_sq(a, b, c, d, x0, x1) != adjForm(a, b, c, d, x0, x1):
+                print(f"  [FAIL] ‖Mx‖²≠⟨M*Mx,x⟩ M=[[{a},{b}],[{c},{d}]] x=({x0},{x1})"); adj_ok = ok = False
+    if adj_ok:
+        print("  [OK]   adjoint C*-bridge ‖Mx‖²=⟨M*Mx,x⟩ for arbitrary 2×2 M and x (any M, toward n×n)")
+
     print("Phase-C oracle:", "ALL CHECKS PASS" if ok else "FAILED")
     return 0 if ok else 1
 
