@@ -1305,6 +1305,32 @@ is the $C^\ast$-completion of the non-commutative limit, the full operator norm 
 $M_n$, whose values are the irrational singular values the analytic $\RR$ makes
 reachable.
 
+\paragraph{The running convergents.}
+A third realization makes the located real concrete as data and fully
+\emph{executable}. Eight further cubical-Agda modules (under
+\texttt{Corridor/Running/}, all \texttt{-{}-safe} and postulate-free) build
+$\varphi$ directly from the Fibonacci convergents $F_{n+1}/F_n$: rung $n$ carries
+the rational bracket $[\,F_{2n+2}/F_{2n+1},\ F_{2n+3}/F_{2n+2}\,]$, which
+\emph{reduces in the kernel} to a concrete pair of rationals---$[3/2,5/3]$ at
+$n=1$---of Cassini-exact width $1/(F_{2n+1}F_{2n+2})$, so the value $1/6=1/(F_3F_4)$
+is a kernel reduction rather than a claim. The construction is characterised
+completely, and for \emph{all} $n$: each bracket is non-degenerate
+($\mathrm{lo}\,n<\mathrm{hi}\,n$); the family is genuinely nested
+($\mathrm{lo}\,n<\mathrm{lo}(n{+}1)<\mathrm{hi}(n{+}1)<\mathrm{hi}\,n$); it is
+\emph{forced} to close (the bracket denominators are unbounded, so the width tends
+to $0$, and a constant rate provably fails this---the genuine content of ``the
+ladder is the rate''); it satisfies the golden equation as the exact integer
+identity $F_{n+1}^2 = F_{n+1}F_n + F_n^2 + (-1)^{n+1}$, equivalently the rational
+squeeze $\mathrm{lo}\,n^2<\mathrm{lo}\,n+1$ and $\mathrm{hi}\,n+1<\mathrm{hi}\,n^2$
+(with $\mathrm{lo}\,n+1$ \emph{proven} equal to the next convergent, not assumed);
+and the lower and upper convergents form a genuine Dedekind cut,
+$\mathrm{lo}\,m<\mathrm{hi}\,n$ for \emph{all} $m,n$, so the real they pin is
+unique. The same machine, run on the Pell recurrence $(p,q)\mapsto(p+2q,\,p+q)$ in
+place of Fibonacci, certifies $\sqrt2$: the Pell--Cassini identity
+$p^2-2q^2=(-1)^{n+1}$ makes the convergents bracket $\sqrt2$ with kernel-checked
+squared bounds. One method, two algebraic numbers, every claim reducing in the
+kernel.
+
 \paragraph{A non-specialist's verification path.}
 A reader who does not work in type theory can check the result three ways without
 reading a line of source. First, the equations: each numbered theorem is stated

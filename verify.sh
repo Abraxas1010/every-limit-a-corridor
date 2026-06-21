@@ -39,6 +39,21 @@ else
   echo "  [FAIL] RealCohesion/CorridorOrganism"; tail -5 /tmp/_o.log; fail=1
 fi
 
+echo "== 1bb. the RUNNING-CONVERGENT construction (executable phi + sqrt2, full characterization) =="
+RMODS=(
+  $P/Corridor/Running/Bracket $P/Corridor/Running/Cassini $P/Corridor/Running/Ordered
+  $P/Corridor/Running/Located $P/Corridor/Running/Forcing $P/Corridor/Running/CertifiedSqrt2
+  $P/Corridor/Running/LocatedLaw $P/Corridor/Running/CrossCut
+)
+for m in "${RMODS[@]}"; do
+  if "$AGDA" "${INC[@]}" "agda/$m.agda" >/tmp/_r.log 2>&1; then
+    echo "  [OK]   ${m#$P/}"
+  else
+    echo "  [FAIL] ${m#$P/}"; tail -4 /tmp/_r.log; fail=1
+  fi
+  grep -qE "^\s*postulate" "agda/$m.agda" && { echo "  [FAIL] ${m#$P/} contains postulate"; fail=1; }
+done
+
 echo "== 1c. the organism negative controls MUST be kernel-rejected =="
 for c in BadTrisection BadQuadMono BadCStarNonneg; do
   if "$AGDA" "${INC[@]}" "agda/$P/RealCohesion/negative_controls/$c.agda" >/tmp/_oc.log 2>&1; then
@@ -72,6 +87,6 @@ else
 fi
 
 echo
-[[ "$fail" -eq 0 ]] && echo "VERIFY OK: 7 germ + organism (18) modules kernel-checked, all negative controls rejected, lane discriminates." \
+[[ "$fail" -eq 0 ]] && echo "VERIFY OK: 7 germ + organism (18) + running-convergent (8) modules kernel-checked, all negative controls rejected, lane discriminates." \
                      || echo "VERIFY FAILED (see [FAIL] above)."
 exit "$fail"
