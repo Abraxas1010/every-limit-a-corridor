@@ -60,6 +60,22 @@ def main() -> int:
     assert abs(charM2(a, b, d, phi * phi)) < 1e-9, "φ² eigenvalue of [[1,1],[1,0]]²"
     print(f"  [OK]   φ={phi:.6f} eigenvalue of [[1,1],[1,0]]; φ²={phi*phi:.6f} eigenvalue of its square (ties A/F)")
 
+    # 4. C3 — the operator-norm C*-identity ‖M²‖=‖M‖² for the spectral edge.
+    #    disc(M²)=(a+d)²·disc(M), and the spectral-edge bracket scales by (a+d).
+    def disc(a, b, d): return (a - d) ** 2 + 4 * b * b
+    def specedge(a, b, d): return ((a + d) + math.sqrt(disc(a, b, d))) / 2
+    for a, b, d in ((Q(2), Q(1), Q(1)), (Q(3), Q(2), Q(1)), (Q(1), Q(1), Q(0)), (Q(5), Q(2), Q(3))):
+        a2, b2, d2 = a * a + b * b, b * (a + d), b * b + d * d   # M² entries
+        # (i) discriminant identity (exact, rational)
+        if disc(a2, b2, d2) != (a + d) ** 2 * disc(a, b, d):
+            print(f"  [FAIL] disc(M²) ≠ (a+d)²·disc(M) for [[{a},{b}],[{b},{d}]]"); ok = False
+        # (ii) the C*-identity at the value level: specEdge(M²) = specEdge(M)²
+        lhs, rhs = specedge(float(a2), float(b2), float(d2)), specedge(float(a), float(b), float(d)) ** 2
+        if abs(lhs - rhs) > 1e-9:
+            print(f"  [FAIL] specEdge(M²)={lhs} ≠ specEdge(M)²={rhs}"); ok = False
+        else:
+            print(f"  [OK]   C*-identity [[{a},{b}],[{b},{d}]]: disc(M²)=(a+d)²disc(M); ‖M²‖={lhs:.5f}=‖M‖²")
+
     print("Phase-C oracle:", "ALL CHECKS PASS" if ok else "FAILED")
     return 0 if ok else 1
 

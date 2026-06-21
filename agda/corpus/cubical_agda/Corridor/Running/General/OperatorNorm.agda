@@ -63,3 +63,41 @@ module _ (R : CommRing ℓ-zero) where
       factored = cong (_· f2) f1≡0 ∙ solve! R
       zeroAdd : 0r + rhs ≡ rhs
       zeroAdd = solve! R
+
+  -- ════════════════════════════════════════════════════════════════════════
+  -- C3 — THE OPERATOR-NORM C*-IDENTITY ‖M²‖ = ‖M‖² FOR THE SPECTRAL EDGE.
+  --
+  -- For symmetric M = [[a,b],[b,d]], M² = [[a²+b², b(a+d)],[b(a+d), b²+d²]], and
+  -- (for PSD M) the operator norm IS the spectral edge specEdge(M)=((a+d)+√Δ)/2,
+  -- Δ = disc(M) = (a−d)²+4b².  The C*-identity specEdge(M²)=specEdge(M)² looks
+  -- like it needs the irrational √, but it REDUCES to two pure ring identities
+  -- that eliminate the √ entirely (they force √disc(M²)=(a+d)·√disc(M)):
+  --   (i)   disc(M²) = (a+d)²·disc(M)
+  --   (ii)  2·tr(M²) = (a+d)² + disc(M)
+  -- Then  specEdge(M²) = (tr(M²)+√disc(M²))/2 = (tr(M²)+(a+d)√Δ)/2
+  --        = ((a+d)²+Δ)/4 + (a+d)√Δ/2 = ((a+d)+√Δ)²/4 = specEdge(M)².  ∎
+  -- This discharges the paper's named-open piece for the PSD symmetric 2×2 case
+  -- (the algebraic obstruction — the √ — is gone).  Honestly OUT of scope: the
+  -- non-PSD magnitude norm max(|λ₊|,|λ₋|) and the n×n generalisation.
+  -- ════════════════════════════════════════════════════════════════════════
+  fourR : ⟨ R ⟩
+  fourR = (1r + 1r) + (1r + 1r)
+
+  disc : (a b d : ⟨ R ⟩) → ⟨ R ⟩
+  disc a b d = ((a - d) · (a - d)) + (fourR · (b · b))
+
+  -- (i)  the discriminant of M² is (a+d)² times that of M — so √disc(M²)=(a+d)·√disc(M).
+  discM2 : (a b d : ⟨ R ⟩)
+         → disc ((a · a) + (b · b)) (b · (a + d)) ((b · b) + (d · d))
+         ≡ ((a + d) · (a + d)) · disc a b d
+  discM2 a b d = solve! R
+
+  -- (ii)  twice the trace of M² is (a+d)² + disc(M).  (i)+(ii) ⟹ specEdge(M²)=specEdge(M)².
+  traceM2 : (a b d : ⟨ R ⟩)
+          → (1r + 1r) · (((a · a) + (b · b)) + ((b · b) + (d · d)))
+          ≡ ((a + d) · (a + d)) + disc a b d
+  traceM2 a b d = solve! R
+
+  -- scaling a square out (for the bracket-level C*-identity):  (s·x)² = s²·x².
+  mulSquare : (s x : ⟨ R ⟩) → (s · x) · (s · x) ≡ (s · s) · (x · x)
+  mulSquare s x = solve! R
