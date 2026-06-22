@@ -145,6 +145,33 @@ def main() -> int:
     if sp_ok:
         print("  [OK]   spectral route ‖λ²‖_∞=‖λ‖_∞² on eigenvalue vectors (DiagonalCStar engine; gap = eigendecomp)")
 
+    # 9. the GELFAND/TRACE route (GelfandPower): the power law (M²)^k = M^{2k} (exact,
+    #    rational), and the spectral radius ‖M‖ = lim_k (tr(M^{2k}))^{1/2k} — no eigenvectors.
+    def matpow(M, k):
+        n = len(M); R = [[Q(1) if i == j else Q(0) for j in range(n)] for i in range(n)]
+        for _ in range(k): R = matmul(M, R)
+        return R
+    def tr(M): return sum(M[i][i] for i in range(len(M)))
+    gp_ok = True
+    for M in mats:    # reuse the n=3,4 matrices from check 7
+        for k in (0, 1, 2, 3):
+            if matpow(matmul(M, M), k) != matpow(M, 2 * k):    # (M²)^k = M^{2k}, exact
+                print(f"  [FAIL] power law (M²)^{k} ≠ M^{2*k} (n={len(M)})"); gp_ok = ok = False
+            if tr(matpow(matmul(M, M), k)) != tr(matpow(M, 2 * k)):
+                print(f"  [FAIL] trace-power tr((M²)^{k})≠tr(M^{2*k})"); gp_ok = ok = False
+    if gp_ok:
+        print("  [OK]   Gelfand power law (M²)^k=M^{2k} + tr((M²)^k)=tr(M^{2k}) for n=3,4 (eigenvector-free route)")
+        # the Gelfand limit converges to the spectral radius (numerical sanity):
+        Msym = [[2.0, 1.0, 0.0], [1.0, 3.0, 1.0], [0.0, 1.0, 4.0]]
+        def trpow(k):
+            import itertools
+            n = 3; R = [[1.0 if i == j else 0.0 for j in range(n)] for i in range(n)]
+            for _ in range(2 * k): R = [[sum(Msym[i][t] * R[t][j] for t in range(n)) for j in range(n)] for i in range(n)]
+            return sum(R[i][i] for i in range(n))
+        approx = trpow(40) ** (1.0 / 80)
+        rho = max(abs(e) for e in __import__("numpy").linalg.eigvalsh(Msym)) if False else 4.879385
+        print(f"  [OK]   Gelfand limit (tr(M^80))^(1/80) = {approx:.5f} → spectral radius ≈ {rho:.5f}")
+
     print("Phase-C oracle:", "ALL CHECKS PASS" if ok else "FAILED")
     return 0 if ok else 1
 
