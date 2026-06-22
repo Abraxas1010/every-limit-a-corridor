@@ -16,9 +16,9 @@ open import Cubical.Foundations.Prelude
 open import Cubical.Data.Nat using (ℕ; suc)
 open import Cubical.Data.NatPlusOne using (ℕ₊₁; 1+_; ℕ₊₁→ℕ)
 open import Cubical.Data.Sigma using (Σ; _,_; _×_; fst; snd)
-open import Cubical.Data.Int using (ℤ; pos; sucℤ) renaming (_·_ to _·ℤ_)
-open import Cubical.Data.Int.Properties renaming (·IdL to ·IdLℤ; ·IdR to ·IdRℤ) using (·IdLℤ; ·IdRℤ)
-open import Cubical.Data.Int.Order using (_≤_; ≤-·o; isTrans≤; isRefl≤; suc-≤-suc) renaming (_<_ to _<ℤ_)
+open import Cubical.Data.Int using (ℤ; pos; negsuc; sucℤ) renaming (_·_ to _·ℤ_)
+open import Cubical.Data.Int.Properties renaming (·IdL to ·IdLℤ; ·IdR to ·IdRℤ; ·Comm to ·Commℤ) using (·IdLℤ; ·IdRℤ; ·Commℤ)
+open import Cubical.Data.Int.Order using (_≤_; ≤-·o; 0≤o→≤-·o; isTrans≤; isRefl≤; suc-≤-suc; negsuc<pos; zero-≤pos) renaming (_<_ to _<ℤ_)
 open import Cubical.Data.Rationals
 open import Cubical.Data.Rationals.Order using (_<_)
 open import Cubical.HITs.SetQuotients using (elimProp)
@@ -46,3 +46,29 @@ open import Cubical.Foundations.HLevels using (isPropΠ)
         goal : [ pos 1 / 1+ Q ] < [ p / q ]
         goal = subst (_<ℤ (p ·ℤ pos (suc Q))) (sym (·IdLℤ (pos Q)))
                  (isTrans≤ Q<sucQ sucQ≤p·sucQ)
+
+-- ── the dual: ℕ is cofinal in ℚ (every rational lies below some natural) ──────
+-- Together with ℚ-archimedean this is the full two-sided Archimedean property —
+-- the foundation that lets trisect-n's geometric width (2/3)ⁿ·D be driven below
+-- any ε (the D factor needs a natural ABOVE a rational; ε needs one BELOW it).
+
+ℤ<pos : (a : ℤ) → Σ[ m ∈ ℕ ] (a <ℤ pos (suc m))
+ℤ<pos (pos k)    = k , isRefl≤
+ℤ<pos (negsuc k) = 0 , negsuc<pos
+
+ℕ-cofinal : (r : ℚ) → ∥ Σ[ n ∈ ℕ ] (r < [ pos n / 1 ]) ∥₁
+ℕ-cofinal = elimProp (λ _ → squash₁) helper
+  where
+    helper : (ab : ℤ × ℕ₊₁) → ∥ Σ[ n ∈ ℕ ] ([ fst ab / snd ab ] < [ pos n / 1 ]) ∥₁
+    helper (a , 1+ b') with ℤ<pos a
+    ... | (m , a<sucm) = ∣ suc m , goal ∣₁
+      where
+        1≤B : pos 1 ≤ pos (suc b')
+        1≤B = suc-≤-suc zero-≤pos
+        sm≤prod : pos (suc m) ≤ (pos (suc m) ·ℤ pos (suc b'))
+        sm≤prod = subst2 _≤_ (·Commℤ (pos 1) (pos (suc m)) ∙ ·IdRℤ (pos (suc m)))
+                            (·Commℤ (pos (suc b')) (pos (suc m)))
+                            (0≤o→≤-·o zero-≤pos 1≤B)
+        goal : [ a / 1+ b' ] < [ pos (suc m) / 1 ]
+        goal = subst (_<ℤ (pos (suc m) ·ℤ pos (suc b'))) (sym (·IdRℤ a))
+                 (isTrans≤ a<sucm sm≤prod)
