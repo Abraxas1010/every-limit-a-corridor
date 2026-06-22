@@ -294,3 +294,21 @@ module _ (a b d : ℚ) where
       × ((isPD2 (r - a) (- b) (r - d) × isPD2 (r + a) b (r + d))
         → isPD2 ((r · r) - ((a · a) + (b · b))) (- (b · (a + d))) ((r · r) - ((b · b) + (d · d))))
   cstar-cut r 0<r = (cstar-fwd r 0<r , λ (p- , p+) → cstar-back r 0<r p- p+)
+
+  -- ── OPERATOR-NORM FRAMING ────────────────────────────────────────────────
+  -- The operator norm of symmetric M is the spectral radius ρ(M)=max|λ|, whose cut needs
+  -- BOTH ±M:  q > ‖M‖  ⟺  q > λmax(M) ∧ q > λmax(−M)  ⟺  qI−M PD ∧ qI+M PD.
+  -- (isUpperM is definitionally SpecRadiusCut.isUpper of M; isUpper-negM is that of −M.)
+  isUpperM isUpper-negM isNorm isUpperM² : ℚ → Type
+  isUpperM     q = isPD2 (q - a) (- b) (q - d)                 -- q > λmax(M)   (qI−M PD)
+  isUpper-negM q = isPD2 (q + a) b (q + d)                     -- q > λmax(−M)  (qI+M PD)
+  isNorm       q = isUpperM q × isUpper-negM q                 -- q > ‖M‖ = ρ(M) = max|λ|
+  isUpperM²    q = isPD2 (q - ((a · a) + (b · b))) (- (b · (a + d))) (q - ((b · b) + (d · d)))
+                                                               -- q > λmax(M²) = ‖M²‖   (M² is PSD)
+
+  -- THE C*-IDENTITY, operator-norm form:  on rational squares q=r² (r>0), the cut of ‖M²‖
+  -- and the cut of ‖M‖² coincide.  Since rational squares are dense in [0,∞), this says the
+  -- two located reals ‖M²‖ and ‖M‖² are EQUAL:  ‖M²‖ = ‖M‖².
+  cstar-norm : (r : ℚ) → 0 < r
+             → (isUpperM² (r · r) → isNorm r) × (isNorm r → isUpperM² (r · r))
+  cstar-norm r 0<r = cstar-cut r 0<r
