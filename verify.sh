@@ -43,7 +43,7 @@ echo "== 1bb. the RUNNING-CONVERGENT construction (executable phi + sqrt2, full 
 RMODS=(
   $P/Corridor/Running/Bracket $P/Corridor/Running/Cassini $P/Corridor/Running/Ordered
   $P/Corridor/Running/Located $P/Corridor/Running/Forcing $P/Corridor/Running/CertifiedSqrt2
-  $P/Corridor/Running/LocatedLaw $P/Corridor/Running/CrossCut $P/Corridor/Running/DedekindBridge $P/Corridor/Running/CertifiedSqrt $P/Corridor/Running/SpectralEdge $P/Corridor/Running/General/Metallic $P/Corridor/Running/General/MetallicEdge $P/Corridor/Running/General/OperatorNorm $P/Corridor/Running/General/OperatorNormSpectral $P/Corridor/Running/General/OperatorNormMagnitude $P/Corridor/Running/General/AdjointForm $P/Corridor/Running/General/AdjointFormN $P/Corridor/Running/General/SpectralCStar $P/Corridor/Running/General/GelfandPower $P/Corridor/Running/General/EntropyRing $P/Corridor/Running/General/EntropyProvenance
+  $P/Corridor/Running/LocatedLaw $P/Corridor/Running/CrossCut $P/Corridor/Running/DedekindBridge $P/Corridor/Running/CertifiedSqrt $P/Corridor/Running/SpectralEdge $P/Corridor/Running/General/Metallic $P/Corridor/Running/General/MetallicEdge $P/Corridor/Running/General/OperatorNorm $P/Corridor/Running/General/OperatorNormSpectral $P/Corridor/Running/General/OperatorNormMagnitude $P/Corridor/Running/General/AdjointForm $P/Corridor/Running/General/AdjointFormN $P/Corridor/Running/General/SpectralCStar $P/Corridor/Running/General/GelfandPower $P/Corridor/Running/General/LocatedReal $P/Corridor/Running/General/EntropyRing $P/Corridor/Running/General/EntropyProvenance
 )
 for m in "${RMODS[@]}"; do
   if "$AGDA" "${INC[@]}" "agda/$m.agda" >/tmp/_r.log 2>&1; then
