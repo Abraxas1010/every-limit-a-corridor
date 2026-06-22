@@ -13,14 +13,31 @@
 module corpus.cubical_agda.Corridor.Running.General.SpecRadiusCut where
 
 open import Cubical.Foundations.Prelude
-open import Cubical.Data.Sigma using (Σ; _,_; _×_; fst; snd)
+open import Cubical.Foundations.Structure using (⟨_⟩)
+open import Cubical.Algebra.CommRing using (CommRing; CommRingStr)
+open import Cubical.Tactics.CommRingSolver using (solve!)
+open import Cubical.Data.Sigma using (Σ; _,_; _×_; fst; snd; Σ-syntax)
 open import Cubical.Data.Sum using (_⊎_; inl; inr)
 open import Cubical.Data.Empty using (⊥) renaming (rec to ⊥-rec)
-open import Cubical.Relation.Nullary using (¬_)
-open import Cubical.Data.Rationals
-open import Cubical.Data.Rationals.Order using (_<_; _≤_)
+open import Cubical.Relation.Nullary using (¬_; yes; no)
 open import corpus.cubical_agda.Corridor.Running.General.PDTest2
-  using (quadℚ; pd-forward; notPD-pivot1; notPD-pivot2)
+  using (quad; quad10; quadℚ; pd-forward; notPD-pivot1; notPD-pivot2)
+
+-- the shift-difference identity over any commutative ring (placed BEFORE the ℚ open so
+-- `open CommRingStr` doesn't clash with ℚ's `_-_`):
+--   ⟨((p)I−M)x,x⟩ − ⟨((q)I−M)x,x⟩ = (p−q)·‖x‖²   (M fixed).  A pure `solve!` identity.
+module _ (R : CommRing ℓ-zero) where
+  open CommRingStr (snd R)
+  shiftDiffR : (p q a b d x y : ⟨ R ⟩)
+    → quad R (p - a) (- b) (p - d) x y
+    ≡ (quad R (q - a) (- b) (q - d) x y) + ((p - q) · ((x · x) + (y · y)))
+  shiftDiffR p q a b d x y = solve! R
+
+open import Cubical.Data.Rationals
+open import Cubical.Data.Rationals.Order
+  using (_<_; _≤_; <Dec; ≮→≥; <-+o; <-·o; ≤-+o; ≤Monotone+; isRefl≤; isTrans<≤; isTrans≤<)
+open import Cubical.Algebra.CommRing.Instances.Rationals using (ℚCommRing)
+open import corpus.cubical_agda.RealCohesion.DiagonalCStar using (0≤sq-all)
 
 -- the symmetric matrix [[a,b],[b,d]].
 module _ (a b d : ℚ) where
@@ -53,3 +70,47 @@ module _ (a b d : ℚ) where
                   → ¬ (0 < (((q - a) · (q - d)) - ((- b) · (- b))))
                   → shiftQ q (- (- b)) (q - a) ≤ 0
   notUpper-pivot2 q 0<qa ¬0<disc = notPD-pivot2 (q - a) (- b) (q - d) 0<qa ¬0<disc
+
+  -- local ℚ-order helpers (PDTest2's are private).
+  private
+    0<·0<' : (m n : ℚ) → 0 < m → 0 < n → 0 < (m · n)
+    0<·0<' m n 0<m 0<n = subst (_< (m · n)) (·AnnihilL n) (<-·o 0 m n 0<n 0<m)
+    negpos : (m n : ℚ) → m < 0 → 0 < n → (m · n) < 0
+    negpos m n m<0 0<n = subst ((m · n) <_) (·AnnihilL n) (<-·o m 0 n 0<n m<0)
+    nn+pos' : (m n : ℚ) → 0 ≤ m → 0 < n → 0 < (m + n)
+    nn+pos' m n 0≤m 0<n = isTrans<≤ 0 n (m + n) 0<n
+                            (subst (_≤ (m + n)) (+IdL n) (≤Monotone+ 0 m n n 0≤m (isRefl≤ n)))
+    le0+lt0 : (m n : ℚ) → m ≤ 0 → n < 0 → (m + n) < 0
+    le0+lt0 m n m≤0 n<0 = isTrans≤< (m + n) n 0
+                            (subst ((m + n) ≤_) (+IdL n) (≤-+o m 0 n m≤0)) n<0
+
+  -- the shift-difference, specialised to THIS matrix at ℚ.
+  shiftDiff : (p q x y : ℚ) → shiftQ p x y ≡ (shiftQ q x y) + ((p - q) · ((x · x) + (y · y)))
+  shiftDiff p q x y = shiftDiffR ℚCommRing p q a b d x y
+
+  -- ── THE LOCATEDNESS:  p < q  ⟹  isUpper q  OR  an explicit witness puts p below λmax. ──
+  located : (p q : ℚ) → p < q
+          → isUpper q ⊎ (Σ[ x ∈ ℚ ] Σ[ y ∈ ℚ ] (shiftQ p x y < 0))
+  located p q p<q with <Dec 0 (q - a)
+  ... | no ¬0<qa = inr (1 , 0 , shiftP<0)
+    where
+      pa<0 : (p - a) < 0
+      pa<0 = isTrans<≤ (p - a) (q - a) 0 (<-+o p q (- a) p<q) (≮→≥ 0 (q - a) ¬0<qa)
+      shiftP<0 : shiftQ p 1 0 < 0
+      shiftP<0 = subst (_< 0) (sym (quad10 ℚCommRing (p - a) (- b) (p - d))) pa<0
+  ... | yes 0<qa with <Dec 0 (((q - a) · (q - d)) - ((- b) · (- b)))
+  ...   | yes 0<disc = inl (0<qa , 0<disc)
+  ...   | no ¬0<disc = inr (- (- b) , q - a , shiftP<0)
+    where
+      nrm : ℚ
+      nrm = ((- (- b)) · (- (- b))) + ((q - a) · (q - a))
+      0<nrm : 0 < nrm
+      0<nrm = nn+pos' ((- (- b)) · (- (- b))) ((q - a) · (q - a))
+                      (0≤sq-all (- (- b))) (0<·0<' (q - a) (q - a) 0<qa 0<qa)
+      p-q<0 : (p - q) < 0
+      p-q<0 = subst ((p - q) <_) (+Comm q (- q) ∙ +InvL q) (<-+o p q (- q) p<q)
+      shiftP<0 : shiftQ p (- (- b)) (q - a) < 0
+      shiftP<0 = subst (_< 0) (sym (shiftDiff p q (- (- b)) (q - a)))
+                   (le0+lt0 (shiftQ q (- (- b)) (q - a)) ((p - q) · nrm)
+                            (notUpper-pivot2 q 0<qa ¬0<disc)
+                            (negpos (p - q) nrm p-q<0 0<nrm))

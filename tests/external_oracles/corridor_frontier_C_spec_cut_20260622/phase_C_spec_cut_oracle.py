@@ -37,4 +37,19 @@ print("cut  isUpper q <=> q > lam_max          :", "PASS" if ok_cut else "FAIL")
 print("upper-bound isUpper q => <(qI-M)x,x>>0  :", "PASS" if ok_ub else "FAIL")
 print("witness pivot1 (1,0)   <(qI-M)x,x><=0   :", "PASS" if ok_w1 else "FAIL")
 print("witness pivot2 (b,q-a) <(qI-M)x,x><=0   :", "PASS" if ok_w2 else "FAIL")
-print("ALL", "PASS" if all([ok_cut,ok_ub,ok_w1,ok_w2]) else "FAIL")
+
+# located: for p<q, either isUpper q OR an explicit witness with shiftQ p < 0 (strict, at p).
+ok_loc=True
+for _ in range(40000):
+    a=Q(random.randint(-6,6),random.randint(1,4)); b=Q(random.randint(-6,6),random.randint(1,4)); d=Q(random.randint(-6,6),random.randint(1,4))
+    p=Q(random.randint(-12,12),random.randint(1,3)); q=p+Q(random.randint(1,9),random.randint(1,3))  # p<q
+    if isUpper(a,b,d,q): continue                  # left branch ok by the cut check above
+    # right branch: the located witness must have shiftQ p < 0 (strict)
+    if not (q-a>0):
+        if not (shiftQ(a,b,d,p,Q(1),Q(0)) < 0): ok_loc=False     # pivot1 witness (1,0) at p
+    else:
+        wx=-(-b); wy=q-a
+        if not (shiftQ(a,b,d,p,wx,wy) < 0): ok_loc=False         # pivot2 witness (b,q-a) at p
+print("located p<q => isUpper q OR shiftQ p<0  :", "PASS" if ok_loc else "FAIL")
+
+print("ALL", "PASS" if all([ok_cut,ok_ub,ok_w1,ok_w2,ok_loc]) else "FAIL")
