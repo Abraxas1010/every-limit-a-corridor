@@ -44,12 +44,25 @@ module _ (R : CommRing ℓ-zero) where
           → (a · quad a b d (- b) a) ≡ (((a · d) - (b · b)) · (a · a))
   sosWitB a b d = solve! R
 
+  -- the MIRROR SOS (complete the square on the other variable):  d·Q = (b x + d y)² + (ad−b²)·x².
+  sosId-x : (a b d x y : ⟨ R ⟩)
+          → (d · quad a b d x y)
+          ≡ (((b · x) + (d · y)) · ((b · x) + (d · y)))
+              + (((a · d) - (b · b)) · (x · x))
+  sosId-x a b d x y = solve! R
+
+  -- z² = (−z)²  (for the negative branch of square-positivity).
+  negSq : (z : ⟨ R ⟩) → (z · z) ≡ ((- z) · (- z))
+  negSq z = solve! R
+
 -- ── instantiated to ℚ (the bridge ⟨ ℚCommRing ⟩ ≡ ℚ, ops definitional) ──────
 open import Cubical.Data.Rationals
 open import Cubical.Data.Rationals.Order
-  using (_<_; _≤_; ≤-·o; ≤-·o-cancel; ≮→≥)
+  using (_<_; _≤_; ≤-·o; ≤-·o-cancel; ≮→≥; _≟_; Trichotomy; lt; eq; gt;
+         <-·o; <-·o-cancel; <-+o; isTrans<≤; isTrans≤<; isRefl≤; ≤Monotone+)
 open import Cubical.Algebra.CommRing.Instances.Rationals using (ℚCommRing)
-open import Cubical.Data.Empty using (⊥)
+open import Cubical.Data.Empty using (⊥) renaming (rec to ⊥-rec)
+open import Cubical.Data.Sum using (_⊎_; inl; inr)
 open import Cubical.Relation.Nullary using (¬_)
 open import corpus.cubical_agda.RealCohesion.DiagonalCStar using (0≤sq-all)
 
@@ -88,3 +101,76 @@ notPD-pivot2 a b d 0<a ¬0<disc =
     -- transport to Q·a ≤ 0·a for the cancellation
     quadA≤0A : (quadℚ a b d (- b) a · a) ≤ (0 · a)
     quadA≤0A = subst2 _≤_ (·Comm a (quadℚ a b d (- b) a)) (sym (·AnnihilL a)) aQuad≤0
+
+-- ── the FORWARD direction:  0<a ∧ 0<ad−b²  ⟹  PD (⟨Mx,x⟩ > 0 for every x ≠ 0) ──
+-- The SOS read for positivity.  No determinant theory, no eigenvectors: just the two
+-- mirror certificates, each a positive square plus the (ad−b²)·(square) term.
+
+private
+  0<·0< : (m n : ℚ) → 0 < m → 0 < n → 0 < (m · n)
+  0<·0< m n 0<m 0<n = subst (_< (m · n)) (·AnnihilL n) (<-·o 0 m n 0<n 0<m)
+
+  -- square-positivity:  z ≠ 0  ⟹  0 < z·z   (via trichotomy; the negative branch uses z²=(−z)²).
+  sq-pos : (z : ℚ) → ¬ (z ≡ 0) → 0 < (z · z)
+  sq-pos z z≢0 with z ≟ 0
+  ... | gt 0<z = 0<·0< z z 0<z 0<z
+  ... | eq z≡0 = ⊥-rec (z≢0 z≡0)
+  ... | lt z<0 = subst (0 <_) (sym (negSq ℚCommRing z)) (0<·0< (- z) (- z) 0<-z 0<-z)
+    where
+      0<-z : 0 < (- z)
+      0<-z = subst2 _<_ (+Comm z (- z) ∙ +InvL z) (+IdL (- z)) (<-+o z 0 (- z) z<0)
+
+  -- 0 ≤ m  ∧  0 < n  ⟹  0 < m + n.
+  nn+pos : (m n : ℚ) → 0 ≤ m → 0 < n → 0 < (m + n)
+  nn+pos m n 0≤m 0<n =
+    isTrans<≤ 0 n (m + n) 0<n
+      (subst (_≤ (m + n)) (+IdL n) (≤Monotone+ 0 m n n 0≤m (isRefl≤ n)))
+
+  -- 0<a ∧ 0<ad−b²  ⟹  0<d   (so the mirror pivot is positive too):  b² < ad, ad>0, hence d>0.
+  0<d-of : (a b d : ℚ) → 0 < a → 0 < ((a · d) - (b · b)) → 0 < d
+  0<d-of a b d 0<a 0<disc = <-·o-cancel 0 d a 0<a 0<d·a
+    where
+      b²<ad : (b · b) < (a · d)
+      b²<ad = subst2 _<_ (+IdL (b · b)) lemAD (<-+o 0 ((a · d) - (b · b)) (b · b) 0<disc)
+        where lemAD : (((a · d) - (b · b)) + (b · b)) ≡ (a · d)
+              lemAD = solveAD ℚCommRing a b d
+                where open import Cubical.Algebra.CommRing using (CommRing; CommRingStr)
+                      solveAD : (R : CommRing ℓ-zero) (a b d : ⟨ R ⟩)
+                              → (CommRingStr._+_ (snd R)
+                                   (CommRingStr._-_ (snd R) (CommRingStr._·_ (snd R) a d)
+                                                            (CommRingStr._·_ (snd R) b b))
+                                   (CommRingStr._·_ (snd R) b b))
+                                ≡ CommRingStr._·_ (snd R) a d
+                      solveAD R a b d = let open CommRingStr (snd R) in solve! R
+      0<ad : 0 < (a · d)
+      0<ad = isTrans≤< 0 (b · b) (a · d) (0≤sq-all b) b²<ad
+      0<d·a : (0 · a) < (d · a)
+      0<d·a = subst2 _<_ (sym (·AnnihilL a)) (·Comm a d) 0<ad
+
+  -- strip the positive pivot:  0 < c · Q  ∧  0 < c  ⟹  0 < Q.
+  cancelPiv : (c q : ℚ) → 0 < c → 0 < (c · q) → 0 < q
+  cancelPiv c q 0<c 0<cq =
+    <-·o-cancel 0 q c 0<c (subst2 _<_ (sym (·AnnihilL c)) (·Comm c q) 0<cq)
+
+-- THE FORWARD CRITERION.  "x ≠ 0" = one component apart from 0 (ℚ has decidable equality).
+pd-forward : (a b d x y : ℚ) → 0 < a → 0 < ((a · d) - (b · b))
+           → (¬ (x ≡ 0)) ⊎ (¬ (y ≡ 0))
+           → 0 < quadℚ a b d x y
+pd-forward a b d x y 0<a 0<disc (inr y≢0) =
+  cancelPiv a (quadℚ a b d x y) 0<a 0<aQ
+  where
+    0<aQ : 0 < (a · quadℚ a b d x y)
+    0<aQ = subst (0 <_) (sym (sosℚ a b d x y))
+             (nn+pos (((a · x) + (b · y)) · ((a · x) + (b · y)))
+                     (((a · d) - (b · b)) · (y · y))
+                     (0≤sq-all ((a · x) + (b · y)))
+                     (0<·0< ((a · d) - (b · b)) (y · y) 0<disc (sq-pos y y≢0)))
+pd-forward a b d x y 0<a 0<disc (inl x≢0) =
+  cancelPiv d (quadℚ a b d x y) (0<d-of a b d 0<a 0<disc) 0<dQ
+  where
+    0<dQ : 0 < (d · quadℚ a b d x y)
+    0<dQ = subst (0 <_) (sym (sosId-x ℚCommRing a b d x y))
+             (nn+pos (((b · x) + (d · y)) · ((b · x) + (d · y)))
+                     (((a · d) - (b · b)) · (x · x))
+                     (0≤sq-all ((b · x) + (d · y)))
+                     (0<·0< ((a · d) - (b · b)) (x · x) 0<disc (sq-pos x x≢0)))

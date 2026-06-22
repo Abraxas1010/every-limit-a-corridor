@@ -36,4 +36,16 @@ print("witness Q(1,0)=a                       :", "PASS" if ok_w1 else "FAIL")
 print("witness a*Q(-b,a)=(ad-b^2)a^2          :", "PASS" if ok_w2 else "FAIL")
 print("Sylvester(0<a & 0<ad-b^2) == eig-PD    :", "PASS" if ok_syl else "FAIL")
 print("non-PD witness gives Q<=0              :", "PASS" if ok_witfail else "FAIL")
-print("ALL", "PASS" if all([ok_sos,ok_w1,ok_w2,ok_syl,ok_witfail]) else "FAIL")
+
+# forward: PD (0<a & 0<disc) => Q(x,y)>0 for every nonzero (x,y)
+ok_fwd=True
+import random as _r
+for _ in range(20000):
+    a=Q(_r.randint(1,6),_r.randint(1,4)); d=Q(_r.randint(-3,6),_r.randint(1,4)); b=Q(_r.randint(-6,6),_r.randint(1,4))
+    if not (a>0 and a*d-b*b>0): continue
+    x=Q(_r.randint(-5,5),_r.randint(1,3)); y=Q(_r.randint(-5,5),_r.randint(1,3))
+    if x==0 and y==0: continue
+    if not (quad(a,b,d,x,y) > 0): ok_fwd=False
+print("forward PD => Q>0 for nonzero x          :", "PASS" if ok_fwd else "FAIL")
+
+print("ALL", "PASS" if all([ok_sos,ok_w1,ok_w2,ok_syl,ok_witfail,ok_fwd]) else "FAIL")
