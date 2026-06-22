@@ -25,4 +25,19 @@ for n in (2,3,4,5):
         if (ip(x,M2x) < r*r*xx) != (ip(Mx,Mx) < r*r*xx): ok_cut=False
 print("adjoint  <Mx,Mx> = <x,M^2 x>  (n=2..5)      :", "PASS" if ok_adj else "FAIL")
 print("cut coincidence  ‖M²‖-cut = ‖M‖²-cut        :", "PASS" if ok_cut else "FAIL")
-print("ALL", "PASS" if (ok_adj and ok_cut) else "FAIL")
+
+# full C*-axiom: arbitrary (non-symmetric) M, ‖M*M‖=‖M‖²  ⟺  <Mx,Mx> = <x, M^T M x>
+ok_ax=True
+def mvT(M,x): n=len(M); return [sum(M[j][i]*x[j] for j in range(n)) for i in range(n)]  # M^T x
+for n in (2,3,4):
+    for _ in range(20000):
+        M=[[Q(random.randint(-5,5),random.randint(1,3)) for _ in range(n)] for _ in range(n)]  # ARBITRARY
+        x=[Q(random.randint(-5,5),random.randint(1,3)) for _ in range(n)]
+        if all(t==0 for t in x): continue
+        Mx=mv(M,x); MTMx=mvT(M,Mx)
+        if ip(Mx,Mx) != ip(x,MTMx): ok_ax=False    # ‖Mx‖² = <x, M^T M x>
+        r=Q(random.randint(1,9),random.randint(1,3)); xx=ip(x,x)
+        if (ip(Mx,Mx)<r*r*xx) != (ip(x,MTMx)<r*r*xx): ok_ax=False
+print("C*-axiom  ‖M*M‖=‖M‖² (arbitrary M, n=2..4) :", "PASS" if ok_ax else "FAIL")
+
+print("ALL", "PASS" if (ok_adj and ok_cut and ok_ax) else "FAIL")

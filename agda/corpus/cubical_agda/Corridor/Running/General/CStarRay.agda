@@ -27,7 +27,7 @@ open import Cubical.Algebra.CommRing.Instances.Rationals using (ℚCommRing)
 open import corpus.cubical_agda.Corridor.Running.General.AdjointFormN
 
 open Coefficient ℚCommRing using (Mat; _⋆_)
-open Adjoint ℚCommRing using (_ᵀ; adjointBridgeSym)
+open Adjoint ℚCommRing using (_ᵀ; adjointBridge; adjointBridgeSym)
 
 -- the inner product ⟨u,v⟩ as the single entry of the 1×1 matrix uᵀ⋆v.
 ⟪_,_⟫ : {n : ℕ} → Mat n 1 → Mat n 1 → ℚ
@@ -52,4 +52,19 @@ cstar-ray M symM r = (fwd , bwd)
     fwd : normUp M r → rayUp (M ⋆ M) (r · r)
     fwd nu x 0<xx = subst (_< ((r · r) · ⟪ x , x ⟫)) (adjEq x) (nu x 0<xx)
     bwd : rayUp (M ⋆ M) (r · r) → normUp M r
+    bwd ru x 0<xx = subst (_< ((r · r) · ⟪ x , x ⟫)) (sym (adjEq x)) (ru x 0<xx)
+
+-- THE FULL C*-AXIOM, all n, ARBITRARY M:  ‖M*M‖ = ‖M‖²  (M* = Mᵀ over ℚ).  No symmetry needed —
+-- adjointBridge gives ‖Mx‖² = ⟨M*Mx,x⟩ for any M, so the cut of ‖M‖² and the cut of ‖M*M‖
+-- (M*M is PSD symmetric) coincide.  cstar-ray is the symmetric special case (M*M = M²).
+cstar-axiom : {n : ℕ} (M : Mat n n) → (r : ℚ)
+            → (normUp M r → rayUp ((M ᵀ) ⋆ M) (r · r))
+            × (rayUp ((M ᵀ) ⋆ M) (r · r) → normUp M r)
+cstar-axiom M r = (fwd , bwd)
+  where
+    adjEq : (x : Mat _ 1) → ⟪ M ⋆ x , M ⋆ x ⟫ ≡ ⟪ x , ((M ᵀ) ⋆ M) ⋆ x ⟫
+    adjEq x = cong (λ K → K zero zero) (adjointBridge M x)
+    fwd : normUp M r → rayUp ((M ᵀ) ⋆ M) (r · r)
+    fwd nu x 0<xx = subst (_< ((r · r) · ⟪ x , x ⟫)) (adjEq x) (nu x 0<xx)
+    bwd : rayUp ((M ᵀ) ⋆ M) (r · r) → normUp M r
     bwd ru x 0<xx = subst (_< ((r · r) · ⟪ x , x ⟫)) (sym (adjEq x)) (ru x 0<xx)
