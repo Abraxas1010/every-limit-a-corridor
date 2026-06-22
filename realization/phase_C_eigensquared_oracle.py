@@ -133,6 +133,18 @@ def main() -> int:
     if nd_ok:
         print("  [OK]   general-n adjoint bridge ⟨Mx,Mx⟩=⟨MᵀM·x,x⟩ for n=3,4 (incl. non-symmetric)")
 
+    # 8. the SPECTRAL ROUTE (SpectralCStar): the spectral-radius ℓ∞ C*-identity on the
+    #    eigenvalue vector — ‖λ²‖_∞ = ‖λ‖_∞² (DiagonalCStar.cstar-identity), the
+    #    post-diagonalisation engine that closes the n×n C*-identity modulo eigendecomp.
+    def linf(v): return max(abs(x) for x in v)
+    sp_ok = True
+    for spec in ([Q(3), Q(1)], [Q(5), Q(2), Q(-4)], [Q(-7), Q(1), Q(3), Q(2)], [Q(0), Q(6)]):
+        sq = [x * x for x in spec]
+        if linf(sq) != linf(spec) ** 2:           # ‖λ²‖_∞ = ‖λ‖_∞²
+            print(f"  [FAIL] spectral-radius C*-identity ‖λ²‖≠‖λ‖² for {spec}"); sp_ok = ok = False
+    if sp_ok:
+        print("  [OK]   spectral route ‖λ²‖_∞=‖λ‖_∞² on eigenvalue vectors (DiagonalCStar engine; gap = eigendecomp)")
+
     print("Phase-C oracle:", "ALL CHECKS PASS" if ok else "FAILED")
     return 0 if ok else 1
 
