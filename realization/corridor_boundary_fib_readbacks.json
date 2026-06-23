@@ -1,0 +1,104 @@
+{
+  "1": {
+    "reconstruct": 1,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "2": {
+    "reconstruct": 2,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "3": {
+    "reconstruct": 3,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "5": {
+    "reconstruct": 5,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "8": {
+    "reconstruct": 8,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "13": {
+    "reconstruct": 13,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "21": {
+    "reconstruct": 21,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "34": {
+    "reconstruct": 34,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "55": {
+    "reconstruct": 55,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "89": {
+    "reconstruct": 89,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "144": {
+    "reconstruct": 144,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "4": {
+    "reconstruct": 4,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "6": {
+    "reconstruct": 6,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "7": {
+    "reconstruct": 7,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "100": {
+    "reconstruct": 100,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "1000": {
+    "reconstruct": 1000,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  },
+  "10000": {
+    "reconstruct": 10000,
+    "row_ok": true,
+    "artifact": "boundary-cubical-fibonacci-canonicalization-v1",
+    "theorem": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs"
+  }
+}

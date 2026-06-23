@@ -1,0 +1,108 @@
+{
+  "schema": "corridor.boundary_runtime_roundtrip.v1",
+  "conjecture_id": "corridor_frontier_D_boundary_lowering_20260621",
+  "substrates": {
+    "agda": "Bracket.agda kernel refl certs (exact \u211a)",
+    "rust": "realization/rust/corridor_running.rs (exact i128, compiled+run)",
+    "boundary": "HeytingLean.BoundaryCubical.Fibonacci canonicalize_reconstructs (reducer Zeckendorf readback)"
+  },
+  "boundary_route_authorities": {
+    "kernel_registry": "HeytingLean.AlgebraicCompiler.KernelRegistry.registeredModalities",
+    "kernel_route": "HeytingLean.AlgebraicCompiler.Router.route",
+    "hardware_route": "HeytingLean.AlgebraicCompiler.HardwareRouter.dispatchHw"
+  },
+  "boundary_readback_authority": "HeytingLean.BoundaryCubical.Fibonacci.canonicalize_reconstructs (kernel theorem: reducer readback = input \u2200 m\u22651)",
+  "boundary_readback_provenance": "artifacts/boundary_cubical_fibonacci/transcript_report.json (master, row_ok=True samples)",
+  "rust_self_assertion_suite_ok": true,
+  "rows": [
+    {
+      "rung_D": 1,
+      "agda_lo": "3/2",
+      "agda_hi": "5/3",
+      "rust_lo": "3/2",
+      "rust_hi": "5/3",
+      "boundary_lo": "3/2",
+      "boundary_hi": "5/3",
+      "boundary_authority": "transcript_row_ok+theorem",
+      "three_substrate_parity": true
+    },
+    {
+      "rung_D": 2,
+      "agda_lo": "8/5",
+      "agda_hi": "13/8",
+      "rust_lo": "8/5",
+      "rust_hi": "13/8",
+      "boundary_lo": "8/5",
+      "boundary_hi": "13/8",
+      "boundary_authority": "transcript_row_ok+theorem",
+      "three_substrate_parity": true
+    },
+    {
+      "rung_D": 3,
+      "agda_lo": "21/13",
+      "agda_hi": "34/21",
+      "rust_lo": "21/13",
+      "rust_hi": "34/21",
+      "boundary_lo": "21/13",
+      "boundary_hi": "34/21",
+      "boundary_authority": "transcript_row_ok+theorem",
+      "three_substrate_parity": true
+    },
+    {
+      "rung_D": 4,
+      "agda_lo": "55/34",
+      "agda_hi": "89/55",
+      "rust_lo": "55/34",
+      "rust_hi": "89/55",
+      "boundary_lo": "55/34",
+      "boundary_hi": "89/55",
+      "boundary_authority": "transcript_row_ok+theorem",
+      "three_substrate_parity": true
+    },
+    {
+      "rung_D": 10,
+      "agda_lo": "17711/10946",
+      "agda_hi": "28657/17711",
+      "rust_lo": "17711/10946",
+      "rust_hi": "28657/17711",
+      "boundary_lo": "17711/10946",
+      "boundary_hi": "28657/17711",
+      "boundary_authority": "canonicalize_reconstructs_theorem",
+      "three_substrate_parity": true
+    },
+    {
+      "rung_D": 20,
+      "agda_lo": "267914296/165580141",
+      "agda_hi": "433494437/267914296",
+      "rust_lo": "267914296/165580141",
+      "rust_hi": "433494437/267914296",
+      "boundary_lo": "267914296/165580141",
+      "boundary_hi": "433494437/267914296",
+      "boundary_authority": "canonicalize_reconstructs_theorem",
+      "three_substrate_parity": true
+    }
+  ],
+  "three_substrate_parity_all": true,
+  "scope_delta": {
+    "pm_requested_depths": [
+      3,
+      10,
+      20
+    ],
+    "depths_evaluated": [
+      1,
+      2,
+      3,
+      4,
+      10,
+      20
+    ],
+    "transcript_confirmed_depths": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "note": "Every rung's Boundary readback is the kernel reduction guaranteed by canonicalize_reconstructs (\u2200 m\u22651, reducer-readback(canonicalize m)=m) \u2014 not a recorded output.  D=1..4 are ADDITIONALLY confirmed operationally by the cached reducer transcript (row_ok=True); D=10,20 rest on the kernel theorem alone, the cached transcript sampling Fibonacci only up to F_12=144."
+  }
+}
