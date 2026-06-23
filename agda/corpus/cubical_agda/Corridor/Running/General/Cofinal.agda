@@ -18,7 +18,7 @@ open import Cubical.Data.Nat.Order using (≤-trans; suc-≤-suc; zero-≤) rena
 open import Cubical.Data.NatPlusOne using (ℕ₊₁; 1+_; _·₊₁_; ℕ₊₁→ℕ)
 open import Cubical.Data.Int using (ℤ; pos) renaming (_·_ to _·ℤ_; ·IdL to ·IdLℤ)
 open import Cubical.Data.Int.Order using () renaming (_≤_ to _≤ℤ_; _<_ to _<ℤ_)
-open import Cubical.Data.Sigma using (Σ-syntax; _,_)
+open import Cubical.Data.Sigma using (Σ-syntax; _,_; _×_)
 open import Cubical.Data.Sum using (_⊎_; inl; inr)
 open import Cubical.Relation.Nullary using (yes; no)
 open import Cubical.HITs.PropositionalTruncation as PT using (∥_∥₁; ∣_∣₁; squash₁)
@@ -38,16 +38,25 @@ module _ (R : CommRing ℓ-zero) where
   r3 q qq = solve! R
   r4 : (q qq d : ⟨ R ⟩) → (((d + (qq + (- q))) + (- d))) ≡ (qq + (- q))
   r4 q qq d = solve! R
+  -- the f(x)=x²−x factorisation (forward order step):  f(r) − f(q) = (r−q)(r+q−1).
+  r5 : (q r : ⟨ R ⟩)
+     → (((r · r) + (- r)) + (- ((q · q) + (- q)))) ≡ ((r + (- q)) · ((r + q) + (- 1r)))
+  r5 q r = solve! R
+  r6 : (x : ⟨ R ⟩) → ((x + 1r) + (- x)) ≡ 1r
+  r6 x = solve! R
+  r7 : (q qq : ⟨ R ⟩) → ((qq + (- q)) + q) ≡ qq
+  r7 q qq = solve! R
 
 open import Cubical.Data.Rationals
 open import Cubical.Data.Rationals.Order
-  using (_<_; _≤_; isTrans<; isTrans<≤; isTrans≤<; <-+o; <-o+; ≮→≥; <Dec)
+  using (_<_; _≤_; isTrans<; isTrans<≤; isTrans≤<; <-+o; <-o+; <-·o; ≮→≥; <Dec)
 open import corpus.cubical_agda.RealCohesion.DedekindReal using (0<1ℚ)
-open import corpus.cubical_agda.RealCohesion.GoldenCut using (φL)
+open import corpus.cubical_agda.RealCohesion.GoldenCut using (φL; small-quad)
 open import corpus.cubical_agda.RealCohesion.DedekindReal using (⟦_⟧)
 open import corpus.cubical_agda.Corridor.Running.Bracket using (fibP; dbl; lo)
 open import corpus.cubical_agda.Corridor.Running.Forcing using (fpN; fpN-lower; fpN-pos; le-mult; M≤dbl)
-open import corpus.cubical_agda.Corridor.Running.LocatedLaw using (n→ℕ·₊₁; loPlus1; loPlus1≡; oneℚ)
+open import corpus.cubical_agda.Corridor.Running.LocatedLaw
+  using (n→ℕ·₊₁; loPlus1; loPlus1≡; oneℚ; golden-lower-faithful)
 open import corpus.cubical_agda.Corridor.Running.CrossCut using (lo-mono)
 open import corpus.cubical_agda.Corridor.Running.General.Archimedean using (ℚ-archimedean)
 open import corpus.cubical_agda.Corridor.Running.General.GeometricBoundQ using (posMono)
@@ -133,3 +142,58 @@ cut-to-runs q = PT.rec squash₁ branch
             1<q+lon : 1 < (q + lo n)
             1<q+lon = isTrans≤< 1 q (q + lo n) 1≤q
                         (subst (_< (q + lo n)) (+IdR q) (<-o+ 0 (lo n) q (0<lon n)))
+
+-- forward order step:  q < r and 1 < q+r  ⟹  f(q) < f(r)   (f x = x²−x increasing on (½,∞)).
+quad-mono : (q r : ℚ) → q < r → 1 < (q + r)
+          → ((q · q) + (- q)) < ((r · r) + (- r))
+quad-mono q r q<r 1<qr = 0<sub→<
+  where
+    0<r-q : 0 < (r + (- q))
+    0<r-q = subst (_< (r + (- q))) (+InvR q) (<-+o q r (- q) q<r)
+    0<r+q-1 : 0 < ((r + q) + (- 1))
+    0<r+q-1 = subst (_< ((r + q) + (- 1))) (+InvR 1)
+                (<-+o 1 (r + q) (- 1) (subst (1 <_) (+Comm q r) 1<qr))
+    0<prod : 0 < ((r + (- q)) · ((r + q) + (- 1)))
+    0<prod = subst (_< ((r + (- q)) · ((r + q) + (- 1)))) (·AnnihilL ((r + q) + (- 1)))
+               (<-·o 0 (r + (- q)) ((r + q) + (- 1)) 0<r+q-1 0<r-q)
+    0<diff : 0 < (((r · r) + (- r)) + (- ((q · q) + (- q))))
+    0<diff = subst (0 <_) (sym (r5 ℚCommRing q r)) 0<prod
+    0<sub→< : ((q · q) + (- q)) < ((r · r) + (- r))
+    0<sub→< = subst2 _<_ (+IdL ((q · q) + (- q)))
+                (sym (+Assoc ((r · r) + (- r)) (- ((q · q) + (- q))) ((q · q) + (- q)))
+                  ∙ cong (((r · r) + (- r)) +_) (+InvL ((q · q) + (- q))) ∙ +IdR ((r · r) + (- r)))
+                (<-+o 0 (((r · r) + (- r)) + (- ((q · q) + (- q)))) ((q · q) + (- q)) 0<diff)
+
+-- THE CONVERSE BRIDGE:  q below some convergent ⟹ q ∈ φL  (q below φ).
+runs→cut : (q : ℚ) → ∥ Σ[ n ∈ ℕ ] (q < lo n) ∥₁ → ⟦ φL ⟧ q
+runs→cut q = PT.rec squash₁ wit
+  where
+    wit : Σ[ n ∈ ℕ ] (q < lo n) → ⟦ φL ⟧ q
+    wit (n , q<lon) with <Dec q 0
+    ... | yes q<0 = ∣ inl q<0 ∣₁
+    ... | no ¬q<0 with <Dec q 1
+    ...   | yes q<1 = ∣ inr (small-quad q (≮→≥ q 0 ¬q<0) q<1) ∣₁
+    ...   | no ¬q<1 = ∣ inr qsq ∣₁
+      where
+        0<lon-n : 0 < lo n
+        0<lon-n = isTrans<≤ 0 1 (lo n) 0<1ℚ (lo-mono 0 n zero-≤)
+        1<q+lon : 1 < (q + lo n)
+        1<q+lon = isTrans≤< 1 q (q + lo n) (≮→≥ q 1 ¬q<1)
+                    (subst (_< (q + lo n)) (+IdR q) (<-o+ 0 (lo n) q 0<lon-n))
+        flon<1 : ((lo n · lo n) + (- lo n)) < 1
+        flon<1 = subst (((lo n · lo n) + (- lo n)) <_) (r6 ℚCommRing (lo n))
+                   (<-+o (lo n · lo n) (lo n + 1) (- lo n) (golden-lower-faithful n))
+        fq<1 : ((q · q) + (- q)) < 1
+        fq<1 = isTrans< ((q · q) + (- q)) ((lo n · lo n) + (- lo n)) 1
+                 (quad-mono q (lo n) q<lon 1<q+lon) flon<1
+        qsq : (q · q) < (q + 1)
+        qsq = subst2 _<_ (r7 ℚCommRing q (q · q)) (+Comm 1 q)
+                (<-+o ((q · q) + (- q)) 1 q fq<1)
+
+-- ════════════════════════════════════════════════════════════════════════════
+-- RUNNING ≅ DEDEKIND φ — the two φ's have the SAME cut: φL q ⟺ ∃n, q < lo n.
+-- ════════════════════════════════════════════════════════════════════════════
+running≅dedekind : (q : ℚ)
+                 → (⟦ φL ⟧ q → ∥ Σ[ n ∈ ℕ ] (q < lo n) ∥₁)
+                 × (∥ Σ[ n ∈ ℕ ] (q < lo n) ∥₁ → ⟦ φL ⟧ q)
+running≅dedekind q = cut-to-runs q , runs→cut q
