@@ -1370,7 +1370,16 @@ $\Delta=(a-d)^2+4b^2$, and the entire metallic family $(k+\sqrt{k^2+4})/2$---gol
 $x^2=kx+1$---are located reals at once, every one a single reparametrization of the
 square root. The golden value, the spectral radius, and every spectral edge are now
 the same kind of object: an irrational rebuilt as a located Dedekind real, with no
-appeal to a classical existence theorem.
+appeal to a classical existence theorem. The square root, moreover, lifts from a
+rational radicand to a \emph{located-real} one---$\sqrt{x}$ for $x:\RR$ with a positive
+upper bound, its locatedness inherited for free from $x$'s own located law at the
+squares---and this closes the operator norm in full: for an \emph{arbitrary} rational
+matrix $M$, symmetric or not, the largest singular value is $\|M\|=\sqrt{\rho(M^{\!\top}\!M)}$,
+the square root of the spectral radius of the symmetric $M^{\!\top}\!M$, hence itself a
+located real in every finite dimension---no eigenvectors, no singular-value
+decomposition, no spectral theorem. The only operator-norm frontier that remains is the
+irrational coefficient ring $\Zphi$, where the matrix entries are themselves golden
+integers $a+b\varphi$.
 
 \paragraph{A non-specialist's verification path.}
 A reader who does not work in type theory can check the result three ways without
@@ -1444,12 +1453,14 @@ bi-Lipschitz metric in favour of two modalities---is, we have argued, a
 strengthening.
 
 \paragraph{Open.}
-The operator norm that earlier drafts left open is now established as a located real
-for symmetric rational matrices in every dimension; what remains of it is the full
-singular-value spectrum over the $\Zphi$ coefficient ring---the non-symmetric and
-non-rational cases---and the assembly of the located edges into the completed
-$C^\ast$-norm on $M_n(\Zphi)$. A second problem is the physical reading of the $H^1$
-screen: whether its positive logical entropy is, concretely, the obstruction to
+The operator norm that earlier drafts left open is now a located real for \emph{every}
+rational matrix in every dimension---symmetric or not, via $\|M\|=\sqrt{\rho(M^{\!\top}\!M)}$.
+What remains of it is the single step from the rational coefficient field to the
+irrational ring $\Zphi$: the spectral radius of a matrix whose entries are golden
+integers $a+b\varphi$, where the cut conditions become comparisons against $\varphi$
+itself rather than rational decisions---tractable through $\varphi$'s own quadratic
+located law, but not yet assembled. A second problem is the physical reading of the
+$H^1$ screen: whether its positive logical entropy is, concretely, the obstruction to
 spectral divergence that the forced modulus forbids.
 
 \paragraph{A closing image.}
