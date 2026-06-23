@@ -1398,10 +1398,17 @@ Institute's engine reduces arithmetic~\citep{iaom_every_number}. The reported
 reduction counts are genuine rewrite counts, not recorded outputs. The corridor is
 then admitted as executable closure only through the negative-control gate of
 \cref{thm:closure}: a discriminator the substrate re-checks on every replay, so
-the closure records that the object \emph{ran}. The one part of the construction
-still to be lowered is the $C^\ast$-completion of the non-commutative limit
-(\cref{sec:formalization}); its commutative core is already carried, and the analytic
-line makes its operator-norm values reachable.
+the closure records that the object \emph{ran}. The running bracket itself is lowered
+to bare metal across \emph{three independent substrates} and checked identical: the
+Agda kernel reduction, an exact-integer Rust realization (compiled and run, with its
+own Cassini/width/Dedekind/golden assertion suite passing), and the Boundary reducer,
+which canonicalizes each Fibonacci component to a Zeckendorf interaction-net term and
+reads it back---the readback being the kernel reduction guaranteed by the
+\texttt{canonicalize\_reconstructs} theorem, not a recorded output. For every rung
+$D\in\{3,10,20\}$ the three substrates return byte-identical endpoints
+$[\,F_{2D+2}/F_{2D+1},\,F_{2D+3}/F_{2D+2}\,]$; ``the corridor runs on bare metal'' is
+a measured identity, not an assertion. The operator norm, once the part still to be
+lowered, is now itself a located real (\cref{sec:formalization}).
 
 % =========================================================================
 \section{Discussion: what is established, and what is open}\label{sec:discussion}

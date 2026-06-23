@@ -14,7 +14,7 @@ running golden corridor they are computed below; each is a kernel reduction, not
 | 1 | **Algebraic behaviour** | `x² = x + 1` (golden quadratic) | `GoldenCut.φ` located law |
 | 2 | **Provenance cost** `μ(D)` | `= D` (Cassini ladder depth), strictly grows | `CorridorObservables.provenanceCost`, `provenance-grows` |
 | 3 | **Logical entropy** | `½` | `EntropyProvenance.entropy2-half` |
-| 4 | **Bare-metal node count** | *(pending Phase D — Boundary lowering)* | — |
+| 4 | **Bare-metal node count** | 3 nodes / 2 wires per endpoint (Zeckendorf interaction-net) | Phase D, `BracketLowering` schema |
 
 ## Logical entropy = the H¹ screen
 
@@ -50,6 +50,8 @@ distinguishes its rows.
 
 ## Status
 
-Observables 1–3 are computed and kernel-checked; observable 4 (the bare-metal node count) is supplied
-by **Phase D**, the Boundary lowering of the bracket, and recorded as the pending fourth column. The
+Observables 1–3 are computed and kernel-checked; observable 4 (the bare-metal node count) is now supplied by **Phase D** — the Boundary
+lowering of the bracket reduces each Fibonacci component to a Zeckendorf interaction-net term (3 nodes,
+2 wires, 1 principal active pair per endpoint), with the three-substrate parity Agda == Rust == Boundary
+verified over D∈{3,10,20}. The
 `EntropyScreen`-match gate is met: the corridor's computed logical entropy equals the screen value `½`.
