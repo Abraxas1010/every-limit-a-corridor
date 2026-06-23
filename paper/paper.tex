@@ -1275,9 +1275,9 @@ faithful representative models. The cohesion separation (\cref{thm:shapenotflat}
 proved on the two-point cohesive interval---the smallest space on which $\shapeM$ and
 $\flatM$ provably differ, and the boundary the re-entry acts on. The $\Zphi$ colimit
 (\cref{thm:af}) is the approximately-finite \emph{shape}: proper finite stages with
-genuine growth. The formalization also carries the full analytic forms of both, and
-the located spectrum, set out next; the single component it does not establish is the
-$C^\ast$-completion of the non-commutative limit.
+genuine growth. The formalization also carries the full analytic forms of both, the
+located spectrum, and---closing the component earlier drafts left open---the operator
+norm of the non-commutative limit as a located real (set out below).
 
 \paragraph{The analytic constructions.}
 Alongside the representative models, the formalization provides the analytic form of
@@ -1300,10 +1300,10 @@ a Bratteli $\ast$-homomorphism, with the involution descending to the inductive
 limit; its commutative core, the diagonal Cartan algebra, carries a rational-valued
 $C^\ast$-norm satisfying every normed-$\ast$-algebra axiom---the $C^\ast$-identity
 $\|f^\ast f\| = \|f\|^2$, submultiplicativity, the triangle inequality,
-definiteness---under isometric Bratteli inclusions. The one component not established
-is the $C^\ast$-completion of the non-commutative limit, the full operator norm on
-$M_n$, whose values are the irrational singular values the analytic $\RR$ makes
-reachable.
+definiteness---under isometric Bratteli inclusions. The operator norm of the
+non-commutative limit, whose values are the irrational singular numbers the analytic
+$\RR$ makes reachable, was the component earlier drafts left open; for symmetric
+matrices it is established below, as a located real in every finite dimension.
 
 \paragraph{The running convergents.}
 A third realization makes the located real concrete as data and fully
@@ -1330,6 +1330,47 @@ place of Fibonacci, certifies $\sqrt2$: the Pell--Cassini identity
 $p^2-2q^2=(-1)^{n+1}$ makes the convergents bracket $\sqrt2$ with kernel-checked
 squared bounds. One method, two algebraic numbers, every claim reducing in the
 kernel.
+
+\paragraph{The corridor \emph{is} the point.}
+The running convergents do not merely pin a unique real---they \emph{generate the
+Dedekind cut} of the organism's $\varphi$. For every rational $q$, $q$ lies in
+$\varphi$'s lower cut if and only if $q<\mathrm{lo}\,n$ for some rung $n$, so the two
+$\varphi$'s---the Dedekind point and the running corridor---are one object with one
+cut. The forward direction is that each lower convergent is below $\varphi$ (its
+defining inequality $\mathrm{lo}\,n^2<\mathrm{lo}\,n+1$ is exactly membership in
+$\varphi$'s cut, with the next convergent the strict witness). The converse is a
+genuine convergence theorem: the Cassini defect $\mathrm{lo}\,n+1-\mathrm{lo}\,n^2$
+is \emph{exactly} $1/F_{2n+1}^2$---Cassini's identity read at the level of
+$\QQ$---so the unbounded denominators force it to $0$, the quantity
+$\mathrm{lo}\,n^2-\mathrm{lo}\,n = 1-1/F_{2n+1}^2$ climbs to $1$, and it overtakes
+$q^2-q$ for any $q$ below $\varphi$; an order-reflection through the increasing
+branch of $x\mapsto x^2-x$ turns that into $q<\mathrm{lo}\,n$. ``The corridor
+converges to the point'' is thus not a metaphor but a closed equivalence.
+
+\paragraph{The operator norm, the square root, and the spectral edges.}
+The single component the earlier formalization left open---the operator norm of the
+non-commutative limit, ``whose values are the irrational singular numbers the
+analytic $\RR$ makes reachable''---is now itself a located real. For a symmetric
+rational matrix $M$ in \emph{every} finite dimension, the spectral radius
+$\rho(M)=\|M\|$ is an eight-law Dedekind cut, its lower and upper sides witnessed by
+the running power conditions $q^{2^L}<(M^{2^L})_{ii}$ and $\|M^{2^L}\|_1<q^{2^L}$ and
+located by the same kind of dyadic modulus---\emph{computed by running rational
+matrix squaring}, with no determinant, no eigenvector, and no constructive spectral
+theorem. Its engine is the running $C^\ast$-identity $\|M^\ast M\|=\|M\|^2$ obtained
+by repeated squaring, and the cut is certified faithful to the genuine operator-norm
+condition $\|Mx\|^2<q^2\langle x,x\rangle$. Underneath it sits a constructive square
+root: $\sqrt{x}:\RR$ for any nonnegative rational $x$ is a located real whose
+locatedness is fully \emph{decidable} (the comparison $q^2<x$ is a rational decision,
+needing neither bisection nor a convergence rate). A monotone reparametrization
+transports any located real along an affine $\QQ$-bijection, so the spectral edge
+$\lambda_+=(a+d+\sqrt\Delta)/2$ of a symmetric
+$\bigl[\begin{smallmatrix}a&b\\b&d\end{smallmatrix}\bigr]$, with discriminant
+$\Delta=(a-d)^2+4b^2$, and the entire metallic family $(k+\sqrt{k^2+4})/2$---golden
+($k{=}1$), silver ($k{=}2$), bronze ($k{=}3$), each the larger root of
+$x^2=kx+1$---are located reals at once, every one a single reparametrization of the
+square root. The golden value, the spectral radius, and every spectral edge are now
+the same kind of object: an irrational rebuilt as a located Dedekind real, with no
+appeal to a classical existence theorem.
 
 \paragraph{A non-specialist's verification path.}
 A reader who does not work in type theory can check the result three ways without
@@ -1373,8 +1414,13 @@ running. The two walls are different functors with no metric
 (\cref{thm:modsound,thm:modforced}); the approximation is a genuinely growing
 $\Zphi$ colimit (\cref{thm:af}); the screen is a locally-trivial, globally
 nontrivial $H^1$ class carrying positive logical entropy (\cref{thm:h1}); and one
-identity binds the approximants to the brackets (\cref{thm:crosspart}). The whole
-lowers to bare metal and closes through a discriminating gate (\cref{thm:closure}).
+identity binds the approximants to the brackets (\cref{thm:crosspart}). Beyond the
+seven body theorems, the running corridor is proved \emph{equal} to the Dedekind
+point---one cut in two presentations---and the operator norm of a symmetric rational
+matrix, the spectral edge of a symmetric $2\times2$, and the entire metallic family
+are now located reals, each an irrational rebuilt by running rational arithmetic with
+no classical existence theorem. The whole lowers to bare metal and closes through a
+discriminating gate (\cref{thm:closure}).
 
 \paragraph{Novel against the known.}
 The ingredients are each known; their fusion is not. Real-cohesive type theory is
@@ -1391,11 +1437,13 @@ bi-Lipschitz metric in favour of two modalities---is, we have argued, a
 strengthening.
 
 \paragraph{Open.}
-Two problems remain. The first is the $C^\ast$-completion of the non-commutative
-matrix limit---the full operator norm on $M_n(\Zphi)$, whose values are the
-irrational singular numbers the analytic real line makes reachable. The second is the
-physical reading of the $H^1$ screen: whether its positive logical entropy is,
-concretely, the obstruction to spectral divergence that the forced modulus forbids.
+The operator norm that earlier drafts left open is now established as a located real
+for symmetric rational matrices in every dimension; what remains of it is the full
+singular-value spectrum over the $\Zphi$ coefficient ring---the non-symmetric and
+non-rational cases---and the assembly of the located edges into the completed
+$C^\ast$-norm on $M_n(\Zphi)$. A second problem is the physical reading of the $H^1$
+screen: whether its positive logical entropy is, concretely, the obstruction to
+spectral divergence that the forced modulus forbids.
 
 \paragraph{A closing image.}
 A point is a destination you can name but never reach. A corridor is a road, with
