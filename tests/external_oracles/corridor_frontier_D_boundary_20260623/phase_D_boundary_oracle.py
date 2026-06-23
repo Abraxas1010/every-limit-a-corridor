@@ -4,7 +4,7 @@ Runs the realization lane; the gate is byte parity across the three substrates o
 D∈{3,10,20}, with the Boundary readback the kernel reduction of canonicalize_reconstructs."""
 import subprocess, sys, json
 from pathlib import Path
-HERE = Path(__file__).resolve().parents[2]
+HERE = Path(__file__).resolve().parents[3]
 lane = HERE / "realization" / "agda_boundary_runtime_roundtrip.py"
 rc = subprocess.run([sys.executable, str(lane)]).returncode
 receipt = json.loads((HERE / "realization" / "corridor_boundary_lowering_receipt.json").read_text())
