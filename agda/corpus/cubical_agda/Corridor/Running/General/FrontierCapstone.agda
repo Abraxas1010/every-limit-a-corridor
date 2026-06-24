@@ -23,3 +23,7 @@ open import corpus.cubical_agda.Corridor.Running.General.SqrtRealR using (sqrtRe
 open import corpus.cubical_agda.Corridor.Running.General.SpectralEdgeReal using (specEdge)
 -- E: the corridor's logical-entropy observables (the catalogue row).
 open import corpus.cubical_agda.Corridor.Running.General.CorridorObservables using (the-corridor)
+-- Z[φ] frontier foundation: the golden field Q[φ] ↪ ℝ as located reals (a+bφ, decidable via φ's law).
+open import corpus.cubical_agda.Corridor.Running.General.AffineReal using (affineℝ)
+open import corpus.cubical_agda.Corridor.Running.General.ZPhiReal using (zphiReal; negℝ)
+
