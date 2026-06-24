@@ -1472,9 +1472,21 @@ radius needs never leaves ordinary rational matrices.  That this pair arithmetic
 $\Zphi$-multiplication is machine-checked (the theorem \texttt{faithful}: evaluating the pair
 product at any ring element $t$ with $t^2{=}t{+}1$---either real embedding of $\varphi$---equals
 the product of the evaluations; proved by induction on the matrix dimension, since the sum's
-cons rule reduces definitionally).  What remains for the full $n\times n$ operator norm is the
-analytic layer atop this foundation---the spectral-radius cut over the $\QQ[\varphi]$ diagonal
-entries (decidable through $\varphi$'s law) and its $C^\ast$-convergence locatedness.  A second problem is the physical reading of the
+cons rule reduces definitionally).  And the full $n\times n$ operator norm follows with no new spectral radius, through the
+\emph{regular representation}: $\varphi$ acts on the basis $(1,\varphi)$ as
+$\left[\begin{smallmatrix}0&1\\1&1\end{smallmatrix}\right]$, so $a+b\varphi$ becomes the
+$2\times2$ rational matrix $\left[\begin{smallmatrix}a&b\\b&a+b\end{smallmatrix}\right]$ and an
+$n\times n$ $\Zphi$-matrix $M=(A,B)$ becomes the $2n\times2n$ \emph{rational} matrix
+$\widetilde M=\left[\begin{smallmatrix}A&B\\B&A+B\end{smallmatrix}\right]$.  The representation is a
+ring homomorphism and each scalar block is symmetric, so $\widetilde M^{\mathsf T}\widetilde M
+=\widetilde{M^{\mathsf T}M}$ is rational and symmetric, and the operator norm of
+\S\ref{sec:formalization} applies unchanged: $\lVert M\rVert:=\lVert\widetilde M\rVert
+=\sqrt{\rho(\widetilde M^{\mathsf T}\widetilde M)}$ is a located real for every $n\times n$
+$\Zphi$-matrix.  Its eigenvalues are those of $M$ under \emph{both} real embeddings
+$\varphi^{\pm}=(1\pm\sqrt5)/2$, so this is $\max(\lVert M\rVert_{\varphi^+},\lVert M\rVert_{\varphi^-})$,
+the house norm over all real places---the natural size of a golden-integer matrix---and the located
+spectral radius it needs is supplied entirely by the rational construction already built, with no
+$\QQ[\varphi]$ $C^\ast$-convergence to re-derive.  A second problem is the physical reading of the
 $H^1$ screen: whether its positive logical entropy is, concretely, the obstruction to
 spectral divergence that the forced modulus forbids.
 
