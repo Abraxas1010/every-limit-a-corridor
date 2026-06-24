@@ -87,7 +87,7 @@
 \newcommand{\fib}{\mathrm{F}}                           % Fibonacci
 \newcommand{\unmk}{\mathsf{u}}                          % unmarked
 \newcommand{\mkd}{\mathsf{m}}                           % marked
-\newcommand{\cross}{\sigma}                             % the Laws-of-Form crossing
+\newcommand{\cross}{\sigma}                             % the re-entry crossing
 \newcommand{\modulus}{\mu}
 \newcommand{\Llog}{h}                                   % logical entropy
 \DeclareMathOperator{\Hom}{Hom}
@@ -138,14 +138,16 @@ corridor is a wavepacket whose error bars are intrinsic and computable rather
 than imposed by hand. We synthesize three frameworks---a point-free
 ``$\QQ$-free ladder,'' a bi-Lipschitz spectral corridor, and the computability
 certificates of Eagle and McNicholl---and realize them as one instance of the
-Institute's build-from-Nothing engine, in \emph{cohesive homotopy type theory},
-then lower it to a bare-metal artifact. Five constructions carry the
+Institute's vacuum-genesis engine, grounded in the topological quantum vacuum
+(the non-collapsing re-entry $x^2{=}x{+}1$, whose quantum charts are the Fibonacci
+anyon fusion rule and the golden ratio~\citep{iaom_quantum_atlas}), in
+\emph{cohesive homotopy type theory}, then lower it to a bare-metal artifact. Five constructions carry the
 result, each a genuine mathematical object. \textbf{(i)} A faithful real-cohesion
 in which the two walls are genuinely different functors: the continuity wall
 ($\shapeM$) collapses the corridor's endpoints to a single connected point, while
 the cost wall ($\flatM$) keeps them apart---topology and distinguishability,
 separated, with no metric required. \textbf{(ii)} A univalence that
-\emph{computes}: the Laws-of-Form re-entry is realized as an involution whose
+\emph{computes}: the vacuum's re-entry is realized as an involution whose
 transport flips the boundary state, exactly as a reflection acts on a two-level
 system, and the identification is a path that runs rather than an axiom that
 sticks. \textbf{(iii)} A golden-ratio modulus that makes ``the ladder is the
@@ -223,7 +225,7 @@ the structure. ``The ladder is the rate'' is a slogan we discharge to a theorem.
 
 Third, the corridor remembers how it was built, and the memory is
 \emph{measurable}. The same engine that constructs the number systems from the
-empty distinction---and reads each value's Conway birthday, provenance cost, and
+vacuum---and reads each value's Conway birthday, provenance cost, and
 \emph{logical entropy} off its construction trace---measures the corridor too. Its
 logical entropy is the distinction content of its boundary, the same quantity that
 distinguishes the number $2$ in the naturals ($h=4/9$) from the number $2$ in the
@@ -346,22 +348,28 @@ the only unsolved component.}
 \end{table}
 
 % =========================================================================
-\section{A measurable construction from Nothing}\label{sec:engine}
+\section{A measurable construction from the vacuum}\label{sec:engine}
 
 \paragraph{Hook.}
 Hand a machine a finished number and ask it the rude question: where did you come
 from? In the usual telling the question is malformed---$2$ simply \emph{is} an
 element of $\NN$, full stop. The Institute's engine refuses the full stop. It
 gives every value a \emph{construction trace}: a syntactic record of how the value
-was assembled from the empty distinction's two seeds, the void and the mark of the
-Laws of Form~\citep{spencerbrown1969laws}. From that trace it reads the value's
-history, and from the history it reads \emph{numbers about the number}.
+was assembled from the two seeds of the topological vacuum---the vacuum $\varnothing$
+itself and the \emph{mark} it forces: the residue of a pair the vacuum creates and
+cannot annihilate without trace~\citep{iaom_quantum_atlas,kock2004}. From that trace
+it reads the value's history, and from the history it reads \emph{numbers about the
+number}.
 
 \paragraph{The substrate: dependent type theory.}
-The ``void'' and the ``mark'' are not metaphors; they are the primitive type
-formers of \emph{dependent type theory}---the empty type that begins with no
-element, and the inductive clause that manufactures one structure from another. A
-from-Nothing trace is a closed term in this theory, and a value is what that term
+The ``vacuum'' and the ``mark'' are not metaphors; they are the primitive type
+formers of \emph{dependent type theory}---the empty type, which is the vacuum's
+monoidal unit (the initial object, with a unique \emph{forced} map out, $\neg 0 = 1$),
+and the inductive clause that manufactures one structure from another. This is the
+type-theoretic shadow of the topological vacuum: the empty type is the vacuum $\varnothing$
+of a $2$-dimensional TQFT, and the inductive step is its \emph{cup}, the creation
+channel $\varnothing\to\tau\otimes\tau$~\citep{kock2004,iaom_quantum_atlas}. A
+from-the-vacuum trace is a closed term in this theory, and a value is what that term
 evaluates to in a chosen carrier, so provenance is syntactic by construction and the
 four observables below are read off the term rather than attached to it. We work in
 the homotopy-type-theoretic refinement of this setting~\citep{voevodsky2014univalent},
@@ -382,7 +390,7 @@ each of these ingredients is load-bearing rather than incidental.
 The forward map is generative. Choose a system and a trace; obtain a value that
 remembers how it was made. The backward map is the engine proper: given a literal,
 the \emph{provenance inversion} engine discovers every system in a catalogue that
-can host it and reconstructs each system's canonical from-Nothing history. The
+can host it and reconstructs each system's canonical from-the-vacuum history. The
 central finding of the engine's own development is that the history is genuinely
 plural: the value $2$ is a successor ratchet in $\NN$, a ring datum $a+b\theta$ in
 the Gaussian integers, a simplest-day cut $\{L\mid R\}$ in Conway's surreal
@@ -395,7 +403,7 @@ We import one capability: \emph{measurement}. A constructed object is weighed by
 four observables, and we will weigh the corridor by the same four.
 
 \begin{definition}[The four observables]\label{def:observables}
-For a from-Nothing construction the engine records
+For a from-the-vacuum construction the engine records
 \begin{enumerate}[label=(\roman*), nosep, leftmargin=2.2em]
   \item \emph{algebraic behaviour}---which operations close on the carrier;
   \item \emph{provenance cost}---the depth of the construction trace (the Conway
@@ -432,7 +440,7 @@ corridor's obstruction are the same coin.
 \paragraph{The catalogue and its complexity.}
 The plurality is not a handful of special cases; it is a \emph{catalogue}. From the
 same two seeds the engine climbs a ladder of number systems---each a genuine
-algebraic structure with its own from-Nothing history, and therefore its own
+algebraic structure with its own from-the-vacuum history, and therefore its own
 complexity profile---topped by the surreal numbers, the universal rung on which
 every value of every lower system is born on a definite day~\citep{conway2001onag,
 iaom_every_number}. \Cref{fig:numladder} draws the ladder; \cref{tab:catalogue} weighs a
@@ -452,7 +460,7 @@ catalogue as its own row.
 \centering
 \caption{\textbf{The catalogue, weighed.} A representative element of each number
 system the engine builds from the two seeds, read by four observables: its
-from-Nothing history, the algebra that closes on it, its provenance cost (the Conway
+from-the-vacuum history, the algebra that closes on it, its provenance cost (the Conway
 birthday of the witness), and the logical entropy of the witness where the engine
 has computed it. The corridor (last row) enters the same catalogue; ``\,---\,''
 marks an observable not computed here.}
@@ -460,7 +468,7 @@ marks an observable not computed here.}
 \small
 \begin{tabular}{@{}llllc@{}}
 \toprule
-\textbf{system} & \textbf{from-Nothing history} & \textbf{closes under} & \textbf{birthday} & $\bm{\Llog}$ \\
+\textbf{system} & \textbf{from-vacuum history} & \textbf{closes under} & \textbf{birthday} & $\bm{\Llog}$ \\
 \midrule
 $\NN$                  & $\mathsf{succ}^{n}\,\mathbf 0$            & commutative semiring          & $n$              & $4/9$ \\
 $\ZZ$                  & $\pm\,\mathsf{succ}^{n}\,\mathbf 0$       & commutative ring              & $n$              & --- \\
@@ -486,7 +494,7 @@ staged $\RR$           & modulus program                           & complete or
   % seeds
   \node[seed] (zero) at (1.5,0) {$\mathbf 0$};
   \node[seed] (one)  at (2.7,0) {$\mathbf 1$};
-  \node[font=\sffamily\scriptsize, text=gray!55!black, anchor=west] at (3.6,0) {the two seeds: void, mark};
+  \node[font=\sffamily\scriptsize, text=gray!55!black, anchor=west] at (3.6,0) {the two seeds: vacuum $\varnothing$, mark};
   % finite rung
   \node[boxBlue] (nat)   at (1.6,2.0) {$\NN$};
   \node[boxBlue] (int)   at (3.0,2.0) {$\ZZ$};
@@ -515,13 +523,15 @@ effective, metric-free presentation.}
 \begin{figure}[t]
 \centering
 \begin{tikzpicture}[node distance=8mm]
-  \node[seed] (void) {void};
-  \node[seed, below=5mm of void] (mark) {mark};
-  \node[boxBlue, right=14mm of void, yshift=-4mm] (build) {\textsc{build}\\[1pt]\scriptsize from-Nothing\\\scriptsize trace};
+  \node[seed] (vac) {$\varnothing$};
+  \node[font=\sffamily\scriptsize, text=gray!60!black, left=1mm of vac] {vacuum};
+  \node[seed, below=5mm of vac] (mark) {mark};
+  \node[font=\sffamily\scriptsize, text=gray!60!black, left=1mm of mark] {residue};
+  \node[boxBlue, right=14mm of vac, yshift=-4mm] (build) {\textsc{build}\\[1pt]\scriptsize from-vacuum\\\scriptsize trace};
   \node[boxGreen, right=14mm of build] (obj) {a constructed\\object\\[1pt]\scriptsize (a number; a corridor)};
   \node[boxOrange, right=14mm of obj] (meas) {\textsc{measure}\\[1pt]\scriptsize four\\\scriptsize observables};
   \node[boxPurple, below=10mm of obj] (metal) {\textsc{run}\\[1pt]\scriptsize bare-metal\\\scriptsize interaction net};
-  \draw[arr] (void.east) -- (build.west);
+  \draw[arr] (vac.east) -- node[above, font=\sffamily\scriptsize, text=gray!60!black]{cup} (build.west);
   \draw[arr] (mark.east) -- (build.west);
   \draw[arr] (build) -- (obj);
   \draw[arr] (obj) -- (meas);
@@ -530,8 +540,9 @@ effective, metric-free presentation.}
   \node[font=\sffamily\scriptsize, text=gray!60!black, align=left, above=1mm of meas]
     {birthday $\cdot$ entropy\\ closure $\cdot$ steps};
 \end{tikzpicture}
-\caption{\textbf{The engine in one line.} Every object is built from the empty
-distinction's two seeds, \emph{measured} by four observables (one of them logical
+\caption{\textbf{The engine in one line.} Every object is built from the vacuum
+$\varnothing$ and the mark it forces (the residue of the cup, $\varnothing\to\tau\otimes\tau$),
+\emph{measured} by four observables (one of them logical
 entropy), and lowered to (the engine runs) a bare-metal interaction net. This paper
 feeds one new object---the effective corridor---through the same stations, reaching
 the third as a lowering (\cref{sec:metal}).}
@@ -541,14 +552,32 @@ the third as a lowering (\cref{sec:metal}).}
 \paragraph{What we inherit, precisely.}
 From the engine we take the discipline that an object is not finished when it
 type-checks but when it \emph{reaches executable bare-metal form and is measured}.
-From the from-Nothing
-companion we take the starting point literally: our corridor will be built from
-the same two seeds---the void and the mark---and its first nontrivial structure,
-the re-entry of \cref{sec:univalence}, is the Laws-of-Form crossing itself. The
+From the genesis companion we take the starting point literally: our corridor is
+built from the same vacuum and mark, and its first nontrivial structure---the
+re-entry of \cref{sec:univalence}---is the cup and cap of the topological vacuum,
+the creation and annihilation channels $\varnothing\rightleftarrows\tau\otimes\tau$
+whose provable \emph{non-collapse} is the residue~\citep{iaom_quantum_atlas}. The
 remainder of the paper is the corridor's passage through the three stations of
 \cref{fig:engine}: it is built (\cref{sec:cohesion,sec:univalence,sec:modulus,%
 sec:screen}), bound into one object (\cref{sec:synthesis}), measured, and run
 (\cref{sec:metal}).
+
+\paragraph{The quantum chart: the vacuum's residue is the golden relation.}
+The vacuum's re-entry is not metaphysics; it is one relation read in a quantum
+register. A round trip through the cup and cap leaves a residue exactly when the
+minimal carrier of re-entry, the matrix $\bigl[\begin{smallmatrix}1&1\\1&0\end{smallmatrix}\bigr]$,
+satisfies $G^2 = G + \mathsf I$---which is $\varphi^2 = \varphi + 1$ on
+eigenvalues, the collapse $G^2{=}G$ forcing $\mathsf I{=}0$, i.e.\ the degenerate
+world $1{=}0$. The \emph{same} relation $x^2 = x+1$ is the Fibonacci anyon fusion
+rule $\tau\otimes\tau = \mathbf 1\oplus\tau$, with $\varphi$ its quantum dimension,
+and the golden modulus that forces this paper's corridor to close
+(\cref{thm:modforced})~\citep{nayaketal2008,iaom_quantum_atlas}. The rate that
+forbids the corridor's collapse to a syntactic point and the anyon dimension that
+forbids the fusion from trivializing are one number. We take the quantum reading as
+a \emph{chart}, not a claim that the corridor \emph{is} quantum mechanics: the
+theorem-bearing content is the structural irreducibility $1\neq 0$, and a physical
+constant such as $\hbar$ is an interpretation laid over the residue, never an
+equation~\citep{iaom_quantum_atlas}.
 
 % =========================================================================
 \section{Two walls, intrinsically}\label{sec:cohesion}
@@ -691,9 +720,11 @@ the type system supplies directly.
 \section{The square root of re-entry}\label{sec:univalence}
 
 \paragraph{Hook.}
-Draw a mark. Draw a mark around the mark. In George Spencer-Brown's calculus the
-second act is \emph{re-entry}: the form crosses its own boundary and comes back
-changed~\citep{spencerbrown1969laws}. Re-entry is an operation that, applied
+Pull a pair out of the vacuum; try to push it back. The creation channel
+$\varnothing\to\tau\otimes\tau$ and the annihilation channel
+$\tau\otimes\tau\to\varnothing$ of a topological quantum field theory are the two
+halves of a \emph{re-entry}: the form crosses its own boundary and comes back
+changed~\citep{kock2004,iaom_quantum_atlas}. Re-entry is an operation that, applied
 twice, returns you to where you started while sending each state to its
 opposite---a reflection, an involution, the discrete shadow of multiplication by
 $-1$. The corridor's target is the fixed object of this re-entry, and to build it
@@ -704,7 +735,7 @@ univalence of the kind that computes.
 
 \paragraph{The crossing.}
 Let $\Bd=\{\unmk,\mkd\}$ be the boundary, and let $\cross\colon\Bd\to\Bd$ be the
-Laws-of-Form crossing, $\cross(\unmk)=\mkd$, $\cross(\mkd)=\unmk$. It is its own
+re-entry crossing, $\cross(\unmk)=\mkd$, $\cross(\mkd)=\unmk$. It is its own
 inverse,
 \begin{equation}\label{eq:cross-involution}
   \cross\circ\cross = \mathrm{id}_{\Bd},
@@ -1078,7 +1109,7 @@ cohesion modalities, and the corridor loses nothing by losing the metric.}
 \end{figure}
 
 \paragraph{The corridor, weighed.}
-Because the corridor is a from-Nothing construction, the engine's four observables
+Because the corridor is a from-the-vacuum construction, the engine's four observables
 apply to it directly, and the most informative is the third. The corridor's
 \emph{logical entropy} is the distinction content of its boundary screen,
 $\Llog=\tfrac12$ (\cref{thm:h1})---the same quantity that reads $4/9$ for the
@@ -1108,7 +1139,7 @@ $2$ in surreals (simplest-day cut)      & $12/25$ & birthday $2$ & net reduces \
 \bottomrule
 \end{tabular}
 \caption{\textbf{The corridor, weighed beside a number.} The engine's four
-observables (\cref{def:observables}) apply to the corridor as to any from-Nothing
+observables (\cref{def:observables}) apply to the corridor as to any from-the-vacuum
 construction. Its logical entropy is the distinction content of its $H^1$ screen,
 $\tfrac12$ (\cref{thm:h1})---the same Ellerman currency that separates the number
 $2$ across its histories ($4/9$ in $\NN$, $36/49$ in the Gaussians, $12/25$ in the
