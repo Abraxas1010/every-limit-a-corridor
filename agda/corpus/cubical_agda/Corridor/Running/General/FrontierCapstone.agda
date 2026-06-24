@@ -33,6 +33,9 @@ open import corpus.cubical_agda.Corridor.Running.General.AddReal using (addℝ)
 open import corpus.cubical_agda.Corridor.Running.General.ZPhiSpectralEdge using (zphiSpecEdge)
 -- Z[φ] matrix algebra: the pair arithmetic proven faithful to Z[φ] multiplication (n×n op-norm foundation).
 open import corpus.cubical_agda.Corridor.Running.General.ZPhiMatrix using (zφMul; zφSq; faithful)
+-- THE n×n Z[φ] OPERATOR NORM: ‖M‖=√ρ(M̃ᵀM̃) via the regular representation, a located real for any n.
+open import corpus.cubical_agda.Corridor.Running.General.ZPhiOperatorNorm using (zphiHouseNorm; regRep)
+
 
 
 
