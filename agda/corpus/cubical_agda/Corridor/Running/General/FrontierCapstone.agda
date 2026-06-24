@@ -29,5 +29,8 @@ open import corpus.cubical_agda.Corridor.Running.General.ZPhiReal using (zphiRea
 -- located-real arithmetic: the approximation lemma + addition (located reals as an ordered field).
 open import corpus.cubical_agda.Corridor.Running.General.ApproxReal using (approxℝ)
 open import corpus.cubical_agda.Corridor.Running.General.AddReal using (addℝ)
+-- Z[φ] matrix layer reached: the 2×2 Z[φ] symmetric spectral edge (tr+√Δ)/2 as a located real.
+open import corpus.cubical_agda.Corridor.Running.General.ZPhiSpectralEdge using (zphiSpecEdge)
+
 
 
