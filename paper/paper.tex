@@ -1464,8 +1464,17 @@ field the $2\times2$ $\Zphi$ spectral edge is concrete: the larger eigenvalue of
 $[[a+b\varphi,\,c+d\varphi],[c+d\varphi,\,e+f\varphi]]$ is
 $\lambda_+=(\mathrm{tr}+\sqrt{\Delta})/2$ with $\Delta=(A{-}E)^2+4C^2=\Delta_a+\Delta_b\varphi$
 ($\varphi^2{=}\varphi{+}1$, $\Delta_a,\Delta_b\in\QQ$), a located trace plus a located square
-root, halved---itself a located real.  The general $n\times n$ $\Zphi$ operator norm extends
-the same way (the spectral-radius architecture re-run over $\QQ[\varphi]$-coefficient matrices). A second problem is the physical reading of the
+root, halved---itself a located real.  The general $n\times n$ case has its matrix-algebra
+foundation in place: a $\Zphi$-matrix is a pair $(A,B)$ of rational matrices for $A+B\varphi$,
+and because $\varphi^2{=}\varphi{+}1$ the product stays in pair form,
+$(A+B\varphi)(C+D\varphi)=(AC+BD)+(AD+BC+BD)\varphi$, so the running squaring the spectral
+radius needs never leaves ordinary rational matrices.  That this pair arithmetic \emph{is}
+$\Zphi$-multiplication is machine-checked (the theorem \texttt{faithful}: evaluating the pair
+product at any ring element $t$ with $t^2{=}t{+}1$---either real embedding of $\varphi$---equals
+the product of the evaluations; proved by induction on the matrix dimension, since the sum's
+cons rule reduces definitionally).  What remains for the full $n\times n$ operator norm is the
+analytic layer atop this foundation---the spectral-radius cut over the $\QQ[\varphi]$ diagonal
+entries (decidable through $\varphi$'s law) and its $C^\ast$-convergence locatedness.  A second problem is the physical reading of the
 $H^1$ screen: whether its positive logical entropy is, concretely, the obstruction to
 spectral divergence that the forced modulus forbids.
 
