@@ -31,6 +31,9 @@ open import corpus.cubical_agda.Corridor.Running.General.ApproxReal using (appro
 open import corpus.cubical_agda.Corridor.Running.General.AddReal using (addℝ)
 -- Z[φ] matrix layer reached: the 2×2 Z[φ] symmetric spectral edge (tr+√Δ)/2 as a located real.
 open import corpus.cubical_agda.Corridor.Running.General.ZPhiSpectralEdge using (zphiSpecEdge)
+-- Z[φ] matrix algebra: the pair arithmetic proven faithful to Z[φ] multiplication (n×n op-norm foundation).
+open import corpus.cubical_agda.Corridor.Running.General.ZPhiMatrix using (zφMul; zφSq; faithful)
+
 
 
 
