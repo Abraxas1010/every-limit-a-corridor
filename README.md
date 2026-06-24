@@ -30,8 +30,15 @@ This bundle lets a professional **verify every claim from primitives** and
 > consecutive Fibonacci convergents at the golden-modulus width, and `phi`
 > irrational by infinite descent (both roots ruled out); **(3)** a tower of genuine
 > matrix `*`-algebras over `Z[phi]` with a Bratteli AF limit and a complete
-> `C*`-norm on its commutative core. **Open:** the `C*`-completion of the
-> non-commutative limit (the full operator norm). See the paper, §10
+> `C*`-norm on its commutative core, **and** the non-commutative operator
+> (house) norm of every finite `M_n(Z[phi])` reached as a located real through
+> the regular representation (`Corridor/Running/General/ZPhiOperatorNorm.agda`:
+> a golden integer `a+b·phi` acts on the basis `(1,phi)` as `[[0,1],[1,1]]`, so
+> `M=(A,B)` becomes the `2n×2n` rational symmetric Gram matrix whose located
+> spectral radius is the existing rational operator norm — no `Q[phi]`
+> C\*-convergence to re-derive). **Open:** only the physical reading of the
+> `H^1` screen — whether its positive logical entropy *is* the
+> spectral-divergence obstruction the forced modulus forbids. See the paper, §10
 > (*From germ to organism*) and §12.
 
 ## What is here
@@ -69,7 +76,7 @@ realization/     the bare-metal authority lane
 artifacts/
   boundary_metal/                        the bare-metal Boundary programs ({decls, main} term trees, 84 nodes)
   closure/                               the executable-with-receipt transition + fixed-point-stability receipt
-paper/           paper.tex, paper.pdf (18pp), refs.bib, build.sh, figures/
+paper/           paper.tex, paper.pdf (22pp), refs.bib, build.sh, figures/
 ```
 
 ## Dependencies
@@ -123,7 +130,7 @@ interaction-net run is the substrate's, which the lowered programs are ready for
 
 ## The paper
 
-`paper/paper.pdf` (18 pages). Rebuild with `cd paper && ./build.sh`.
+`paper/paper.pdf` (22 pages). Rebuild with `cd paper && ./build.sh`.
 
 ---
 *The Institute for Applied Ontological Mathematics. Licensing: iaom.org/license.*

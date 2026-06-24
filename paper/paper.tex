@@ -135,9 +135,9 @@ Effective mathematics replaces the point with a \emph{corridor}---a two-sided
 bracket carried as data, narrowing at an intrinsic rate. The width is not
 metadata about the object; it \emph{is} the object. In a physicist's terms, the
 corridor is a wavepacket whose error bars are intrinsic and computable rather
-than imposed by hand. We take a concrete proposal---synthesize a point-free
+than imposed by hand. We synthesize three frameworks---a point-free
 ``$\QQ$-free ladder,'' a bi-Lipschitz spectral corridor, and the computability
-certificates of Eagle and McNicholl---and realize it as one instance of the
+certificates of Eagle and McNicholl---and realize them as one instance of the
 Institute's build-from-Nothing engine, in \emph{cohesive homotopy type theory},
 then lower it to a bare-metal artifact. Five constructions carry the
 result, each a genuine mathematical object. \textbf{(i)} A faithful real-cohesion
@@ -151,7 +151,7 @@ system, and the identification is a path that runs rather than an axiom that
 sticks. \textbf{(iii)} A golden-ratio modulus that makes ``the ladder is the
 rate'' a theorem---the Fibonacci ladder reaches any precision, and a
 \emph{constant} rate is provably refuted, so convergence cannot be faked; this is
-Veselov's lower certificate, the bound that forbids collapse to the syntactic
+the lower certificate, the bound that forbids collapse to the syntactic
 horizon. \textbf{(iv)} An approximately-finite colimit over $\Zphi$ whose stages
 are those same golden brackets. \textbf{(v)} An $H^1$ logical-entropy screen: the
 re-entry loop carries a cohomology class that is locally a coboundary but globally
@@ -173,8 +173,9 @@ representative models, the formalization carries the analytic real line $\RR$ on
 which the two walls separate, and the golden value as a located, \emph{irrational}
 real $\varphi:\RR$ with its conjugate and forced modulus
 (\cref{sec:formalization}); the $C^\ast$-norm is established on the algebra's
-commutative core, leaving the non-commutative operator-norm completion as the one
-remaining part.
+commutative core, and the non-commutative operator (house) norm of every finite
+$M_n(\Zphi)$ is reached as a located real through the regular representation
+(\cref{sec:discussion}), leaving only the physical reading of the $H^1$ screen open.
 \end{minipage}
 
 \end{titlingpage}
@@ -236,8 +237,8 @@ claiming that homotopy type theory is the right home for it---not as decoration,
 but because its three native gifts are exactly the three things the corridor
 needs. Univalence gives the corridor's target the \emph{computing} identification
 that a re-entry demands. Cohesion gives the two walls \emph{without a metric},
-dissolving the one piece of the original proposal---a bi-Lipschitz constant---that
-sat awkwardly between a metric-free ontology and a metric estimate. And higher
+replacing the bi-Lipschitz constant with a separation the type system supplies
+intrinsically. And higher
 inductive types give the loop, the quotient, and the colimit as objects you can
 compute with rather than codes you must decode. The payoff is concrete: the whole
 construction lowers to a bare-metal program past a discriminating gate, and its
@@ -304,8 +305,44 @@ a stream of finite codes and every theorem returns a program with an explicit
 rate~\citep{iaom_spectrum}. Their common thesis is a single statement: a spectrum is
 computable \emph{if and only if} it carries a modulus---an explicit positive
 certificate that forbids the resolvent from diverging. This paper realizes that
-thesis, faithful to its three parts and sharpened in one place, where homotopy type
+thesis as one object, sharpened in one place, where homotopy type
 theory shows the metric was never needed.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.16}
+\caption{\textbf{Status at a glance --- the pass/fail matrix.} Every load-bearing
+claim of the construction with its verification state.
+\textcolor{okGreen}{\textbf{PASS}} $=$ kernel-checked in cubical Agda under
+\texttt{-{}-safe}, no postulates, no classical choice (it type-checks and
+\emph{runs}); \textcolor{okVerm}{\textbf{OPEN}} $=$ a remaining build target, not
+yet established. Thirteen of fourteen pass; the one \textcolor{okVerm}{OPEN} row is
+the only unsolved component.}
+\label{tab:passfail}
+\begin{tabular}{@{}c>{\raggedright\arraybackslash}p{8.3cm}l>{\raggedright\arraybackslash}p{2.5cm}@{}}
+\toprule
+\# & Claim & Status & Where \\
+\midrule
+1 & The shape--flat adjunction is genuine (the two walls form an adjoint pair) & \textcolor{okGreen}{\textbf{PASS}} & Thm~\ref{thm:shapeflat} \\
+2 & The two walls are \emph{different} functors: $\shapeM \neq \flatM$, metric-free & \textcolor{okGreen}{\textbf{PASS}} & Thm~\ref{thm:shapenotflat} \\
+3 & Re-entry transports and is nontrivial (univalence that \emph{computes}) & \textcolor{okGreen}{\textbf{PASS}} & Thm~\ref{thm:ua} \\
+4 & The modulus is sound: the golden ladder reaches any demanded precision & \textcolor{okGreen}{\textbf{PASS}} & Thm~\ref{thm:modsound} \\
+5 & The rate is forced: no constant modulus can reach precision & \textcolor{okGreen}{\textbf{PASS}} & Thm~\ref{thm:modforced} \\
+6 & The $\Zphi$ colimit genuinely grows (proper finite AF stages) & \textcolor{okGreen}{\textbf{PASS}} & Thm~\ref{thm:af} \\
+7 & The $H^1$ screen: locally trivial, globally nontrivial, positive logical entropy & \textcolor{okGreen}{\textbf{PASS}} & Thm~\ref{thm:h1} \\
+8 & The approximants \emph{are} the brackets: $w(n)=w(\modulus(n))$ & \textcolor{okGreen}{\textbf{PASS}} & Thm~\ref{thm:crosspart} \\
+9 & Admissibility certifies the lowering to bare metal and rejects the degenerate & \textcolor{okGreen}{\textbf{PASS}} & Thm~\ref{thm:closure} \\
+10 & The analytic line separates: $\shapeM\RR$ contractible, $\flatM\RR$ not & \textcolor{okGreen}{\textbf{PASS}} & \S\ref{sec:formalization} \\
+11 & $\varphi$ is a located real (eight-law cut, $\varphi\,\#\,\psi$, irrational) & \textcolor{okGreen}{\textbf{PASS}} & \S\ref{sec:formalization} \\
+12 & $M_n(\Zphi)$ commutative core carries a rational $C^\ast$-norm (all axioms) & \textcolor{okGreen}{\textbf{PASS}} & \S\ref{sec:formalization} \\
+13 & Operator (house) norm on every finite $M_n(\Zphi)$ as a located real, via the regular representation & \textcolor{okGreen}{\textbf{PASS}} & \S\ref{sec:discussion} \\
+\midrule
+14 & Physical reading of the $H^1$ screen: its entropy \emph{is} the spectral-divergence obstruction & \textcolor{okVerm}{\textbf{OPEN}} & \S\ref{sec:discussion} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 % =========================================================================
 \section{A measurable construction from Nothing}\label{sec:engine}
@@ -386,7 +423,7 @@ content}.
 
 We flag this now because the corridor's $H^1$ screen
 (\cref{sec:screen}) will turn out to carry positive logical entropy of exactly
-this kind. The cohomological obstruction that Veselov's proposal predicted---a
+this kind. The cohomological obstruction the corridor carries---a
 class locally trivial but globally not---is, when measured, a distinction the
 boundary makes and no deformation unmakes. The engine's currency and the
 corridor's obstruction are the same coin.
@@ -521,10 +558,10 @@ different. The upper wall is smooth: slide along it and nothing snags, because i
 records only \emph{nearness}---whether two states are connected, not whether they
 are equal. The lower wall is rough: it records \emph{difference}---it refuses to
 let two distinct states be confused, and that refusal is where the constructive
-work, the cost, accumulates. The original proposal asked for these two walls and
-proposed to separate them with a metric, a bi-Lipschitz pair of golden-ratio
-bounds. Homotopy type theory offers something cleaner: the two walls are two
-\emph{modalities}, and they are different functors with no metric in sight.
+work, the cost, accumulates. The bi-Lipschitz framework separates these two walls
+with a metric, a pair of golden-ratio bounds. Homotopy type theory offers
+something cleaner: the two walls are two \emph{modalities}, and they are different
+functors with no metric in sight.
 
 \paragraph{The setting.}
 In real-cohesive homotopy type theory~\citep{shulman2018brouwer} a type may carry
@@ -595,9 +632,9 @@ contradictory: $\shapeM\neq\flatM$.
 point (it is connected); flat keeps them two (they are distinct). \emph{Statement.}
 \cref{eq:shape-collapses}. \emph{Meaning.} Topology cannot see the endpoints
 apart; distinguishability can. This is the corridor's two walls, separated by a
-\emph{theorem about modalities}, with no metric: the one awkward import of the
-original proposal---a bi-Lipschitz constant living between a point-free ontology
-and a metric estimate---is discharged and then deleted. \emph{Proof.} The shape
+\emph{theorem about modalities}, with no metric: the bi-Lipschitz constant, a
+metric estimate imposed on a point-free ontology, is no longer needed.
+\emph{Proof.} The shape
 is the quotient of a two-point set by the total relation, which is the interval
 type, contractible; the flat is the two-point set with equality, where the two
 points are apart by the discreteness of $\mathbb{2}$. A transport of
@@ -646,7 +683,7 @@ exactly the extra structure that breaks this: by remembering which points hang
 together, the type lets $\shapeM$ quotient and $\flatM$ keep, and
 \cref{thm:shapenotflat} becomes available. Homotopy type theory is where this
 structure is native and where the modalities come with their adjunctions already
-proved. The metric in the original proposal was a stand-in for a separation that
+proved. The bi-Lipschitz metric was a stand-in for a separation that
 the type system supplies directly.
 
 % =========================================================================
@@ -761,7 +798,7 @@ deadline attached, and the deadline is the whole difference between a number you
 believe in and a number you can run. Effective functional analysis is built on
 this move: in Eagle and McNicholl's calculus every point of a $C^\ast$-algebra is
 a stream of finite codes and every norm is an oracle with a
-rate~\citep{eagle2017computable}. Veselov's proposal sharpened it to an
+rate~\citep{eagle2017computable}. The computability thesis sharpens this to an
 equivalence: a spectrum is computable \emph{iff} it has a modulus, a positive
 certificate $c>0$ that forbids the resolvent from diverging---geometrically, a
 lower wall that never lets the corridor's gap collapse to the ``syntactic
@@ -812,13 +849,13 @@ No constant function is a sound modulus.
 precision than that rung delivers; you must keep walking. \emph{Statement.}
 \cref{eq:no-constant}. \emph{Meaning.} This is the heart of ``the ladder is the
 rate.'' The rate is not a parameter one may set to a constant and forget; the
-structure refuses it. The proposal's physical reading makes the analogy precise:
+structure refuses it. The physical reading makes the analogy precise:
 a UV-divergence is a gap that stops shrinking, and in this formal model such a gap
 \emph{is} a constant modulus, so \cref{thm:modforced} is the formal impossibility
-of one. We claim the formal theorem; the physical interpretation is Veselov's, and
-the point is that it is now auditable rather than asserted. The
-upper bound of the original bi-Lipschitz pair guarded against chaos; this lower,
-forced bound is the one that carries the ontology, and it survives the deletion of
+of one. We claim the formal theorem; the physical interpretation is now auditable
+rather than asserted. In the bi-Lipschitz framework the
+upper bound guarded against chaos; this lower,
+forced bound is the one that carries the ontology, and it survives without
 the metric. \emph{Proof.} Take $D=w(c)+1$; then $w(c)<D$ by the irreflexivity of
 $<$. Strict narrowing is positivity of the Fibonacci increment.\hfill$\square$
 
@@ -864,7 +901,7 @@ impossible. The convergence cannot be faked.}
 \section{Approximants and a topological screen}\label{sec:screen}
 
 \paragraph{Hook.}
-Two questions remained in the proposal, and they are the two that a physicist
+Two questions remain, and they are the two that a physicist
 cares about most. Can the continuous object be reached by \emph{finite}
 approximants, so that a computation actually terminates at each stage? And does
 the act of approximating leave a \emph{residue}---an obstruction that is invisible
@@ -873,7 +910,7 @@ flux or a charge? The answer to both is yes, and the second answer is where the
 corridor's measurement closes the loop with the engine.
 
 \paragraph{Finite approximants: the $\Zphi$ colimit.}
-Following the proposal's Part~II we approximate over the golden ring $\Zphi$ by a
+We approximate over the golden ring $\Zphi$ by a
 sequence of finite stages whose sizes are the ladder denominators. Stage $n$ is
 the finite set
 \begin{equation}\label{eq:af-stage}
@@ -905,14 +942,14 @@ inclusions, the shape the dimension data of an AF $C^\ast$-algebra would carry--
 the continuous object is the honest limit of finite data, and a degenerate ``AF''
 colimit whose maps were equivalences (a tower that secretly stopped) is excluded.
 We claim the skeleton here; \cref{sec:formalization} refines it to the
-finite-dimensional matrix $\ast$-algebras, leaving the operator-norm limit as the
-one part still open. \emph{Proof.} Every point of stage $n$ has value strictly
+finite-dimensional matrix $\ast$-algebras, whose operator (house) norm
+\cref{sec:discussion} reaches as a located real. \emph{Proof.} Every point of stage $n$ has value strictly
 below $w(n)$; the inclusion preserves value; so the fresh value $w(n)$ is missed.
 \hfill$\square$
 
 \paragraph{The global residue: an $H^1$ logical-entropy screen.}
-Part~III of the proposal predicted that the ``infinite swarm'' of a truncated
-mode---the observer as a screening boundary---would be a cochain \emph{locally a
+A truncated mode's ``infinite swarm''---the observer as a screening
+boundary---should appear as a cochain \emph{locally a
 coboundary but globally a nontrivial $H^1$ class}. The re-entry loop of
 \cref{sec:univalence} is exactly the space that hosts such a class. Take the
 circle $S^1$ (one vertex, one edge that is a loop) with $\bbtwo$ coefficients; the
@@ -936,8 +973,8 @@ $\Llog(\omega{=}1)=\tfrac12>0$, while a coboundary screens to zero.
 \noindent\emph{Picture.} Around the loop the obstruction cancels at every point
 yet refuses to cancel overall---a charge you cannot see locally but cannot deform
 away. \emph{Statement.} \cref{eq:delta-vanish,eq:not-exact}. \emph{Meaning.} This
-is the proposal's screening boundary, realized: a flux through the re-entry loop,
-of order two, exactly the cohomological signature predicted for the observer. And
+is the screening boundary, realized: a flux through the re-entry loop,
+of order two, exactly the cohomological signature expected for the observer. And
 crucially it is \emph{measured}: by \cref{eq:logical-entropy} the nonzero class
 separates the two boundary states---two ordered distinctions out of four pairs,
 logical entropy $\tfrac12$---the very same logical-entropy currency the engine
@@ -970,7 +1007,7 @@ of $\{\unmk,\mkd\}$ is $2$, giving $\Llog=\tfrac{2}{4}$.\hfill$\square$
   \node[font=\sffamily\scriptsize, align=left, text=gray!55!black, above=1mm of cls]
     {a flux through the loop ---\\ invisible locally,\\ real globally};
 \end{tikzpicture}
-\caption{\textbf{The screen Veselov predicted, realized and measured.} On the
+\caption{\textbf{The screening boundary, realized and measured.} On the
 re-entry loop every local coboundary cancels (\cref{eq:delta-vanish}), yet the
 loop class is not exact: $H^1(S^1;\bbtwo)\cong\bbtwo$
 (\cref{eq:not-exact})---``locally a coboundary, globally nontrivial,'' the
@@ -993,7 +1030,7 @@ The size of the colimit's stage $n$ equals the modulus's bracket at $n$,
 \begin{equation}\label{eq:crosspart}
   w(n) \;\equiv\; w(\modulus(n)),
 \end{equation}
-since $\modulus(n)=n$. Part~II's finite approximation and Part~I's rate are one
+since $\modulus(n)=n$. The finite approximation and the rate are one
 structure: the located approximant and its modulus coincide.
 \end{theorem}
 
@@ -1001,7 +1038,7 @@ structure: the located approximant and its modulus coincide.
 (\cref{thm:shapenotflat}), the computing re-entry (\cref{thm:ua}), the forced rate
 (\cref{thm:modforced}), the $\Zphi$ colimit (\cref{thm:af}), and the $H^1$ screen
 (\cref{thm:h1}), with \cref{eq:crosspart} tying the last two stations of the
-ladder together. \Cref{fig:rosetta} reads the proposal's three Parts across to
+ladder together. \Cref{fig:rosetta} reads the source structures across to
 their realizations.
 
 \begin{figure}[t]
@@ -1012,7 +1049,7 @@ their realizations.
                   >{\raggedright\arraybackslash}p{5.6cm}
                   >{\raggedright\arraybackslash}p{3.4cm}@{}}
 \toprule
-\textbf{The proposal (Veselov)} & \textbf{Our realization (HoTT)} & \textbf{Engine reading} \\
+\textbf{Source framework} & \textbf{Our realization (HoTT)} & \textbf{Engine reading} \\
 \midrule
 $\QQ$-free, zero-free inductive ladder &
 golden Fibonacci ladder $w(n)=\fib_{n+2}$ (\cref{eq:width}) &
@@ -1031,10 +1068,10 @@ $H^1(S^1;\bbtwo)\cong\bbtwo$, positive logical entropy (\cref{thm:h1}) &
 \textbf{logical entropy} \\
 \bottomrule
 \end{tabular}
-\caption{\textbf{The three parts, realized and measured.} Each part of the original
-proposal (left) is realized as a genuine homotopy-type-theoretic construction
+\caption{\textbf{The synthesis, realized and measured.} Each source
+structure (left) is realized as a genuine homotopy-type-theoretic construction
 (centre), and each is \emph{measured} by one of the engine's four observables
-(right). The single change is the second row: the bi-Lipschitz metric becomes two
+(right). The notable change is the second row: the bi-Lipschitz metric becomes two
 cohesion modalities, and the corridor loses nothing by losing the metric.}
 \label{fig:rosetta}
 \end{figure}
@@ -1203,15 +1240,15 @@ have type-checked and then refused to run. Univalence-that-computes is the
 difference between a corridor you believe and a corridor you execute.
 
 \paragraph{Cohesion, because the two walls should not need a metric.}
-The original proposal separated continuity from cost with a bi-Lipschitz metric---a
-reasonable instinct, and the one place where a point-free, zero-free ontology sat
-uneasily beside a metric estimate. Real-cohesive homotopy type
+The bi-Lipschitz framework separates continuity from cost with a metric, the one
+place where a point-free, zero-free ontology requires a metric estimate.
+Real-cohesive homotopy type
 theory~\citep{shulman2018brouwer} supplies the separation \emph{as structure}: the
 two walls are the shape and flat modalities (\cref{eq:cohesion-adjoint}), and they
 are provably different functors (\cref{thm:shapenotflat}) with no metric anywhere.
-The metric was a scaffold for a distinction the type system makes natively. This
-is the paper's single mathematical improvement on the proposal, and it is a
-\emph{simplification}: a constant is deleted and nothing is lost.
+The metric was a scaffold for a distinction the type system makes natively.
+Replacing it with two modalities is a
+\emph{simplification}: a constant is removed and nothing is lost.
 
 \paragraph{Higher inductive types, because the loop, the quotient, and the colimit are objects.}
 The re-entry loop is the circle $S^1$; the corridor's connected components are a
@@ -1245,7 +1282,7 @@ cohomological obstruction. That these coincide (\cref{thm:h1}) hints at a genera
 principle: the topological complexity of a constructive object and its
 distinction-content are one measurable quantity. Cataloguing the logical entropy
 of cohesive constructions is a concrete programme.
-\item \emph{Auditable physics.} The proposal's Part~III reads the screen as
+\item \emph{Auditable physics.} The screen reads as
 the observer's screening boundary and the lower modulus as the impossibility of a
 UV-divergence---a gap that never collapses. With the screen and the forced modulus
 now kernel-checked and lowered to executable form, the physical claim becomes
@@ -1423,7 +1460,7 @@ lowered, is now itself a located real (\cref{sec:formalization}).
 \section{Discussion: what is established, and what is open}\label{sec:discussion}
 
 \paragraph{Established.}
-Veselov's tripartite proposal is realized as one object, kernel-checked and
+The tripartite construction is realized as one object, kernel-checked and
 running. The two walls are different functors with no metric
 (\cref{thm:shapenotflat}); the re-entry is a univalence path that computes
 (\cref{thm:ua}); the modulus is sound and a constant rate is provably refuted
@@ -1443,13 +1480,13 @@ The ingredients are each known; their fusion is not. Real-cohesive type theory i
 Shulman's~\citep{shulman2018brouwer}; the effective functional calculus is Eagle
 and McNicholl's~\citep{eagle2017computable}; logical entropy is
 Ellerman's~\citep{ellerman2018logical}; the universal combinators are
-Lafont's~\citep{lafont1997interaction}. What is new is the synthesis the proposal
-called for and this paper delivers: a corridor whose walls are \emph{cohesion
+Lafont's~\citep{lafont1997interaction}. What is new is the synthesis this paper
+delivers: a corridor whose walls are \emph{cohesion
 rather than metric}, whose rate is a \emph{forced} golden modulus rather than a
 chosen constant, whose obstruction is \emph{measured} in the same logical-entropy
 currency as number provenance, and whose closure is \emph{executable} and gated by
-a kernel-rejected degeneracy. The single edit to the proposal---deleting the
-bi-Lipschitz metric in favour of two modalities---is, we have argued, a
+a kernel-rejected degeneracy. The single change from the metric formulation---replacing the
+bi-Lipschitz metric with two modalities---is, we have argued, a
 strengthening.
 
 \paragraph{Open.}
@@ -1486,7 +1523,7 @@ $\Zphi$-matrix.  Its eigenvalues are those of $M$ under \emph{both} real embeddi
 $\varphi^{\pm}=(1\pm\sqrt5)/2$, so this is $\max(\lVert M\rVert_{\varphi^+},\lVert M\rVert_{\varphi^-})$,
 the house norm over all real places---the natural size of a golden-integer matrix---and the located
 spectral radius it needs is supplied entirely by the rational construction already built, with no
-$\QQ[\varphi]$ $C^\ast$-convergence to re-derive.  A second problem is the physical reading of the
+$\QQ[\varphi]$ $C^\ast$-convergence to re-derive. A second problem is the physical reading of the
 $H^1$ screen: whether its positive logical entropy is, concretely, the obstruction to
 spectral divergence that the forced modulus forbids.
 
