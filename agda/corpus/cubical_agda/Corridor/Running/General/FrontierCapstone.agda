@@ -26,4 +26,8 @@ open import corpus.cubical_agda.Corridor.Running.General.CorridorObservables usi
 -- Z[φ] frontier foundation: the golden field Q[φ] ↪ ℝ as located reals (a+bφ, decidable via φ's law).
 open import corpus.cubical_agda.Corridor.Running.General.AffineReal using (affineℝ)
 open import corpus.cubical_agda.Corridor.Running.General.ZPhiReal using (zphiReal; negℝ)
+-- located-real arithmetic: the approximation lemma + addition (located reals as an ordered field).
+open import corpus.cubical_agda.Corridor.Running.General.ApproxReal using (approxℝ)
+open import corpus.cubical_agda.Corridor.Running.General.AddReal using (addℝ)
+
 
