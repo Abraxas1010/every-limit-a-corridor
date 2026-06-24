@@ -36,10 +36,13 @@ This bundle lets a professional **verify every claim from primitives** and
 > a golden integer `a+b·phi` acts on the basis `(1,phi)` as `[[0,1],[1,1]]`, so
 > `M=(A,B)` becomes the `2n×2n` rational symmetric Gram matrix whose located
 > spectral radius is the existing rational operator norm — no `Q[phi]`
-> C\*-convergence to re-derive). **Open:** only the physical reading of the
-> `H^1` screen — whether its positive logical entropy *is* the
-> spectral-divergence obstruction the forced modulus forbids. See the paper, §10
-> (*From germ to organism*) and §12.
+> C\*-convergence to re-derive). **Open (future work, paper §12):** the chief
+> frontier is the physical reading of the `H^1` screen — whether its positive
+> logical entropy *is* the spectral-divergence obstruction the forced modulus
+> forbids; the paper also names two further frontiers — assembling the finite
+> house norms into the `C*`-completion of the non-commutative *limit* as one
+> object, and the rational rung at `ρ=3/2` (the Mahler `3/2` boundary). See the
+> paper, §10 (*From germ to organism*) and §12.
 
 ## What is here
 

@@ -175,7 +175,8 @@ real $\varphi:\RR$ with its conjugate and forced modulus
 (\cref{sec:formalization}); the $C^\ast$-norm is established on the algebra's
 commutative core, and the non-commutative operator (house) norm of every finite
 $M_n(\Zphi)$ is reached as a located real through the regular representation
-(\cref{sec:discussion}), leaving only the physical reading of the $H^1$ screen open.
+(\cref{sec:formalization}), leaving the physical reading of the $H^1$ screen as the
+principal frontier still open (\cref{sec:discussion}).
 \end{minipage}
 
 \end{titlingpage}
@@ -337,7 +338,7 @@ the only unsolved component.}
 10 & The analytic line separates: $\shapeM\RR$ contractible, $\flatM\RR$ not & \textcolor{okGreen}{\textbf{PASS}} & \S\ref{sec:formalization} \\
 11 & $\varphi$ is a located real (eight-law cut, $\varphi\,\#\,\psi$, irrational) & \textcolor{okGreen}{\textbf{PASS}} & \S\ref{sec:formalization} \\
 12 & $M_n(\Zphi)$ commutative core carries a rational $C^\ast$-norm (all axioms) & \textcolor{okGreen}{\textbf{PASS}} & \S\ref{sec:formalization} \\
-13 & Operator (house) norm on every finite $M_n(\Zphi)$ as a located real, via the regular representation & \textcolor{okGreen}{\textbf{PASS}} & \S\ref{sec:discussion} \\
+13 & Operator (house) norm on every finite $M_n(\Zphi)$ as a located real, via the regular representation & \textcolor{okGreen}{\textbf{PASS}} & \S\ref{sec:formalization} \\
 \midrule
 14 & Physical reading of the $H^1$ screen: its entropy \emph{is} the spectral-divergence obstruction & \textcolor{okVerm}{\textbf{OPEN}} & \S\ref{sec:discussion} \\
 \bottomrule
@@ -1302,8 +1303,9 @@ the standard cubical library. Each displayed theorem in this paper is the
 plain-mathematics image of one kernel-checked declaration: \cref{thm:shapeflat}
 and \cref{thm:shapenotflat} are the cohesion module; \cref{thm:ua} is the re-entry
 module; \cref{thm:modsound} and \cref{thm:modforced} are the modulus module;
-\cref{thm:af} is the colimit module; \cref{thm:h1} is the screen module;
-\cref{thm:crosspart} is the synthesis. No equation in this paper is an equation we
+\cref{thm:af} is the colimit module; \cref{thm:h1} is the screen module (its
+nontriviality and positive entropy there; the exact rational value $\Llog=\tfrac12$
+the running entropy module); \cref{thm:crosspart} is the synthesis. No equation in this paper is an equation we
 did not check.
 
 \paragraph{Scope.}
@@ -1339,13 +1341,13 @@ $C^\ast$-norm satisfying every normed-$\ast$-algebra axiom---the $C^\ast$-identi
 $\|f^\ast f\| = \|f\|^2$, submultiplicativity, the triangle inequality,
 definiteness---under isometric Bratteli inclusions. The operator norm of the
 non-commutative limit, whose values are the irrational singular numbers the analytic
-$\RR$ makes reachable, was the component earlier drafts left open; for symmetric
-matrices it is established below, as a located real in every finite dimension.
+$\RR$ makes reachable, was the component earlier drafts left open; it is established
+below, as a located real in every finite dimension.
 
 \paragraph{The running convergents.}
 A third realization makes the located real concrete as data and fully
-\emph{executable}. Eight further cubical-Agda modules (under
-\texttt{Corridor/Running/}, all \texttt{-{}-safe} and postulate-free) build
+\emph{executable}. A further family of cubical-Agda modules (under
+\texttt{Corridor/Running/}, all \texttt{-{}-safe} and postulate-free) builds
 $\varphi$ directly from the Fibonacci convergents $F_{n+1}/F_n$: rung $n$ carries
 the rational bracket $[\,F_{2n+2}/F_{2n+1},\ F_{2n+3}/F_{2n+2}\,]$, which
 \emph{reduces in the kernel} to a concrete pair of rationals---$[3/2,5/3]$ at
@@ -1414,9 +1416,45 @@ squares---and this closes the operator norm in full: for an \emph{arbitrary} rat
 matrix $M$, symmetric or not, the largest singular value is $\|M\|=\sqrt{\rho(M^{\!\top}\!M)}$,
 the square root of the spectral radius of the symmetric $M^{\!\top}\!M$, hence itself a
 located real in every finite dimension---no eigenvectors, no singular-value
-decomposition, no spectral theorem. The only operator-norm frontier that remains is the
-irrational coefficient ring $\Zphi$, where the matrix entries are themselves golden
-integers $a+b\varphi$.
+decomposition, no spectral theorem. What remains is to carry this to the irrational
+coefficient ring $\Zphi$ itself, where the matrix entries are golden integers
+$a+b\varphi$; that is done next.
+
+\paragraph{The golden ring reached: located arithmetic and the house norm.}
+Carrying the operator norm to the irrational ring $\Zphi$ needs no new analysis.
+Every golden rational $a+b\varphi$ is itself a located real, and located-real
+\emph{arithmetic} is complete: the approximation lemma (arbitrarily tight rational
+brackets, by iterating the $2/3$ trisection on the even subsequence
+$W^{2k}=(4/9)^k$) makes addition $x+_{\RR}y$ located, which with affine scaling
+$kx+c$ and negation $-_{\RR}x$ makes the located reals an ordered field. On that
+field the $2\times2$ $\Zphi$ spectral edge is concrete: the larger eigenvalue of a
+symmetric $[[a+b\varphi,\,c+d\varphi],[c+d\varphi,\,e+f\varphi]]$ is
+$\lambda_+=(\mathrm{tr}+\sqrt\Delta)/2$ with
+$\Delta=(A{-}E)^2+4C^2=\Delta_a+\Delta_b\varphi$ ($\Delta_a,\Delta_b\in\QQ$ by
+$\varphi^2{=}\varphi{+}1$), a located trace plus a located square root, halved. For
+the general $n\times n$ case a $\Zphi$-matrix is a pair $(A,B)$ of rational matrices
+standing for $A+B\varphi$, and because $\varphi^2{=}\varphi{+}1$ the product stays in
+pair form, $(A+B\varphi)(C+D\varphi)=(AC+BD)+(AD+BC+BD)\varphi$, so the running
+squaring the spectral radius needs never leaves rational matrices; that this pair
+arithmetic \emph{is} $\Zphi$-multiplication is machine-checked (the theorem
+\texttt{faithful}, by induction on the dimension). The full $n\times n$ operator norm
+then follows with no new spectral radius, through the \emph{regular representation}:
+$\varphi$ acts on the basis $(1,\varphi)$ as
+$\left[\begin{smallmatrix}0&1\\1&1\end{smallmatrix}\right]$, so $a+b\varphi$ becomes
+the $2\times2$ rational matrix
+$\left[\begin{smallmatrix}a&b\\b&a+b\end{smallmatrix}\right]$ and an $n\times n$
+$\Zphi$-matrix $M=(A,B)$ becomes the $2n\times2n$ \emph{rational} matrix
+$\widetilde M=\left[\begin{smallmatrix}A&B\\B&A+B\end{smallmatrix}\right]$. The
+representation is a ring homomorphism with symmetric scalar blocks, so
+$\widetilde M^{\mathsf T}\widetilde M=\widetilde{M^{\mathsf T}M}$ is rational and
+symmetric and the rational operator norm applies unchanged:
+$\lVert M\rVert:=\lVert\widetilde M\rVert=\sqrt{\rho(\widetilde M^{\mathsf T}\widetilde M)}$
+is a located real for every finite $\Zphi$-matrix. Its eigenvalues are those of $M$
+under \emph{both} real embeddings $\varphi^{\pm}=(1\pm\sqrt5)/2$, so this is
+$\max(\lVert M\rVert_{\varphi^+},\lVert M\rVert_{\varphi^-})$, the house norm over all
+real places---the natural size of a golden-integer matrix---supplied entirely by the
+rational construction already built, with no $\QQ[\varphi]$ $C^\ast$-convergence to
+re-derive.
 
 \paragraph{A non-specialist's verification path.}
 A reader who does not work in type theory can check the result three ways without
@@ -1468,9 +1506,10 @@ running. The two walls are different functors with no metric
 $\Zphi$ colimit (\cref{thm:af}); the screen is a locally-trivial, globally
 nontrivial $H^1$ class carrying positive logical entropy (\cref{thm:h1}); and one
 identity binds the approximants to the brackets (\cref{thm:crosspart}). Beyond the
-seven body theorems, the running corridor is proved \emph{equal} to the Dedekind
-point---one cut in two presentations---and the operator norm of a symmetric rational
-matrix, the spectral edge of a symmetric $2\times2$, and the entire metallic family
+nine body theorems, the running corridor is proved \emph{equal} to the Dedekind
+point---one cut in two presentations---and the operator norm of an arbitrary rational
+matrix, the spectral edge of a symmetric $2\times2$, the entire metallic family, and
+the house operator norm of every finite $M_n(\Zphi)$ via the regular representation
 are now located reals, each an irrational rebuilt by running rational arithmetic with
 no classical existence theorem. The whole lowers to bare metal and closes through a
 discriminating gate (\cref{thm:closure}).
@@ -1489,43 +1528,27 @@ a kernel-rejected degeneracy. The single change from the metric formulation---re
 bi-Lipschitz metric with two modalities---is, we have argued, a
 strengthening.
 
-\paragraph{Open.}
-The operator norm that earlier drafts left open is now a located real for \emph{every}
-rational matrix in every dimension---symmetric or not, via $\|M\|=\sqrt{\rho(M^{\!\top}\!M)}$.
-The irrational ring $\Zphi$ is now reached.  Every golden rational $a+b\varphi$ is a
-located real, and located-real \emph{arithmetic} is complete: the approximation lemma
-(arbitrarily tight rational brackets, by iterating the $2/3$ trisection on the even
-subsequence $W^{2k}=(4/9)^k$) makes addition $x+_{\RR}y$ located, which with the affine
-scaling $kx+c$ and negation $-_{\RR}x$ makes the located reals an ordered field.  On that
-field the $2\times2$ $\Zphi$ spectral edge is concrete: the larger eigenvalue of a symmetric
-$[[a+b\varphi,\,c+d\varphi],[c+d\varphi,\,e+f\varphi]]$ is
-$\lambda_+=(\mathrm{tr}+\sqrt{\Delta})/2$ with $\Delta=(A{-}E)^2+4C^2=\Delta_a+\Delta_b\varphi$
-($\varphi^2{=}\varphi{+}1$, $\Delta_a,\Delta_b\in\QQ$), a located trace plus a located square
-root, halved---itself a located real.  The general $n\times n$ case has its matrix-algebra
-foundation in place: a $\Zphi$-matrix is a pair $(A,B)$ of rational matrices for $A+B\varphi$,
-and because $\varphi^2{=}\varphi{+}1$ the product stays in pair form,
-$(A+B\varphi)(C+D\varphi)=(AC+BD)+(AD+BC+BD)\varphi$, so the running squaring the spectral
-radius needs never leaves ordinary rational matrices.  That this pair arithmetic \emph{is}
-$\Zphi$-multiplication is machine-checked (the theorem \texttt{faithful}: evaluating the pair
-product at any ring element $t$ with $t^2{=}t{+}1$---either real embedding of $\varphi$---equals
-the product of the evaluations; proved by induction on the matrix dimension, since the sum's
-cons rule reduces definitionally).  And the full $n\times n$ operator norm follows with no new spectral radius, through the
-\emph{regular representation}: $\varphi$ acts on the basis $(1,\varphi)$ as
-$\left[\begin{smallmatrix}0&1\\1&1\end{smallmatrix}\right]$, so $a+b\varphi$ becomes the
-$2\times2$ rational matrix $\left[\begin{smallmatrix}a&b\\b&a+b\end{smallmatrix}\right]$ and an
-$n\times n$ $\Zphi$-matrix $M=(A,B)$ becomes the $2n\times2n$ \emph{rational} matrix
-$\widetilde M=\left[\begin{smallmatrix}A&B\\B&A+B\end{smallmatrix}\right]$.  The representation is a
-ring homomorphism and each scalar block is symmetric, so $\widetilde M^{\mathsf T}\widetilde M
-=\widetilde{M^{\mathsf T}M}$ is rational and symmetric, and the operator norm of
-\S\ref{sec:formalization} applies unchanged: $\lVert M\rVert:=\lVert\widetilde M\rVert
-=\sqrt{\rho(\widetilde M^{\mathsf T}\widetilde M)}$ is a located real for every $n\times n$
-$\Zphi$-matrix.  Its eigenvalues are those of $M$ under \emph{both} real embeddings
-$\varphi^{\pm}=(1\pm\sqrt5)/2$, so this is $\max(\lVert M\rVert_{\varphi^+},\lVert M\rVert_{\varphi^-})$,
-the house norm over all real places---the natural size of a golden-integer matrix---and the located
-spectral radius it needs is supplied entirely by the rational construction already built, with no
-$\QQ[\varphi]$ $C^\ast$-convergence to re-derive. A second problem is the physical reading of the
-$H^1$ screen: whether its positive logical entropy is, concretely, the obstruction to
-spectral divergence that the forced modulus forbids.
+\paragraph{Future work.}
+Three frontiers remain open, each sharply stated by what is already built.
+\emph{(i) The physical reading of the $H^1$ screen.} The screen carries positive
+logical entropy (\cref{thm:h1}); whether that entropy \emph{is}, concretely, the
+obstruction to spectral divergence that the forced modulus forbids---the corridor's
+distinction-content read as a physical quantity---is argued informally here but is
+not yet a theorem. \emph{(ii) The $C^\ast$-completion of the non-commutative limit as
+one object.} The house norm is now a located real on every finite stage
+$M_n(\Zphi)$ (\cref{sec:formalization}); assembling those finite norms into the
+operator norm of the inductive-limit $C^\ast$-algebra itself---a single completed
+object over the located reals---remains to be formalized, the isometric Bratteli
+inclusions making it a colimit of what is done rather than new analysis.
+\emph{(iii) The rational rung at $\rho = 3/2$.} The running machine certifies every
+quadratic-irrational corridor (golden, $\sqrt2$, the whole metallic family); the
+Mahler $3/2$ boundary---the $(3/2)^n \bmod 1$ rung, where the same ladder meets a
+genuinely open Diophantine question---marks where the method's reach currently ends.
+Beyond these, one scope limit is stated plainly: the lowering to bare metal is
+certified and its discriminator is kernel-rejected, but a \emph{completed}
+interaction-net reduction of the lowered programs to a normal form is the substrate's
+run---something the lowered programs are prepared for, not something this paper
+asserts.
 
 \paragraph{A closing image.}
 A point is a destination you can name but never reach. A corridor is a road, with
