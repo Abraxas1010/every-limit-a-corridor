@@ -1,4 +1,28 @@
-# Every Limit a Corridor — Research Bundle
+<div align="center">
+
+<img src="paper/figures/IAOM_logo.png" alt="IAOM" width="108"/>
+
+<h1>Every Limit a Corridor</h1>
+<h3>A Constructive Engine for Effective Mathematics</h3>
+
+<p>
+  <a href="https://www.apoth3osis.io/IAOM"><b>Institute for Applied Ontological Mathematics</b></a>
+  &nbsp;·&nbsp; June 2026
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/cubical_Agda-safe_%C2%B7_0_postulates-2ea44f" alt="cubical Agda --safe"/>
+  <img src="https://img.shields.io/badge/negative_controls-kernel--rejected-2ea44f" alt="negative controls kernel-rejected"/>
+  <img src="https://img.shields.io/badge/bare_metal-Boundary_interaction--net_programs-dea584" alt="bare-metal Boundary programs"/>
+  <img src="https://img.shields.io/badge/license-Apoth3osis_Stack_v1-1f6feb" alt="license"/>
+  <a href="paper/paper.pdf"><img src="https://img.shields.io/badge/paper-25pp_PDF-8957e5" alt="paper PDF"/></a>
+</p>
+
+<p><i>Replace the limit-as-a-dumb-point with a <b>corridor</b> — a two-sided bracket carried as data,<br/>narrowing at a forced golden rate — verifiable from primitives and lowered to bare metal.</i></p>
+
+</div>
+
+---
 
 A self-contained, verifiable bundle for the paper **"Every Limit a Corridor: A
 Constructive Engine for Effective Mathematics"** (Institute for Applied
