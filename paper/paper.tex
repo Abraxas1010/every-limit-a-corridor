@@ -348,6 +348,37 @@ the only unsolved component.}
 \end{table}
 
 % =========================================================================
+\paragraph{Terminology and notation, at a glance.}
+The construction borrows vocabulary from several fields; \cref{tab:glossary} maps each term
+to its standard meaning and marks whether it names a \emph{formal object} (a kernel-checked
+definition or theorem) or a \emph{heuristic} (an analogy that organises intuition but
+proves nothing). A reader may treat the heuristics as optional throughout.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Term & Standard meaning & Status \\
+\midrule
+vacuum / from-Nothing & initial object / empty context; build by re-entry & formal \\
+mark, re-entry & the operator $M(x)=1+1/x$ (Kauffman's $J$) and its fixed point & formal \\
+cohesive walls & the shape $\int$ and flat $\flat$ modalities (no metric) & formal \\
+golden ring $\Zphi$, golden module & $\mathbb{Z}[x]/(x^2-x-1)$, exact integer arithmetic & formal \\
+ladder / modulus & the Fibonacci convergents and their forced rate $\psi^{\,n}$ & formal \\
+Bratteli floors & the stages $M_n(\Zphi)$ of the AF tower, with isometric inclusions & formal \\
+logical entropy & Ellerman's $h(\pi)=1-\sum p_i^2$ (distinction content) & formal \\
+screen, $H^1$ class & the locally-trivial, globally-nontrivial cohomology class & formal \\
+quantum vacuum, observer-as-screen & physical readings of the above & \emph{heuristic} \\
+UV divergence, wave packet & physical analogies for the obstruction / corridor & \emph{heuristic} \\
+\bottomrule
+\end{tabular}
+\caption{Terminology: formal objects (kernel-checked) versus heuristic readings
+(\S\ref{sec:discussion}, ``Interpretations'').}
+\label{tab:glossary}
+\end{table}
+
+% =========================================================================
 \section{A measurable construction from the vacuum}\label{sec:engine}
 
 \paragraph{Hook.}
@@ -1155,6 +1186,24 @@ entropy: topology and distinction, one quantity.}
 \end{figure}
 
 % =========================================================================
+\section{The wheel, the tower, and the operadic atlas}\label{sec:wheel}
+
+The re-entry $M(x)=1+1/x$ is most telling exactly where the finite picture breaks: at
+$x=0$ and $x=\infty$, the vacuum's two poles from which the golden ladder launches. Making
+those poles ordinary points of computation requires a \emph{wheel}---an algebra in which
+$1/0$ is a value---on which the re-entry becomes the linear action of the spine matrix, and
+the golden ratio's two lives, as the corridor's \emph{limit} and as the Fibonacci anyon's
+quantum-dimension \emph{invariant}, become one kernel-checked object. That development---the
+golden wheel, the exact modulus $\psi^{\,n+1}=\fib_{n+2}-\fib_{n+1}\varphi$ as an eigenform
+identity, the bridge to the quantum atlas, the tower of $\sqrt{-1}$ with its
+Cayley--Dickson degradation ladder (commutativity, then associativity, then the division
+property, falling in turn), and the operadic coherence (the associahedra, the golden
+$F$-matrix $F^2=I$, Mac Lane's coherence theorem, and a genuine $A_\infty$ structure with
+$m_3\neq0$), all cross-certified in cubical Agda and an axiom-free Lean~4 mirror---is
+carried in a companion paper~\citep{iaom_wheel}, to keep the present account focused on the
+effective analysis of the corridor.
+
+% =========================================================================
 \section{Lowering to bare metal}\label{sec:metal}
 
 \paragraph{Hook.}
@@ -1556,21 +1605,98 @@ rather than metric}, whose rate is a \emph{forced} golden modulus rather than a
 chosen constant, whose obstruction is \emph{measured} in the same logical-entropy
 currency as number provenance, and whose closure is \emph{executable} and gated by
 a kernel-rejected degeneracy. The single change from the metric formulation---replacing the
-bi-Lipschitz metric with two modalities---is, we have argued, a
-strengthening.
+bi-Lipschitz metric with two modalities---is a strengthening, and we now make that a
+theorem rather than an argument: on the finite $\pi_0$ model of cohesion, the shape and
+flat modalities \emph{provably differ} on the cohesive line (one connected piece versus
+its many points), a separation derived from the cohesion structure with \emph{no metric}
+named; and on a discrete space---exactly the ``metric point'' reduction, every point its
+own piece---that separation provably collapses (a cubical Agda module,
+\texttt{CohesionMetricSeparation}). So the shape/flat distinction is a phenomenon the
+cohesive language proves present precisely where the metric reduction makes it
+invisible---the concrete sense in which dropping the metric is a strengthening, not a
+reformulation.
+
+\paragraph{Interpretations, and their status.}
+This paper proves theorems and also offers physical \emph{readings} of them; we keep the
+two apart. The following are \emph{interpretations}---heuristics and analogies, not
+results: the ``quantum vacuum'' from which the construction grows, the ``observer as a
+screen,'' the reading of the $H^1$ class as a ``UV divergence'' obstruction, and the
+``wave packet'' picture of the corridor. None is a physical theorem; the paper constructs
+no field model and asserts no empirical claim. What \emph{is} formal, even where the
+language is borrowed from physics, is purely structural: $\varphi$ is the Fibonacci-anyon
+quantum dimension only in the exact sense that the fusion ring satisfies $x^2=x+1$
+(developed in the companion~\citep{iaom_wheel}); the ``cup and cap from the void'' is the kernel-checked theorem that
+the creation and annihilation channels are not path-identifiable ($\mathsf{create}\neq
+\mathsf{annihilate}$, an honest $\neg$); the ``screen'' is the kernel-checked $H^1$ class
+with its computed logical entropy. The metaphors organise intuition; the theorems carry
+the content, and stripping the physics words leaves every result standing.
+
+\paragraph{What needs univalence, and what does not.}
+The formalism is cubical Agda with real-cohesive modalities, which is not the working
+language of most computable analysts; it is fair to ask which results \emph{require} it.
+Two do, essentially: the re-entry as a univalence path that \emph{computes} in the kernel
+(\cref{thm:ua})---unavailable in axiomatic HoTT or in metric reals---and the two walls as
+the cohesive shape/flat separation with no metric (\cref{thm:shapenotflat}). The rest is
+convenience, not necessity, and we can demonstrate that: the algebraic keystone of the
+golden engine ($\varphi^2=\varphi+1$, the Vieta relations, the anyon dimension) is
+re-certified in a \emph{second, mainstream kernel}, Lean~4, over the exact ring $\Zphi$
+and \emph{axiom-free} (a cross-kernel dual guarantee; companion~\citep{iaom_wheel}). The exact
+arithmetic, the colimit, and the Catalan/associahedron combinatorics likewise transfer to
+a univalence-free setting. So univalence and cohesion are load-bearing exactly where the
+paper says they are---the computing re-entry and the metric-free walls---and elsewhere are
+a convenience whose results we have shown to port.
 
 \paragraph{Future work.}
-Three frontiers remain open, each sharply stated by what is already built.
+Two frontiers remain genuinely open; a third---the $C^\ast$-completion of the
+limit---is now closed, and we record its resolution here.
 \emph{(i) The physical reading of the $H^1$ screen.} The screen carries positive
 logical entropy (\cref{thm:h1}); whether that entropy \emph{is}, concretely, the
 obstruction to spectral divergence that the forced modulus forbids---the corridor's
-distinction-content read as a physical quantity---is argued informally here but is
-not yet a theorem. \emph{(ii) The $C^\ast$-completion of the non-commutative limit as
-one object.} The house norm is now a located real on every finite stage
-$M_n(\Zphi)$ (\cref{sec:formalization}); assembling those finite norms into the
-operator norm of the inductive-limit $C^\ast$-algebra itself---a single completed
-object over the located reals---remains to be formalized, the isometric Bratteli
-inclusions making it a colimit of what is done rather than new analysis.
+distinction-content read as a physical quantity---remains the open frontier, but its
+\emph{first, formal} step is now taken. The measurable physical observable is the
+topological entanglement entropy $\gamma = \log D$, where $D$ is the total quantum
+dimension and $D^2 = \sum_i d_i^2$---a deformation-invariant, entropy-valued quantity
+extracted by the Kitaev--Preskill / Levin--Wen
+partition~\citep{kitaev2006topological,levin2006detecting}. Pinning the observable means
+evaluating the \emph{same} Ellerman logical-entropy functional $h(\pi)=1-\sum_i p_i^2$ that
+weighs the screen on the distribution that fixes the TEE---the quantum-dimension
+distribution $p_i = d_i^2/D^2$, whose normalisation $\sum_i d_i^2 = D^2$ is the squared
+total quantum dimension---and we prove its value exactly: $h = 2/5$ for the Fibonacci data
+(a kernel-checked identity $5(D^4-\sum_i d_i^4)=2D^4$ in $\Zphi$, the irrational parts
+cancelling), with the squared total quantum dimension the exact $D^2 = 2+\varphi$. The
+corridor's order-two screen has logical entropy $1/2$ under the same functional---one
+currency on both the screen and the TEE-defining distribution (a cubical Agda module, \texttt{LogicalEntropyTEEBridge},
+\texttt{-{}-safe}, zero postulates, kernel-rejected control). The golden quantum dimension
+itself is live experimental physics: the candidate host is the $\nu=12/5$ fractional
+quantum Hall plateau~\citep{mong2017fibonacci}, and a 2025 string-net experiment measured
+the Fibonacci braiding $\varphi$ to $98\%$ accuracy~\citep{stringnet2025}. What remains
+genuinely open---and is empirical, not formal---is identifying ``spectral divergence''
+with a measured spectrum (the entanglement spectrum, or the operator-norm growth of the
+inductive limit) and confronting that identification with the data. \emph{(ii) The $C^\ast$-completion of the non-commutative limit as
+one object---now closed.} The house norm is a located real on every finite stage
+$M_n(\Zphi)$ (\cref{sec:formalization}). Both halves of assembling those finite norms
+into the limit are now formalized. The \emph{structural} half: the inductive limit of an
+isometric $C^\ast$-tower is a \emph{single object}---the sequential colimit---on which the
+norm descends (well-defined precisely because the Bratteli inclusions are isometric) and
+the $C^\ast$-identity $\|a^\ast a\| = \|a\|^2$ holds, value-type-agnostically, so the
+located-real operator norm is one instance (\texttt{CStarInductiveLimit}). The
+\emph{analytic} half: the metric (Cauchy) completion of that normed $\ast$-algebra is
+formalized as the completion of a \emph{gauge space} (a space with a graded family of
+closeness relations $x \approx_k y$, read ``$x,y$ agree to tolerance $2^{-k}$''---a
+pseudometric in combinatorial dress) and proved \emph{complete}---every Cauchy sequence
+converges to an explicit diagonal limit---with a dense isometric embedding
+(\texttt{CStarCompletion}). The algebra structure then \emph{extends} to that completion: a
+third module (\texttt{CStarCompletionAlgebra}) proves that uniformly continuous unary and
+binary operations ($\ast$, $\cdot$, $+$) extend to the completion with the embedding an
+on-the-nose homomorphism, and that an equational identity true at every finite stage holds
+on the \emph{whole} completion---proved termwise, with no appeal to density---so the
+$C^\ast$-identity $\|a^\ast a\| = \|a\|^2$ transports in full. All three modules are
+\texttt{-{}-safe}, zero-postulate, each with a kernel-rejected control. The inductive-limit
+$C^\ast$-algebra is thus a single, \emph{complete} normed $\ast$-algebra carrying the
+$C^\ast$-identity---norm, operations, and identity all extended to the limit, with no
+residual; instantiated at the located-real operator norm (a constructive $\RR$), it is the
+AF $C^\ast$-algebra proper. The earlier ``only finite
+stages'' obstruction is gone.
 \emph{(iii) The rational rung at $\rho = 3/2$.} The running machine certifies every
 quadratic-irrational corridor (golden, $\sqrt2$, the whole metallic family); the
 Mahler $3/2$ boundary---the $(3/2)^n \bmod 1$ rung, where the same ladder meets a
@@ -1621,8 +1747,11 @@ Apoth3osis Labs (Equation Capital LLC).
 
 \noindent
 \textbf{Cubical Agda proofs, source code, supporting tooling, and access to the
-underlying formalization are available to interested readers.} If you would like to
-look at the Agda source, verify a specific theorem, build on the formalization in
+underlying formalization are available to interested readers.} The complete verifiable
+research bundle---this paper, the cubical Agda sources, the kernel-rejected negative
+controls, and a one-command verification script---is public at
+\href{https://github.com/Abraxas1010/every-limit-a-corridor}{\nolinkurl{github.com/Abraxas1010/every-limit-a-corridor}}.
+If you would like to verify a specific theorem, build on the formalization in
 your own work, or discuss anything else about this paper, please write to
 \href{mailto:IAOM@apoth3osis.io}{\nolinkurl{IAOM@apoth3osis.io}}. We read every
 message and we respond.

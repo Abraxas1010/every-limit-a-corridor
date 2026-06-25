@@ -36,13 +36,34 @@ This bundle lets a professional **verify every claim from primitives** and
 > a golden integer `a+b·phi` acts on the basis `(1,phi)` as `[[0,1],[1,1]]`, so
 > `M=(A,B)` becomes the `2n×2n` rational symmetric Gram matrix whose located
 > spectral radius is the existing rational operator norm — no `Q[phi]`
-> C\*-convergence to re-derive). **Open (future work, paper §12):** the chief
-> frontier is the physical reading of the `H^1` screen — whether its positive
-> logical entropy *is* the spectral-divergence obstruction the forced modulus
-> forbids; the paper also names two further frontiers — assembling the finite
-> house norms into the `C*`-completion of the non-commutative *limit* as one
-> object, and the rational rung at `ρ=3/2` (the Mahler `3/2` boundary). See the
-> paper, §10 (*From germ to organism*) and §12.
+> C\*-convergence to re-derive).
+>
+> **Closed since the peer-review round (new modules under `agda/corpus/cubical_agda/Theory/`).**
+> A reviewer's critique drove three further kernel-checked additions, each `--cubical
+> --safe`, postulate-free, with a kernel-rejected control (`verify.sh` runs them, §1d/1e):
+> **(a)** the `C*`-completion of the non-commutative *limit* as one object — once named
+> future work — is now closed: `CStarInductiveLimit` (the inductive limit as a single
+> sequential colimit, norm + `C*`-identity descending), `CStarCompletion` (its metric
+> Cauchy completion, *proved complete* with a dense isometric embedding), and
+> `CStarCompletionAlgebra` (the operations and the `C*`-identity *extend* to the
+> completion) — so the AF limit is a complete `C*`-algebra, no residual; **(b)** the
+> cohesion-vs-metric *discriminator* `CohesionMetricSeparation` (shape ≠ flat on the
+> cohesive line, a separation the metric language cannot state); **(c)** the
+> `LogicalEntropyTEEBridge` — the formal first step of the `H^1` frontier — proving the
+> Ellerman logical entropy of the Fibonacci quantum-dimension distribution is exactly
+> `2/5` and the total quantum dimension `D^2 = 2+phi`, bridging the screen's currency to
+> the (measurable) topological entanglement entropy.
+>
+> **Still open.** The chief frontier is the *empirical* reading of the `H^1` screen —
+> identifying "spectral divergence" with a measured spectrum and confronting the
+> `nu=12/5` FQHE / string-net data (the formal observable-bridge is now in place); and
+> the rational rung at `ρ=3/2` (the Mahler `3/2` boundary, an open Diophantine question).
+> See the paper, §10 (*From germ to organism*) and the Discussion.
+>
+> **Companion paper.** The wheel / Tower-of-√−1 / quantum-atlas / operadic development
+> (the golden wheel, the Cayley–Dickson degradation ladder, the associahedra, and an
+> `A_infinity` structure, with an axiom-free Lean 4 cross-kernel mirror) is split into a
+> companion, *The Golden Wheel: Zero, Infinity, and the Quantum Atlas*.
 
 ## What is here
 
@@ -59,6 +80,12 @@ agda/corpus/cubical_agda/   the genuine constructions, cubical Agda (--cubical -
   Corridor/negative_controls/            BadForcedTrueCollapse.agda  (kernel-REJECTED control)
   HottLane/                              supporting genuine univalence (primGlue ua, the crossing)
   Theory/GoldenRing.agda                 Z[phi]: phi^2=phi+1, Fibonacci, the golden minimal polynomial
+  Theory/CStarInductiveLimit.agda        the inductive limit as one object; norm + C*-identity descend
+  Theory/CStarCompletion.agda            its metric Cauchy completion, proved COMPLETE + dense embedding
+  Theory/CStarCompletionAlgebra.agda     operations + C*-identity extend to the completion (no residual)
+  Theory/CohesionMetricSeparation.agda   the cohesion-vs-metric discriminator (shape != flat, metric-free)
+  Theory/LogicalEntropyTEEBridge.agda    H^1-screen <-> TEE: logical entropy 2/5, D^2=2+phi (frontier i)
+  Theory/*NegativeControl.agda           the five kernel-REJECTED controls for the above
   RealCohesion/CorridorOrganism.agda     ★ ORGANISM CAPSTONE: the three completions (transitively typechecks 18 modules)
   RealCohesion/DedekindReal.agda         the genuine analytic real line R (Dedekind cuts of Q)
   RealCohesion/ShapeNullification.agda   shape != flat on the analytic R itself (D3, overcome)
@@ -79,7 +106,7 @@ realization/     the bare-metal authority lane
 artifacts/
   boundary_metal/                        the bare-metal Boundary programs ({decls, main} term trees, 84 nodes)
   closure/                               the executable-with-receipt transition + fixed-point-stability receipt
-paper/           paper.tex, paper.pdf (22pp), refs.bib, build.sh, figures/
+paper/           paper.tex, paper.pdf (25pp), refs.bib, build.sh, figures/
 ```
 
 ## Dependencies
@@ -133,7 +160,17 @@ interaction-net run is the substrate's, which the lowered programs are ready for
 
 ## The paper
 
-`paper/paper.pdf` (22 pages). Rebuild with `cd paper && ./build.sh`.
+`paper/paper.pdf` (25 pages). Rebuild with `cd paper && ./build.sh`.
 
 ---
-*The Institute for Applied Ontological Mathematics. Licensing: iaom.org/license.*
+## License
+
+This research package is provided under the **Apoth3osis License Stack v1** (see
+[`LICENSE.md`](LICENSE.md) and [`licenses/`](licenses/)): a tri-license — the
+**Public Good License** (free for open-access public-good use), the **Small Business
+License**, and the **Enterprise Commercial License** — Licensor *Equation Capital LLC
+DBA Apoth3osis*. The cubical Agda standard library under your `cubical` checkout keeps
+its own upstream MIT license.
+
+---
+*Published and maintained by the [Institute for Applied Ontological Mathematics](https://www.apoth3osis.io/IAOM) (IAOM), a Section 501(c)(3) Private Operating Foundation; hosted by Apoth3osis Labs (Equation Capital LLC). Contact: IAOM@apoth3osis.io*

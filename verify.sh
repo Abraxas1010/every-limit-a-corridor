@@ -61,6 +61,28 @@ for c in BadTrisection BadQuadMono BadCStarNonneg; do
   fi
 done
 
+echo "== 1d. the criticism-remediation modules (C*-completion, cohesion discriminator, H1<->TEE bridge) =="
+CMODS=(
+  $P/Theory/CohesionMetricSeparation $P/Theory/CStarInductiveLimit $P/Theory/CStarCompletion $P/Theory/CStarCompletionAlgebra $P/Theory/LogicalEntropyTEEBridge
+)
+for m in "${CMODS[@]}"; do
+  if "$AGDA" "${INC[@]}" "agda/$m.agda" >/tmp/_c.log 2>&1; then
+    echo "  [OK]   ${m#$P/}"
+  else
+    echo "  [FAIL] ${m#$P/}"; tail -4 /tmp/_c.log; fail=1
+  fi
+  grep -qE "^\s*postulate" "agda/$m.agda" && { echo "  [FAIL] ${m#$P/} contains postulate"; fail=1; }
+done
+
+echo "== 1e. their negative controls MUST be kernel-rejected =="
+for c in CohesionMetricSeparationNegativeControl CStarInductiveLimitNegativeControl CStarCompletionNegativeControl CStarCompletionAlgebraNegativeControl LogicalEntropyTEEBridgeNegativeControl; do
+  if "$AGDA" "${INC[@]}" "agda/$P/Theory/$c.agda" >/tmp/_cc.log 2>&1; then
+    echo "  [FAIL] $c COMPILED -- discriminator broken"; fail=1
+  else
+    echo "  [OK]   $c kernel-rejected"
+  fi
+done
+
 echo "== 2. the negative control MUST be kernel-rejected (true != false) =="
 if "$AGDA" "${INC[@]}" "agda/$P/Corridor/negative_controls/BadForcedTrueCollapse.agda" >/tmp/_n.log 2>&1; then
   echo "  [FAIL] the degenerate collapse COMPILED -- the discriminator is broken"; fail=1

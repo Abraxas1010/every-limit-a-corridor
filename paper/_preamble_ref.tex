@@ -1,0 +1,134 @@
+\documentclass[11pt,letterpaper]{article}
+
+% --- IAOM house-style LaTeX stack ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{bm}
+\usepackage{tikz, tikz-cd, pgfplots}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{xcolor}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[colorlinks=true, allcolors=blue!50!black, breaklinks=true]{hyperref}
+\usepackage[capitalize, noabbrev]{cleveref}
+\usepackage{enumitem}
+\usepackage[round, sort&compress]{natbib}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{titling}
+
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning, arrows.meta, cd, fit, backgrounds, calc, matrix,
+  shapes.geometric, decorations.pathreplacing, shapes.misc}
+
+\emergencystretch=3em
+\hbadness=2000
+\tolerance=1000
+
+% --- Okabe-Ito categorical palette (colorblind-safe) ---
+\definecolor{okabeBlack}{HTML}{000000}
+\definecolor{okabeOrange}{HTML}{E69F00}
+\definecolor{okabeSkyBlue}{HTML}{56B4E9}
+\definecolor{okabeGreen}{HTML}{009E73}
+\definecolor{okabeYellow}{HTML}{F0E442}
+\definecolor{okabeBlue}{HTML}{0072B2}
+\definecolor{okabeVermillion}{HTML}{D55E00}
+\definecolor{okabePurple}{HTML}{CC79A7}
+
+\tikzset{
+  every node/.style={font=\sffamily\small},
+  arr/.style={-Stealth, semithick},
+  arrd/.style={-Stealth, semithick, dashed},
+  obj/.style={draw, rounded corners=2pt, inner sep=5pt, font=\sffamily\small, align=center},
+  seed/.style={draw, circle, minimum size=9mm, fill=okabeYellow!55, line width=0.9pt,
+               font=\sffamily\small, align=center},
+  sysbox/.style={draw, rounded corners=3pt, minimum width=2.5cm, minimum height=1.0cm,
+               inner sep=3pt, font=\sffamily\footnotesize, align=center},
+  sysRing/.style={sysbox, fill=okabeSkyBlue!18, draw=okabeBlue},
+  sysCut/.style={sysbox, fill=okabeGreen!16, draw=okabeGreen!80!black},
+  sysSet/.style={sysbox, fill=okabeOrange!20, draw=okabeOrange!80!black},
+  tnode/.style={draw, circle, minimum size=6mm, inner sep=0pt, fill=okabeSkyBlue!22,
+                font=\sffamily\scriptsize},
+  tseed/.style={tnode, fill=okabeYellow!55, line width=0.8pt},
+  gnode/.style={draw, circle, minimum size=6mm, inner sep=0pt, fill=okabeGreen!22, font=\sffamily\scriptsize},
+  enode/.style={draw, circle, minimum size=5mm, inner sep=0pt, fill=okabeYellow!55, font=\sffamily\scriptsize},
+  box/.style={draw, rounded corners=2pt, inner sep=4pt, font=\sffamily\footnotesize, align=center},
+  boxL/.style={box, fill=okabeBlue!12},
+  boxA/.style={box, fill=okabeGreen!14},
+  boxR/.style={box, fill=okabeOrange!18},
+  layerOK/.style={draw, minimum width=2.2cm, minimum height=0.6cm, fill=okabeGreen!22,
+                   font=\sffamily\scriptsize, align=center},
+}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% --- operators / number sets ---
+\DeclareMathOperator{\grounded}{grounded}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\rb}{readback}
+\DeclareMathOperator{\route}{route}
+\DeclareMathOperator{\run}{run}
+\DeclareMathOperator{\runS}{runStack}
+\DeclareMathOperator{\compile}{compile}
+\DeclareMathOperator{\eval}{eval}
+\DeclareMathOperator{\nf}{nf}
+\DeclareMathOperator{\cbday}{birthday}
+\DeclareMathOperator{\dpp}{dup}
+\DeclareMathOperator{\toNat}{toNat}
+\DeclareMathOperator{\numeral}{numeral}
+\DeclareMathOperator{\addT}{addTree}
+\DeclareMathOperator{\Hl}{H}
+\DeclareMathOperator{\admits}{admits}
+\DeclareMathOperator{\emb}{embed}
+\DeclareMathOperator{\hist}{history}
+\DeclareMathOperator{\invert}{invert}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Gi}{\Z[i]}
+\newcommand{\Zsq}[1]{\Z[\sqrt{#1}\,]}
+\newcommand{\Zw}{\Z[\omega]}
+\newcommand{\Zphi}{\Z[\varphi]}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\SSed}{\mathbb{S}}
+\newcommand{\LamSet}{\Lambda}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dl}{\delta}
+\newcommand{\gm}{\gamma}
+\newcommand{\inj}{\bot\!\!\!\bot}
+\newif\ifIAOMPublication
+\ifdefined\IAOMPUBLICATION
+  \IAOMPublicationtrue
+\else
+  \IAOMPublicationfalse
+\fi
+
+\author{The Institute for Applied Ontological Mathematics}
+\date{June 2026}
+
+\begin{document}
+
+% =========================================================================
+% TITLE PAGE
+% =========================================================================
+\begin{titlingpage}
+\centering
+\vspace*{-0.55in}
+
