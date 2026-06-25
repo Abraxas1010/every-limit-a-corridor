@@ -193,7 +193,7 @@ This research package is provided under the **Apoth3osis License Stack v1** (see
 [`LICENSE.md`](LICENSE.md) and [`licenses/`](licenses/)): a tri-license — the
 **Public Good License** (free for open-access public-good use), the **Small Business
 License**, and the **Enterprise Commercial License** — Licensor *Equation Capital LLC
-DBA Apoth3osis*. The cubical Agda standard library under your `cubical` checkout keeps
+DBA Apoth3osis*. **Commercial use is additionally governed by the [Apoth3osis Commercial License Addendum v2](licenses/Apoth3osis-Commercial-License-Addendum-v2.md)** (a 5% royalty over USD 1M in attributable revenue, restricted blockchain use, JAMS arbitration, and enterprise terms). The cubical Agda standard library under your `cubical` checkout keeps
 its own upstream MIT license.
 
 ---

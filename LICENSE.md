@@ -19,6 +19,11 @@ You may choose ONE of the following licenses:
    - Required for all other uses. Minimum fee USD 25,000/month (indexed to CPI-U) plus usage-based fees per audit.
    - Includes rights to use the "Apoth3osis-Certified" mark, attestation bundle, SLAs, and support.
 
+Commercial Addendum
+- The Apoth3osis Commercial License Addendum v2 applies to all commercial use.
+  See `licenses/Apoth3osis-Commercial-License-Addendum-v2.md` for royalty terms,
+  blockchain restrictions, dispute resolution, and enterprise provisions.
+
 Reservation of Rights
 - Licensor (Equation Capital LLC DBA Apoth3osis) reserves the right to terminate any license granted under this License Stack, in whole or in part, at any time and for any reason that Licensor, in its sole discretion, deems reasonable, upon thirty (30) days' written notice to the licensee. Upon the effective date of termination: (a) all rights granted immediately cease; (b) the licensee must cease all use, copying, modification, and distribution of the Software; and (c) the licensee must destroy or delete all copies of the Software in their possession or control within thirty (30) days. Termination does not release the licensee from any obligation accrued prior to the effective date. For paid licenses, Licensor will refund prepaid fees attributable to the period after the effective date, if any.
 
@@ -29,9 +34,10 @@ Trademarks & Services
 See the full texts under `licenses/`:
 - Apoth3osis-Public-Good-License-1.0.md
 - Apoth3osis-Small-Business-License-1.0.md (derived from PolyForm Small Business concepts; attribution included)
+- Apoth3osis-Commercial-License-Addendum-v2.md
 
 Jurisdiction & Dispute Resolution
-- For CECL and trademark/service terms: arbitration in Oakland County, Michigan (AAA Commercial Rules), governed by Michigan law, with equitable relief and prevailing-party fees.
+- For CECL, commercial addendum, and trademark/service terms: arbitration per Section 3 of the Commercial Addendum (JAMS, Michigan/NY seat), governed by Michigan law, with equitable relief and prevailing-party fees.
 
 If you have questions about which license applies, contact rgoodman@apoth3osis.io.
 
