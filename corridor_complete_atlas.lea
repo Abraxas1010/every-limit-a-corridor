@@ -1,0 +1,4535 @@
+{
+ "schema": "atlas/2",
+ "name": "Every Limit a Corridor",
+ "kernels": [
+  "agda"
+ ],
+ "nodes": [
+  {
+   "id": "GoldenCut",
+   "title": "GoldenCut",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6"
+    }
+   ]
+  },
+  {
+   "id": "RealEmbedding",
+   "title": "RealEmbedding",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "-\u211d-\u03b9"
+    }
+   ]
+  },
+  {
+   "id": "RealOrder",
+   "title": "RealOrder",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "<\u211d-asym"
+    }
+   ]
+  },
+  {
+   "id": "ShapeNullification",
+   "title": "ShapeNullification",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "shape-merges-0-1"
+    }
+   ]
+  },
+  {
+   "id": "GoldenConjugate",
+   "title": "GoldenConjugate",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6#\u03c8"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar",
+   "title": "DiagonalCStar",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "norm-definite"
+    }
+   ]
+  },
+  {
+   "id": "GoldenValue",
+   "title": "GoldenValue",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "quad-mono"
+    }
+   ]
+  },
+  {
+   "id": "GoldenIrrationalZ",
+   "title": "GoldenIrrationalZ",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-no-\u2124"
+    }
+   ]
+  },
+  {
+   "id": "GoldenMatrixAlgebra",
+   "title": "GoldenMatrixAlgebra",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2605-antihom"
+    }
+   ]
+  },
+  {
+   "id": "RealApprox",
+   "title": "RealApprox",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "trisect-n"
+    }
+   ]
+  },
+  {
+   "id": "CorridorOrganism",
+   "title": "CorridorOrganism",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6\u2262conv53"
+    }
+   ]
+  },
+  {
+   "id": "GoldenLocated",
+   "title": "GoldenLocated",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-modulus-bracket"
+    }
+   ]
+  },
+  {
+   "id": "GoldenAFAlgebra",
+   "title": "GoldenAFAlgebra",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-tower-proper"
+    }
+   ]
+  },
+  {
+   "id": "GoldenSpectrum",
+   "title": "GoldenSpectrum",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-modulus-two-sided"
+    }
+   ]
+  },
+  {
+   "id": "RealTranslation",
+   "title": "RealTranslation",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "_+\u211a_"
+    }
+   ]
+  },
+  {
+   "id": "GoldenIrrational",
+   "title": "GoldenIrrational",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-no-pos"
+    }
+   ]
+  },
+  {
+   "id": "RealNegation",
+   "title": "RealNegation",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "-\u211d-involutive"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal",
+   "title": "DedekindReal",
+   "group": "RealCohesion",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "0#1"
+    }
+   ]
+  },
+  {
+   "id": "FiniteCohesion",
+   "title": "FiniteCohesion",
+   "group": "Foundations",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "faithful-cohesion-witness"
+    }
+   ]
+  },
+  {
+   "id": "LogicalEntropyTEEBridge",
+   "title": "LogicalEntropyTEEBridge",
+   "group": "Theory",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "h-screen-one-half"
+    }
+   ]
+  },
+  {
+   "id": "RationalField",
+   "title": "RationalField",
+   "group": "Theory",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "div-mul-cancel-neg"
+    }
+   ]
+  },
+  {
+   "id": "CStarInductiveLimit",
+   "title": "CStarInductiveLimit",
+   "group": "Theory",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "exampleTower"
+    }
+   ]
+  },
+  {
+   "id": "CStarCompletionAlgebra",
+   "title": "CStarCompletionAlgebra",
+   "group": "Theory",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "law-everywhere"
+    }
+   ]
+  },
+  {
+   "id": "LogicalEntropy",
+   "title": "LogicalEntropy",
+   "group": "Theory",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "h-three-orbit"
+    }
+   ]
+  },
+  {
+   "id": "GoldenRing",
+   "title": "GoldenRing",
+   "group": "Theory",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-fib-5"
+    }
+   ]
+  },
+  {
+   "id": "CohesiveTower",
+   "title": "CohesiveTower",
+   "group": "Theory",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "idModality"
+    }
+   ]
+  },
+  {
+   "id": "CohesionMetricSeparation",
+   "title": "CohesionMetricSeparation",
+   "group": "Theory",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "point-no-separation"
+    }
+   ]
+  },
+  {
+   "id": "CStarCompletion",
+   "title": "CStarCompletion",
+   "group": "Theory",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "discreteGauge"
+    }
+   ]
+  },
+  {
+   "id": "CompleteCorridor",
+   "title": "CompleteCorridor",
+   "group": "Corridor",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "the-complete-corridor"
+    }
+   ]
+  },
+  {
+   "id": "GoldenAFColimit",
+   "title": "GoldenAFColimit",
+   "group": "Corridor",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-af-witness"
+    }
+   ]
+  },
+  {
+   "id": "EntropyScreen",
+   "title": "EntropyScreen",
+   "group": "Corridor",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "entropy-screen-witness"
+    }
+   ]
+  },
+  {
+   "id": "FaithfulCorridor",
+   "title": "FaithfulCorridor",
+   "group": "Corridor",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "walls-distinct-univalently"
+    }
+   ]
+  },
+  {
+   "id": "FaithfulModulus",
+   "title": "FaithfulModulus",
+   "group": "Corridor",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "the-effective-corridor"
+    }
+   ]
+  },
+  {
+   "id": "CrossingCorridor",
+   "title": "CrossingCorridor",
+   "group": "Corridor",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "two-walls-genuinely-distinct"
+    }
+   ]
+  },
+  {
+   "id": "DedekindBridge",
+   "title": "DedekindBridge",
+   "group": "Running",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "runs-to-cut"
+    }
+   ]
+  },
+  {
+   "id": "LocatedLaw",
+   "title": "LocatedLaw",
+   "group": "Running",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-upper-faithful"
+    }
+   ]
+  },
+  {
+   "id": "Ordered",
+   "title": "Ordered",
+   "group": "Running",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "lo<hi"
+    }
+   ]
+  },
+  {
+   "id": "Located",
+   "title": "Located",
+   "group": "Running",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6"
+    }
+   ]
+  },
+  {
+   "id": "SpectralEdge",
+   "title": "SpectralEdge",
+   "group": "Running",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "specEdgeBracket"
+    }
+   ]
+  },
+  {
+   "id": "CertifiedSqrt",
+   "title": "CertifiedSqrt",
+   "group": "Running",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "sqrtBracket"
+    }
+   ]
+  },
+  {
+   "id": "Cassini",
+   "title": "Cassini",
+   "group": "Running",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "_"
+    }
+   ]
+  },
+  {
+   "id": "CertifiedSqrt2",
+   "title": "CertifiedSqrt2",
+   "group": "Running",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "aboveSq"
+    }
+   ]
+  },
+  {
+   "id": "Bracket",
+   "title": "Bracket",
+   "group": "Running",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "width-2"
+    }
+   ]
+  },
+  {
+   "id": "Forcing",
+   "title": "Forcing",
+   "group": "Running",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "constant-rate-fails"
+    }
+   ]
+  },
+  {
+   "id": "CrossCut",
+   "title": "CrossCut",
+   "group": "Running",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "lo<hi-cut"
+    }
+   ]
+  },
+  {
+   "id": "CStarRay",
+   "title": "CStarRay",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstar-axiom"
+    }
+   ]
+  },
+  {
+   "id": "SpecBracket",
+   "title": "SpecBracket",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "notRayUp-diag"
+    }
+   ]
+  },
+  {
+   "id": "SqrtReal",
+   "title": "SqrtReal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "decide2"
+    }
+   ]
+  },
+  {
+   "id": "ZPhiOperatorNorm",
+   "title": "ZPhiOperatorNorm",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiHouseNorm"
+    }
+   ]
+  },
+  {
+   "id": "GeometricVanish",
+   "title": "GeometricVanish",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "pow49-vanish"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef",
+   "title": "GramPosDef",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "gram-def"
+    }
+   ]
+  },
+  {
+   "id": "SqrtRealR",
+   "title": "SqrtRealR",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "PosUpper"
+    }
+   ]
+  },
+  {
+   "id": "LocatedReal",
+   "title": "LocatedReal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "locatedSquare"
+    }
+   ]
+  },
+  {
+   "id": "EntropyProvenance",
+   "title": "EntropyProvenance",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "entropy2-sym"
+    }
+   ]
+  },
+  {
+   "id": "LowerBracket",
+   "title": "LowerBracket",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "eRayleigh"
+    }
+   ]
+  },
+  {
+   "id": "SpecCutDisjoint",
+   "title": "SpecCutDisjoint",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "absurd"
+    }
+   ]
+  },
+  {
+   "id": "EntropyRing",
+   "title": "EntropyRing",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "H2-sym"
+    }
+   ]
+  },
+  {
+   "id": "Archimedean",
+   "title": "Archimedean",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "mult-arch"
+    }
+   ]
+  },
+  {
+   "id": "OperatorNorm",
+   "title": "OperatorNorm",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "mulSquare"
+    }
+   ]
+  },
+  {
+   "id": "CorridorObservables",
+   "title": "CorridorObservables",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "the-corridor"
+    }
+   ]
+  },
+  {
+   "id": "SpecRadiusCut",
+   "title": "SpecRadiusCut",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "shiftP<0"
+    }
+   ]
+  },
+  {
+   "id": "OneNormDiagBound",
+   "title": "OneNormDiagBound",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "nSq"
+    }
+   ]
+  },
+  {
+   "id": "MetallicEdge",
+   "title": "MetallicEdge",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "_"
+    }
+   ]
+  },
+  {
+   "id": "QuadSqueeze",
+   "title": "QuadSqueeze",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "quad-squeeze"
+    }
+   ]
+  },
+  {
+   "id": "QuadLemmas",
+   "title": "QuadLemmas",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "sqrt-mono-\u2264"
+    }
+   ]
+  },
+  {
+   "id": "GapBound",
+   "title": "GapBound",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "suc\u2124\u2261+1"
+    }
+   ]
+  },
+  {
+   "id": "GeometricBoundN",
+   "title": "GeometricBoundN",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "geomBound\u2115"
+    }
+   ]
+  },
+  {
+   "id": "GeomGrowArch",
+   "title": "GeomGrowArch",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "qgrow"
+    }
+   ]
+  },
+  {
+   "id": "AdjointForm",
+   "title": "AdjointForm",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "adjointFormSqSym"
+    }
+   ]
+  },
+  {
+   "id": "GeometricBoundQ",
+   "title": "GeometricBoundQ",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "pow49-bound"
+    }
+   ]
+  },
+  {
+   "id": "OffDiagBound",
+   "title": "OffDiagBound",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "offdiag-sq"
+    }
+   ]
+  },
+  {
+   "id": "SpecLocated",
+   "title": "SpecLocated",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2203Fin-dec"
+    }
+   ]
+  },
+  {
+   "id": "SpecLocHelpers",
+   "title": "SpecLocHelpers",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "beat-suc"
+    }
+   ]
+  },
+  {
+   "id": "QpowMono",
+   "title": "QpowMono",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "qpow-mono"
+    }
+   ]
+  },
+  {
+   "id": "MetallicReal",
+   "title": "MetallicReal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "sqrtCorridor"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN",
+   "title": "AdjointFormN",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "adjointBridgeSym"
+    }
+   ]
+  },
+  {
+   "id": "ApproxReal",
+   "title": "ApproxReal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "approx\u211d"
+    }
+   ]
+  },
+  {
+   "id": "OperatorNormMagnitude",
+   "title": "OperatorNormMagnitude",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstarBracketAbs"
+    }
+   ]
+  },
+  {
+   "id": "PDTest2",
+   "title": "PDTest2",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "pd-forward"
+    }
+   ]
+  },
+  {
+   "id": "SpecNormCut",
+   "title": "SpecNormCut",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "notNormUp-low"
+    }
+   ]
+  },
+  {
+   "id": "FrontierCapstone",
+   "title": "FrontierCapstone",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "ZPhiSpectralEdge",
+   "title": "ZPhiSpectralEdge",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiSpecEdge"
+    }
+   ]
+  },
+  {
+   "id": "SpecRadiusReal",
+   "title": "SpecRadiusReal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "loc"
+    }
+   ]
+  },
+  {
+   "id": "AbsLemmas",
+   "title": "AbsLemmas",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "abs-triangle"
+    }
+   ]
+  },
+  {
+   "id": "OneNormSubmult",
+   "title": "OneNormSubmult",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "oneNorm-submult"
+    }
+   ]
+  },
+  {
+   "id": "SumOrder",
+   "title": "SumOrder",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2211-mono-\u2264"
+    }
+   ]
+  },
+  {
+   "id": "AddReal",
+   "title": "AddReal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "add\u211d"
+    }
+   ]
+  },
+  {
+   "id": "SquareRefine",
+   "title": "SquareRefine",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "square-refine"
+    }
+   ]
+  },
+  {
+   "id": "Cofinal",
+   "title": "Cofinal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "LocatedEq",
+   "title": "LocatedEq",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2248-sym"
+    }
+   ]
+  },
+  {
+   "id": "CStarLocated",
+   "title": "CStarLocated",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "fm2"
+    }
+   ]
+  },
+  {
+   "id": "PowerMonotone",
+   "title": "PowerMonotone",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "entry\u2264oneNorm"
+    }
+   ]
+  },
+  {
+   "id": "ZPhiReal",
+   "title": "ZPhiReal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiReal"
+    }
+   ]
+  },
+  {
+   "id": "Metallic",
+   "title": "Metallic",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "_"
+    }
+   ]
+  },
+  {
+   "id": "CauchySchwarz",
+   "title": "CauchySchwarz",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cauchy-schwarz"
+    }
+   ]
+  },
+  {
+   "id": "ReparamReal",
+   "title": "ReparamReal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "loc"
+    }
+   ]
+  },
+  {
+   "id": "PowerScaffold",
+   "title": "PowerScaffold",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "normUp-from-pow"
+    }
+   ]
+  },
+  {
+   "id": "ZPhiMatrix",
+   "title": "ZPhiMatrix",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "faithful"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound",
+   "title": "QuadBound",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "quadBound"
+    }
+   ]
+  },
+  {
+   "id": "OperatorNormReal",
+   "title": "OperatorNormReal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u1d40\u1d40"
+    }
+   ]
+  },
+  {
+   "id": "GeomGrow",
+   "title": "GeomGrow",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "bern"
+    }
+   ]
+  },
+  {
+   "id": "OperatorNormSpectral",
+   "title": "OperatorNormSpectral",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstarBracket"
+    }
+   ]
+  },
+  {
+   "id": "SpectralEdgeReal",
+   "title": "SpectralEdgeReal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "specEdge"
+    }
+   ]
+  },
+  {
+   "id": "AffineReal",
+   "title": "AffineReal",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "affine\u211d"
+    }
+   ]
+  },
+  {
+   "id": "SpectralCStar",
+   "title": "SpectralCStar",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "spectral2-cstar"
+    }
+   ]
+  },
+  {
+   "id": "GeomBeat",
+   "title": "GeomBeat",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "geom-beat"
+    }
+   ]
+  },
+  {
+   "id": "GelfandPower",
+   "title": "GelfandPower",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "spectralPowerBridge"
+    }
+   ]
+  },
+  {
+   "id": "SpecRadiusFaithful",
+   "title": "SpecRadiusFaithful",
+   "group": "General",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "U-sound"
+    }
+   ]
+  },
+  {
+   "id": "InvolutionBorrow",
+   "title": "InvolutionBorrow",
+   "group": "HottLane",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "borrowed-suc-transport-neg"
+    }
+   ]
+  },
+  {
+   "id": "IsoToEquiv",
+   "title": "IsoToEquiv",
+   "group": "HottLane",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "isoToEquiv"
+    }
+   ]
+  },
+  {
+   "id": "BridgePrelude",
+   "title": "BridgePrelude",
+   "group": "HottLane",
+   "kind": "theorem",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "crossBiInv"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "id": "DedekindReal__GoldenCut",
+   "source": "DedekindReal",
+   "target": "GoldenCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6"
+    }
+   ]
+  },
+  {
+   "id": "GoldenValue__GoldenCut",
+   "source": "GoldenValue",
+   "target": "GoldenCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6"
+    }
+   ]
+  },
+  {
+   "id": "RealApprox__GoldenCut",
+   "source": "RealApprox",
+   "target": "GoldenCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6"
+    }
+   ]
+  },
+  {
+   "id": "RealNegation__GoldenCut",
+   "source": "RealNegation",
+   "target": "GoldenCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__RealEmbedding",
+   "source": "DedekindReal",
+   "target": "RealEmbedding",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "-\u211d-\u03b9"
+    }
+   ]
+  },
+  {
+   "id": "RealNegation__RealEmbedding",
+   "source": "RealNegation",
+   "target": "RealEmbedding",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "-\u211d-\u03b9"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__RealOrder",
+   "source": "DedekindReal",
+   "target": "RealOrder",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "<\u211d-asym"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__ShapeNullification",
+   "source": "DedekindReal",
+   "target": "ShapeNullification",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "shape-merges-0-1"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__GoldenConjugate",
+   "source": "DedekindReal",
+   "target": "GoldenConjugate",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6#\u03c8"
+    }
+   ]
+  },
+  {
+   "id": "RealNegation__GoldenConjugate",
+   "source": "RealNegation",
+   "target": "GoldenConjugate",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6#\u03c8"
+    }
+   ]
+  },
+  {
+   "id": "RealTranslation__GoldenConjugate",
+   "source": "RealTranslation",
+   "target": "GoldenConjugate",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6#\u03c8"
+    }
+   ]
+  },
+  {
+   "id": "GoldenCut__GoldenConjugate",
+   "source": "GoldenCut",
+   "target": "GoldenConjugate",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6#\u03c8"
+    }
+   ]
+  },
+  {
+   "id": "RealApprox__DiagonalCStar",
+   "source": "RealApprox",
+   "target": "DiagonalCStar",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "norm-definite"
+    }
+   ]
+  },
+  {
+   "id": "RealNegation__DiagonalCStar",
+   "source": "RealNegation",
+   "target": "DiagonalCStar",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "norm-definite"
+    }
+   ]
+  },
+  {
+   "id": "RealApprox__GoldenValue",
+   "source": "RealApprox",
+   "target": "GoldenValue",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "quad-mono"
+    }
+   ]
+  },
+  {
+   "id": "GoldenIrrational__GoldenIrrationalZ",
+   "source": "GoldenIrrational",
+   "target": "GoldenIrrationalZ",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-no-\u2124"
+    }
+   ]
+  },
+  {
+   "id": "GoldenRing__GoldenMatrixAlgebra",
+   "source": "GoldenRing",
+   "target": "GoldenMatrixAlgebra",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2605-antihom"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__RealApprox",
+   "source": "DedekindReal",
+   "target": "RealApprox",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "trisect-n"
+    }
+   ]
+  },
+  {
+   "id": "RealNegation__RealApprox",
+   "source": "RealNegation",
+   "target": "RealApprox",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "trisect-n"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__CorridorOrganism",
+   "source": "DedekindReal",
+   "target": "CorridorOrganism",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6\u2262conv53"
+    }
+   ]
+  },
+  {
+   "id": "GoldenCut__CorridorOrganism",
+   "source": "GoldenCut",
+   "target": "CorridorOrganism",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6\u2262conv53"
+    }
+   ]
+  },
+  {
+   "id": "GoldenConjugate__CorridorOrganism",
+   "source": "GoldenConjugate",
+   "target": "CorridorOrganism",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6\u2262conv53"
+    }
+   ]
+  },
+  {
+   "id": "GoldenIrrationalZ__CorridorOrganism",
+   "source": "GoldenIrrationalZ",
+   "target": "CorridorOrganism",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6\u2262conv53"
+    }
+   ]
+  },
+  {
+   "id": "GoldenLocated__CorridorOrganism",
+   "source": "GoldenLocated",
+   "target": "CorridorOrganism",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6\u2262conv53"
+    }
+   ]
+  },
+  {
+   "id": "RealOrder__CorridorOrganism",
+   "source": "RealOrder",
+   "target": "CorridorOrganism",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6\u2262conv53"
+    }
+   ]
+  },
+  {
+   "id": "ShapeNullification__CorridorOrganism",
+   "source": "ShapeNullification",
+   "target": "CorridorOrganism",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6\u2262conv53"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__CorridorOrganism",
+   "source": "DiagonalCStar",
+   "target": "CorridorOrganism",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6\u2262conv53"
+    }
+   ]
+  },
+  {
+   "id": "GoldenAFAlgebra__CorridorOrganism",
+   "source": "GoldenAFAlgebra",
+   "target": "CorridorOrganism",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6\u2262conv53"
+    }
+   ]
+  },
+  {
+   "id": "GoldenSpectrum__CorridorOrganism",
+   "source": "GoldenSpectrum",
+   "target": "CorridorOrganism",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6\u2262conv53"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__GoldenLocated",
+   "source": "DedekindReal",
+   "target": "GoldenLocated",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-modulus-bracket"
+    }
+   ]
+  },
+  {
+   "id": "GoldenCut__GoldenLocated",
+   "source": "GoldenCut",
+   "target": "GoldenLocated",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-modulus-bracket"
+    }
+   ]
+  },
+  {
+   "id": "GoldenMatrixAlgebra__GoldenAFAlgebra",
+   "source": "GoldenMatrixAlgebra",
+   "target": "GoldenAFAlgebra",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-tower-proper"
+    }
+   ]
+  },
+  {
+   "id": "GoldenRing__GoldenSpectrum",
+   "source": "GoldenRing",
+   "target": "GoldenSpectrum",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-modulus-two-sided"
+    }
+   ]
+  },
+  {
+   "id": "FaithfulModulus__GoldenSpectrum",
+   "source": "FaithfulModulus",
+   "target": "GoldenSpectrum",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-modulus-two-sided"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__RealTranslation",
+   "source": "DedekindReal",
+   "target": "RealTranslation",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "_+\u211a_"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__RealNegation",
+   "source": "DedekindReal",
+   "target": "RealNegation",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "-\u211d-involutive"
+    }
+   ]
+  },
+  {
+   "id": "GoldenRing__LogicalEntropyTEEBridge",
+   "source": "GoldenRing",
+   "target": "LogicalEntropyTEEBridge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "h-screen-one-half"
+    }
+   ]
+  },
+  {
+   "id": "LogicalEntropy__LogicalEntropyTEEBridge",
+   "source": "LogicalEntropy",
+   "target": "LogicalEntropyTEEBridge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "h-screen-one-half"
+    }
+   ]
+  },
+  {
+   "id": "CStarCompletion__CStarCompletionAlgebra",
+   "source": "CStarCompletion",
+   "target": "CStarCompletionAlgebra",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "law-everywhere"
+    }
+   ]
+  },
+  {
+   "id": "RationalField__LogicalEntropy",
+   "source": "RationalField",
+   "target": "LogicalEntropy",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "h-three-orbit"
+    }
+   ]
+  },
+  {
+   "id": "CohesiveTower__CohesionMetricSeparation",
+   "source": "CohesiveTower",
+   "target": "CohesionMetricSeparation",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "point-no-separation"
+    }
+   ]
+  },
+  {
+   "id": "FaithfulModulus__CompleteCorridor",
+   "source": "FaithfulModulus",
+   "target": "CompleteCorridor",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "the-complete-corridor"
+    }
+   ]
+  },
+  {
+   "id": "GoldenAFColimit__CompleteCorridor",
+   "source": "GoldenAFColimit",
+   "target": "CompleteCorridor",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "the-complete-corridor"
+    }
+   ]
+  },
+  {
+   "id": "EntropyScreen__CompleteCorridor",
+   "source": "EntropyScreen",
+   "target": "CompleteCorridor",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "the-complete-corridor"
+    }
+   ]
+  },
+  {
+   "id": "FaithfulModulus__GoldenAFColimit",
+   "source": "FaithfulModulus",
+   "target": "GoldenAFColimit",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-af-witness"
+    }
+   ]
+  },
+  {
+   "id": "FiniteCohesion__FaithfulCorridor",
+   "source": "FiniteCohesion",
+   "target": "FaithfulCorridor",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "walls-distinct-univalently"
+    }
+   ]
+  },
+  {
+   "id": "CrossingCorridor__FaithfulCorridor",
+   "source": "CrossingCorridor",
+   "target": "FaithfulCorridor",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "walls-distinct-univalently"
+    }
+   ]
+  },
+  {
+   "id": "BridgePrelude__FaithfulCorridor",
+   "source": "BridgePrelude",
+   "target": "FaithfulCorridor",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "walls-distinct-univalently"
+    }
+   ]
+  },
+  {
+   "id": "FaithfulCorridor__FaithfulModulus",
+   "source": "FaithfulCorridor",
+   "target": "FaithfulModulus",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "the-effective-corridor"
+    }
+   ]
+  },
+  {
+   "id": "BridgePrelude__CrossingCorridor",
+   "source": "BridgePrelude",
+   "target": "CrossingCorridor",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "two-walls-genuinely-distinct"
+    }
+   ]
+  },
+  {
+   "id": "InvolutionBorrow__CrossingCorridor",
+   "source": "InvolutionBorrow",
+   "target": "CrossingCorridor",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "two-walls-genuinely-distinct"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__DedekindBridge",
+   "source": "DedekindReal",
+   "target": "DedekindBridge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "runs-to-cut"
+    }
+   ]
+  },
+  {
+   "id": "GoldenCut__DedekindBridge",
+   "source": "GoldenCut",
+   "target": "DedekindBridge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "runs-to-cut"
+    }
+   ]
+  },
+  {
+   "id": "Bracket__DedekindBridge",
+   "source": "Bracket",
+   "target": "DedekindBridge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "runs-to-cut"
+    }
+   ]
+  },
+  {
+   "id": "Located__DedekindBridge",
+   "source": "Located",
+   "target": "DedekindBridge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "runs-to-cut"
+    }
+   ]
+  },
+  {
+   "id": "CrossCut__DedekindBridge",
+   "source": "CrossCut",
+   "target": "DedekindBridge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "runs-to-cut"
+    }
+   ]
+  },
+  {
+   "id": "LocatedLaw__DedekindBridge",
+   "source": "LocatedLaw",
+   "target": "DedekindBridge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "runs-to-cut"
+    }
+   ]
+  },
+  {
+   "id": "Bracket__LocatedLaw",
+   "source": "Bracket",
+   "target": "LocatedLaw",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-upper-faithful"
+    }
+   ]
+  },
+  {
+   "id": "Cassini__LocatedLaw",
+   "source": "Cassini",
+   "target": "LocatedLaw",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-upper-faithful"
+    }
+   ]
+  },
+  {
+   "id": "Ordered__LocatedLaw",
+   "source": "Ordered",
+   "target": "LocatedLaw",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "golden-upper-faithful"
+    }
+   ]
+  },
+  {
+   "id": "Bracket__Ordered",
+   "source": "Bracket",
+   "target": "Ordered",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "lo<hi"
+    }
+   ]
+  },
+  {
+   "id": "Cassini__Ordered",
+   "source": "Cassini",
+   "target": "Ordered",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "lo<hi"
+    }
+   ]
+  },
+  {
+   "id": "Bracket__Located",
+   "source": "Bracket",
+   "target": "Located",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6"
+    }
+   ]
+  },
+  {
+   "id": "Cassini__Located",
+   "source": "Cassini",
+   "target": "Located",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6"
+    }
+   ]
+  },
+  {
+   "id": "Ordered__Located",
+   "source": "Ordered",
+   "target": "Located",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u03c6"
+    }
+   ]
+  },
+  {
+   "id": "CertifiedSqrt__SpectralEdge",
+   "source": "CertifiedSqrt",
+   "target": "SpectralEdge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "specEdgeBracket"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__CertifiedSqrt",
+   "source": "DedekindReal",
+   "target": "CertifiedSqrt",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "sqrtBracket"
+    }
+   ]
+  },
+  {
+   "id": "Bracket__CertifiedSqrt2",
+   "source": "Bracket",
+   "target": "CertifiedSqrt2",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "aboveSq"
+    }
+   ]
+  },
+  {
+   "id": "Bracket__Forcing",
+   "source": "Bracket",
+   "target": "Forcing",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "constant-rate-fails"
+    }
+   ]
+  },
+  {
+   "id": "Ordered__Forcing",
+   "source": "Ordered",
+   "target": "Forcing",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "constant-rate-fails"
+    }
+   ]
+  },
+  {
+   "id": "Bracket__CrossCut",
+   "source": "Bracket",
+   "target": "CrossCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "lo<hi-cut"
+    }
+   ]
+  },
+  {
+   "id": "Ordered__CrossCut",
+   "source": "Ordered",
+   "target": "CrossCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "lo<hi-cut"
+    }
+   ]
+  },
+  {
+   "id": "Located__CrossCut",
+   "source": "Located",
+   "target": "CrossCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "lo<hi-cut"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN__CStarRay",
+   "source": "AdjointFormN",
+   "target": "CStarRay",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstar-axiom"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__SpecBracket",
+   "source": "DedekindReal",
+   "target": "SpecBracket",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "notRayUp-diag"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__SpecBracket",
+   "source": "GramPosDef",
+   "target": "SpecBracket",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "notRayUp-diag"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound__SpecBracket",
+   "source": "QuadBound",
+   "target": "SpecBracket",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "notRayUp-diag"
+    }
+   ]
+  },
+  {
+   "id": "LowerBracket__SpecBracket",
+   "source": "LowerBracket",
+   "target": "SpecBracket",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "notRayUp-diag"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__SqrtReal",
+   "source": "DedekindReal",
+   "target": "SqrtReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "decide2"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__SqrtReal",
+   "source": "DiagonalCStar",
+   "target": "SqrtReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "decide2"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__ZPhiOperatorNorm",
+   "source": "DedekindReal",
+   "target": "ZPhiOperatorNorm",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiHouseNorm"
+    }
+   ]
+  },
+  {
+   "id": "OperatorNormReal__ZPhiOperatorNorm",
+   "source": "OperatorNormReal",
+   "target": "ZPhiOperatorNorm",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiHouseNorm"
+    }
+   ]
+  },
+  {
+   "id": "GeometricBoundQ__GeometricVanish",
+   "source": "GeometricBoundQ",
+   "target": "GeometricVanish",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "pow49-vanish"
+    }
+   ]
+  },
+  {
+   "id": "Archimedean__GeometricVanish",
+   "source": "Archimedean",
+   "target": "GeometricVanish",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "pow49-vanish"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__GramPosDef",
+   "source": "DiagonalCStar",
+   "target": "GramPosDef",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "gram-def"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__SqrtRealR",
+   "source": "DedekindReal",
+   "target": "SqrtRealR",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "PosUpper"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__SqrtRealR",
+   "source": "DiagonalCStar",
+   "target": "SqrtRealR",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "PosUpper"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__LocatedReal",
+   "source": "DiagonalCStar",
+   "target": "LocatedReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "locatedSquare"
+    }
+   ]
+  },
+  {
+   "id": "Bracket__LocatedReal",
+   "source": "Bracket",
+   "target": "LocatedReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "locatedSquare"
+    }
+   ]
+  },
+  {
+   "id": "Ordered__LocatedReal",
+   "source": "Ordered",
+   "target": "LocatedReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "locatedSquare"
+    }
+   ]
+  },
+  {
+   "id": "Located__LocatedReal",
+   "source": "Located",
+   "target": "LocatedReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "locatedSquare"
+    }
+   ]
+  },
+  {
+   "id": "EntropyRing__EntropyProvenance",
+   "source": "EntropyRing",
+   "target": "EntropyProvenance",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "entropy2-sym"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__LowerBracket",
+   "source": "GramPosDef",
+   "target": "LowerBracket",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "eRayleigh"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__SpecCutDisjoint",
+   "source": "DiagonalCStar",
+   "target": "SpecCutDisjoint",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "absurd"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__SpecCutDisjoint",
+   "source": "GramPosDef",
+   "target": "SpecCutDisjoint",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "absurd"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound__SpecCutDisjoint",
+   "source": "QuadBound",
+   "target": "SpecCutDisjoint",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "absurd"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN__SpecCutDisjoint",
+   "source": "AdjointFormN",
+   "target": "SpecCutDisjoint",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "absurd"
+    }
+   ]
+  },
+  {
+   "id": "PowerScaffold__SpecCutDisjoint",
+   "source": "PowerScaffold",
+   "target": "SpecCutDisjoint",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "absurd"
+    }
+   ]
+  },
+  {
+   "id": "PowerMonotone__SpecCutDisjoint",
+   "source": "PowerMonotone",
+   "target": "SpecCutDisjoint",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "absurd"
+    }
+   ]
+  },
+  {
+   "id": "OneNormSubmult__SpecCutDisjoint",
+   "source": "OneNormSubmult",
+   "target": "SpecCutDisjoint",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "absurd"
+    }
+   ]
+  },
+  {
+   "id": "EntropyProvenance__CorridorObservables",
+   "source": "EntropyProvenance",
+   "target": "CorridorObservables",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "the-corridor"
+    }
+   ]
+  },
+  {
+   "id": "PDTest2__SpecRadiusCut",
+   "source": "PDTest2",
+   "target": "SpecRadiusCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "shiftP<0"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__SpecRadiusCut",
+   "source": "DiagonalCStar",
+   "target": "SpecRadiusCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "shiftP<0"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__OneNormDiagBound",
+   "source": "DiagonalCStar",
+   "target": "OneNormDiagBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "nSq"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__OneNormDiagBound",
+   "source": "GramPosDef",
+   "target": "OneNormDiagBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "nSq"
+    }
+   ]
+  },
+  {
+   "id": "QuadLemmas__OneNormDiagBound",
+   "source": "QuadLemmas",
+   "target": "OneNormDiagBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "nSq"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound__OneNormDiagBound",
+   "source": "QuadBound",
+   "target": "OneNormDiagBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "nSq"
+    }
+   ]
+  },
+  {
+   "id": "SumOrder__OneNormDiagBound",
+   "source": "SumOrder",
+   "target": "OneNormDiagBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "nSq"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN__OneNormDiagBound",
+   "source": "AdjointFormN",
+   "target": "OneNormDiagBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "nSq"
+    }
+   ]
+  },
+  {
+   "id": "OffDiagBound__OneNormDiagBound",
+   "source": "OffDiagBound",
+   "target": "OneNormDiagBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "nSq"
+    }
+   ]
+  },
+  {
+   "id": "CertifiedSqrt__MetallicEdge",
+   "source": "CertifiedSqrt",
+   "target": "MetallicEdge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "_"
+    }
+   ]
+  },
+  {
+   "id": "SpectralEdge__MetallicEdge",
+   "source": "SpectralEdge",
+   "target": "MetallicEdge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "_"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__QuadLemmas",
+   "source": "DiagonalCStar",
+   "target": "QuadLemmas",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "sqrt-mono-\u2264"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__QuadLemmas",
+   "source": "GramPosDef",
+   "target": "QuadLemmas",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "sqrt-mono-\u2264"
+    }
+   ]
+  },
+  {
+   "id": "Bracket__GapBound",
+   "source": "Bracket",
+   "target": "GapBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "suc\u2124\u2261+1"
+    }
+   ]
+  },
+  {
+   "id": "LocatedLaw__GapBound",
+   "source": "LocatedLaw",
+   "target": "GapBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "suc\u2124\u2261+1"
+    }
+   ]
+  },
+  {
+   "id": "Ordered__GapBound",
+   "source": "Ordered",
+   "target": "GapBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "suc\u2124\u2261+1"
+    }
+   ]
+  },
+  {
+   "id": "PowerScaffold__GeomGrowArch",
+   "source": "PowerScaffold",
+   "target": "GeomGrowArch",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "qgrow"
+    }
+   ]
+  },
+  {
+   "id": "GeomGrow__GeomGrowArch",
+   "source": "GeomGrow",
+   "target": "GeomGrowArch",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "qgrow"
+    }
+   ]
+  },
+  {
+   "id": "Archimedean__GeomGrowArch",
+   "source": "Archimedean",
+   "target": "GeomGrowArch",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "qgrow"
+    }
+   ]
+  },
+  {
+   "id": "GeometricBoundN__GeometricBoundQ",
+   "source": "GeometricBoundN",
+   "target": "GeometricBoundQ",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "pow49-bound"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN__OffDiagBound",
+   "source": "AdjointFormN",
+   "target": "OffDiagBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "offdiag-sq"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__OffDiagBound",
+   "source": "GramPosDef",
+   "target": "OffDiagBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "offdiag-sq"
+    }
+   ]
+  },
+  {
+   "id": "CauchySchwarz__OffDiagBound",
+   "source": "CauchySchwarz",
+   "target": "OffDiagBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "offdiag-sq"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN__SpecLocated",
+   "source": "AdjointFormN",
+   "target": "SpecLocated",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2203Fin-dec"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound__SpecLocated",
+   "source": "QuadBound",
+   "target": "SpecLocated",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2203Fin-dec"
+    }
+   ]
+  },
+  {
+   "id": "OneNormDiagBound__SpecLocated",
+   "source": "OneNormDiagBound",
+   "target": "SpecLocated",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2203Fin-dec"
+    }
+   ]
+  },
+  {
+   "id": "PowerScaffold__SpecLocated",
+   "source": "PowerScaffold",
+   "target": "SpecLocated",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2203Fin-dec"
+    }
+   ]
+  },
+  {
+   "id": "QpowMono__SpecLocated",
+   "source": "QpowMono",
+   "target": "SpecLocated",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2203Fin-dec"
+    }
+   ]
+  },
+  {
+   "id": "GeomBeat__SpecLocated",
+   "source": "GeomBeat",
+   "target": "SpecLocated",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2203Fin-dec"
+    }
+   ]
+  },
+  {
+   "id": "SpecLocHelpers__SpecLocated",
+   "source": "SpecLocHelpers",
+   "target": "SpecLocated",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2203Fin-dec"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__SpecLocHelpers",
+   "source": "DiagonalCStar",
+   "target": "SpecLocHelpers",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "beat-suc"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__SpecLocHelpers",
+   "source": "DedekindReal",
+   "target": "SpecLocHelpers",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "beat-suc"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__SpecLocHelpers",
+   "source": "GramPosDef",
+   "target": "SpecLocHelpers",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "beat-suc"
+    }
+   ]
+  },
+  {
+   "id": "QuadLemmas__SpecLocHelpers",
+   "source": "QuadLemmas",
+   "target": "SpecLocHelpers",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "beat-suc"
+    }
+   ]
+  },
+  {
+   "id": "QpowMono__SpecLocHelpers",
+   "source": "QpowMono",
+   "target": "SpecLocHelpers",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "beat-suc"
+    }
+   ]
+  },
+  {
+   "id": "OneNormDiagBound__SpecLocHelpers",
+   "source": "OneNormDiagBound",
+   "target": "SpecLocHelpers",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "beat-suc"
+    }
+   ]
+  },
+  {
+   "id": "PowerScaffold__SpecLocHelpers",
+   "source": "PowerScaffold",
+   "target": "SpecLocHelpers",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "beat-suc"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__QpowMono",
+   "source": "DiagonalCStar",
+   "target": "QpowMono",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "qpow-mono"
+    }
+   ]
+  },
+  {
+   "id": "PowerScaffold__QpowMono",
+   "source": "PowerScaffold",
+   "target": "QpowMono",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "qpow-mono"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__MetallicReal",
+   "source": "DedekindReal",
+   "target": "MetallicReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "sqrtCorridor"
+    }
+   ]
+  },
+  {
+   "id": "SqrtReal__MetallicReal",
+   "source": "SqrtReal",
+   "target": "MetallicReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "sqrtCorridor"
+    }
+   ]
+  },
+  {
+   "id": "SpectralEdgeReal__MetallicReal",
+   "source": "SpectralEdgeReal",
+   "target": "MetallicReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "sqrtCorridor"
+    }
+   ]
+  },
+  {
+   "id": "GeometricBoundN__ApproxReal",
+   "source": "GeometricBoundN",
+   "target": "ApproxReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "approx\u211d"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__ApproxReal",
+   "source": "DedekindReal",
+   "target": "ApproxReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "approx\u211d"
+    }
+   ]
+  },
+  {
+   "id": "RealApprox__ApproxReal",
+   "source": "RealApprox",
+   "target": "ApproxReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "approx\u211d"
+    }
+   ]
+  },
+  {
+   "id": "Bracket__ApproxReal",
+   "source": "Bracket",
+   "target": "ApproxReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "approx\u211d"
+    }
+   ]
+  },
+  {
+   "id": "GeometricBoundQ__ApproxReal",
+   "source": "GeometricBoundQ",
+   "target": "ApproxReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "approx\u211d"
+    }
+   ]
+  },
+  {
+   "id": "GeometricVanish__ApproxReal",
+   "source": "GeometricVanish",
+   "target": "ApproxReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "approx\u211d"
+    }
+   ]
+  },
+  {
+   "id": "CertifiedSqrt__OperatorNormMagnitude",
+   "source": "CertifiedSqrt",
+   "target": "OperatorNormMagnitude",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstarBracketAbs"
+    }
+   ]
+  },
+  {
+   "id": "SpectralEdge__OperatorNormMagnitude",
+   "source": "SpectralEdge",
+   "target": "OperatorNormMagnitude",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstarBracketAbs"
+    }
+   ]
+  },
+  {
+   "id": "OperatorNorm__OperatorNormMagnitude",
+   "source": "OperatorNorm",
+   "target": "OperatorNormMagnitude",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstarBracketAbs"
+    }
+   ]
+  },
+  {
+   "id": "OperatorNormSpectral__OperatorNormMagnitude",
+   "source": "OperatorNormSpectral",
+   "target": "OperatorNormMagnitude",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstarBracketAbs"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__OperatorNormMagnitude",
+   "source": "DiagonalCStar",
+   "target": "OperatorNormMagnitude",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstarBracketAbs"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__PDTest2",
+   "source": "DiagonalCStar",
+   "target": "PDTest2",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "pd-forward"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN__SpecNormCut",
+   "source": "AdjointFormN",
+   "target": "SpecNormCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "notNormUp-low"
+    }
+   ]
+  },
+  {
+   "id": "CStarRay__SpecNormCut",
+   "source": "CStarRay",
+   "target": "SpecNormCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "notNormUp-low"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound__SpecNormCut",
+   "source": "QuadBound",
+   "target": "SpecNormCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "notNormUp-low"
+    }
+   ]
+  },
+  {
+   "id": "SpecBracket__SpecNormCut",
+   "source": "SpecBracket",
+   "target": "SpecNormCut",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "notNormUp-low"
+    }
+   ]
+  },
+  {
+   "id": "Cofinal__FrontierCapstone",
+   "source": "Cofinal",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "MetallicReal__FrontierCapstone",
+   "source": "MetallicReal",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "SpecRadiusReal__FrontierCapstone",
+   "source": "SpecRadiusReal",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "SpecRadiusFaithful__FrontierCapstone",
+   "source": "SpecRadiusFaithful",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "OperatorNormReal__FrontierCapstone",
+   "source": "OperatorNormReal",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "SqrtRealR__FrontierCapstone",
+   "source": "SqrtRealR",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "SpectralEdgeReal__FrontierCapstone",
+   "source": "SpectralEdgeReal",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "CorridorObservables__FrontierCapstone",
+   "source": "CorridorObservables",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "AffineReal__FrontierCapstone",
+   "source": "AffineReal",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "ZPhiReal__FrontierCapstone",
+   "source": "ZPhiReal",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "ApproxReal__FrontierCapstone",
+   "source": "ApproxReal",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "AddReal__FrontierCapstone",
+   "source": "AddReal",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "ZPhiSpectralEdge__FrontierCapstone",
+   "source": "ZPhiSpectralEdge",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "ZPhiMatrix__FrontierCapstone",
+   "source": "ZPhiMatrix",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "ZPhiOperatorNorm__FrontierCapstone",
+   "source": "ZPhiOperatorNorm",
+   "target": "FrontierCapstone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__ZPhiSpectralEdge",
+   "source": "DedekindReal",
+   "target": "ZPhiSpectralEdge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiSpecEdge"
+    }
+   ]
+  },
+  {
+   "id": "SqrtRealR__ZPhiSpectralEdge",
+   "source": "SqrtRealR",
+   "target": "ZPhiSpectralEdge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiSpecEdge"
+    }
+   ]
+  },
+  {
+   "id": "AffineReal__ZPhiSpectralEdge",
+   "source": "AffineReal",
+   "target": "ZPhiSpectralEdge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiSpecEdge"
+    }
+   ]
+  },
+  {
+   "id": "AddReal__ZPhiSpectralEdge",
+   "source": "AddReal",
+   "target": "ZPhiSpectralEdge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiSpecEdge"
+    }
+   ]
+  },
+  {
+   "id": "ZPhiReal__ZPhiSpectralEdge",
+   "source": "ZPhiReal",
+   "target": "ZPhiSpectralEdge",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiSpecEdge"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__SpecRadiusReal",
+   "source": "DedekindReal",
+   "target": "SpecRadiusReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "loc"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN__SpecRadiusReal",
+   "source": "AdjointFormN",
+   "target": "SpecRadiusReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "loc"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound__SpecRadiusReal",
+   "source": "QuadBound",
+   "target": "SpecRadiusReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "loc"
+    }
+   ]
+  },
+  {
+   "id": "QpowMono__SpecRadiusReal",
+   "source": "QpowMono",
+   "target": "SpecRadiusReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "loc"
+    }
+   ]
+  },
+  {
+   "id": "PowerScaffold__SpecRadiusReal",
+   "source": "PowerScaffold",
+   "target": "SpecRadiusReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "loc"
+    }
+   ]
+  },
+  {
+   "id": "SpecCutDisjoint__SpecRadiusReal",
+   "source": "SpecCutDisjoint",
+   "target": "SpecRadiusReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "loc"
+    }
+   ]
+  },
+  {
+   "id": "SpecLocated__SpecRadiusReal",
+   "source": "SpecLocated",
+   "target": "SpecRadiusReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "loc"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__AbsLemmas",
+   "source": "DiagonalCStar",
+   "target": "AbsLemmas",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "abs-triangle"
+    }
+   ]
+  },
+  {
+   "id": "QuadLemmas__AbsLemmas",
+   "source": "QuadLemmas",
+   "target": "AbsLemmas",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "abs-triangle"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound__AbsLemmas",
+   "source": "QuadBound",
+   "target": "AbsLemmas",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "abs-triangle"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__OneNormSubmult",
+   "source": "DiagonalCStar",
+   "target": "OneNormSubmult",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "oneNorm-submult"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__OneNormSubmult",
+   "source": "GramPosDef",
+   "target": "OneNormSubmult",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "oneNorm-submult"
+    }
+   ]
+  },
+  {
+   "id": "QuadLemmas__OneNormSubmult",
+   "source": "QuadLemmas",
+   "target": "OneNormSubmult",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "oneNorm-submult"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound__OneNormSubmult",
+   "source": "QuadBound",
+   "target": "OneNormSubmult",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "oneNorm-submult"
+    }
+   ]
+  },
+  {
+   "id": "SumOrder__OneNormSubmult",
+   "source": "SumOrder",
+   "target": "OneNormSubmult",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "oneNorm-submult"
+    }
+   ]
+  },
+  {
+   "id": "AbsLemmas__OneNormSubmult",
+   "source": "AbsLemmas",
+   "target": "OneNormSubmult",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "oneNorm-submult"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__AddReal",
+   "source": "DedekindReal",
+   "target": "AddReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "add\u211d"
+    }
+   ]
+  },
+  {
+   "id": "ApproxReal__AddReal",
+   "source": "ApproxReal",
+   "target": "AddReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "add\u211d"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__SquareRefine",
+   "source": "DiagonalCStar",
+   "target": "SquareRefine",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "square-refine"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN__SquareRefine",
+   "source": "AdjointFormN",
+   "target": "SquareRefine",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "square-refine"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__SquareRefine",
+   "source": "GramPosDef",
+   "target": "SquareRefine",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "square-refine"
+    }
+   ]
+  },
+  {
+   "id": "CauchySchwarz__SquareRefine",
+   "source": "CauchySchwarz",
+   "target": "SquareRefine",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "square-refine"
+    }
+   ]
+  },
+  {
+   "id": "SpecBracket__SquareRefine",
+   "source": "SpecBracket",
+   "target": "SquareRefine",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "square-refine"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__Cofinal",
+   "source": "DedekindReal",
+   "target": "Cofinal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "GoldenCut__Cofinal",
+   "source": "GoldenCut",
+   "target": "Cofinal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "Bracket__Cofinal",
+   "source": "Bracket",
+   "target": "Cofinal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "Forcing__Cofinal",
+   "source": "Forcing",
+   "target": "Cofinal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "LocatedLaw__Cofinal",
+   "source": "LocatedLaw",
+   "target": "Cofinal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "CrossCut__Cofinal",
+   "source": "CrossCut",
+   "target": "Cofinal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "Archimedean__Cofinal",
+   "source": "Archimedean",
+   "target": "Cofinal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "GeometricBoundQ__Cofinal",
+   "source": "GeometricBoundQ",
+   "target": "Cofinal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "GapBound__Cofinal",
+   "source": "GapBound",
+   "target": "Cofinal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "QuadSqueeze__Cofinal",
+   "source": "QuadSqueeze",
+   "target": "Cofinal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "running\u2245dedekind"
+    }
+   ]
+  },
+  {
+   "id": "LocatedReal__LocatedEq",
+   "source": "LocatedReal",
+   "target": "LocatedEq",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u2248-sym"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__CStarLocated",
+   "source": "DiagonalCStar",
+   "target": "CStarLocated",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "fm2"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__PowerMonotone",
+   "source": "DiagonalCStar",
+   "target": "PowerMonotone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "entry\u2264oneNorm"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__PowerMonotone",
+   "source": "GramPosDef",
+   "target": "PowerMonotone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "entry\u2264oneNorm"
+    }
+   ]
+  },
+  {
+   "id": "QuadLemmas__PowerMonotone",
+   "source": "QuadLemmas",
+   "target": "PowerMonotone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "entry\u2264oneNorm"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound__PowerMonotone",
+   "source": "QuadBound",
+   "target": "PowerMonotone",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "entry\u2264oneNorm"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__ZPhiReal",
+   "source": "DedekindReal",
+   "target": "ZPhiReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiReal"
+    }
+   ]
+  },
+  {
+   "id": "GoldenCut__ZPhiReal",
+   "source": "GoldenCut",
+   "target": "ZPhiReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiReal"
+    }
+   ]
+  },
+  {
+   "id": "AffineReal__ZPhiReal",
+   "source": "AffineReal",
+   "target": "ZPhiReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "zphiReal"
+    }
+   ]
+  },
+  {
+   "id": "Cassini__Metallic",
+   "source": "Cassini",
+   "target": "Metallic",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "_"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__CauchySchwarz",
+   "source": "DiagonalCStar",
+   "target": "CauchySchwarz",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cauchy-schwarz"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__CauchySchwarz",
+   "source": "GramPosDef",
+   "target": "CauchySchwarz",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cauchy-schwarz"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__ReparamReal",
+   "source": "DedekindReal",
+   "target": "ReparamReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "loc"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__PowerScaffold",
+   "source": "DiagonalCStar",
+   "target": "PowerScaffold",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "normUp-from-pow"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN__PowerScaffold",
+   "source": "AdjointFormN",
+   "target": "PowerScaffold",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "normUp-from-pow"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__PowerScaffold",
+   "source": "GramPosDef",
+   "target": "PowerScaffold",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "normUp-from-pow"
+    }
+   ]
+  },
+  {
+   "id": "CStarRay__PowerScaffold",
+   "source": "CStarRay",
+   "target": "PowerScaffold",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "normUp-from-pow"
+    }
+   ]
+  },
+  {
+   "id": "SquareRefine__PowerScaffold",
+   "source": "SquareRefine",
+   "target": "PowerScaffold",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "normUp-from-pow"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound__PowerScaffold",
+   "source": "QuadBound",
+   "target": "PowerScaffold",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "normUp-from-pow"
+    }
+   ]
+  },
+  {
+   "id": "SpecBracket__PowerScaffold",
+   "source": "SpecBracket",
+   "target": "PowerScaffold",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "normUp-from-pow"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__QuadBound",
+   "source": "DiagonalCStar",
+   "target": "QuadBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "quadBound"
+    }
+   ]
+  },
+  {
+   "id": "GramPosDef__QuadBound",
+   "source": "GramPosDef",
+   "target": "QuadBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "quadBound"
+    }
+   ]
+  },
+  {
+   "id": "QuadLemmas__QuadBound",
+   "source": "QuadLemmas",
+   "target": "QuadBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "quadBound"
+    }
+   ]
+  },
+  {
+   "id": "SumOrder__QuadBound",
+   "source": "SumOrder",
+   "target": "QuadBound",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "quadBound"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__OperatorNormReal",
+   "source": "DedekindReal",
+   "target": "OperatorNormReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u1d40\u1d40"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN__OperatorNormReal",
+   "source": "AdjointFormN",
+   "target": "OperatorNormReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u1d40\u1d40"
+    }
+   ]
+  },
+  {
+   "id": "QuadBound__OperatorNormReal",
+   "source": "QuadBound",
+   "target": "OperatorNormReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u1d40\u1d40"
+    }
+   ]
+  },
+  {
+   "id": "SpecCutDisjoint__OperatorNormReal",
+   "source": "SpecCutDisjoint",
+   "target": "OperatorNormReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u1d40\u1d40"
+    }
+   ]
+  },
+  {
+   "id": "SpecRadiusReal__OperatorNormReal",
+   "source": "SpecRadiusReal",
+   "target": "OperatorNormReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u1d40\u1d40"
+    }
+   ]
+  },
+  {
+   "id": "SqrtRealR__OperatorNormReal",
+   "source": "SqrtRealR",
+   "target": "OperatorNormReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "\u1d40\u1d40"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__GeomGrow",
+   "source": "DiagonalCStar",
+   "target": "GeomGrow",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "bern"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__GeomGrow",
+   "source": "DedekindReal",
+   "target": "GeomGrow",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "bern"
+    }
+   ]
+  },
+  {
+   "id": "PowerScaffold__GeomGrow",
+   "source": "PowerScaffold",
+   "target": "GeomGrow",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "bern"
+    }
+   ]
+  },
+  {
+   "id": "CertifiedSqrt__OperatorNormSpectral",
+   "source": "CertifiedSqrt",
+   "target": "OperatorNormSpectral",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstarBracket"
+    }
+   ]
+  },
+  {
+   "id": "SpectralEdge__OperatorNormSpectral",
+   "source": "SpectralEdge",
+   "target": "OperatorNormSpectral",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstarBracket"
+    }
+   ]
+  },
+  {
+   "id": "OperatorNorm__OperatorNormSpectral",
+   "source": "OperatorNorm",
+   "target": "OperatorNormSpectral",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "cstarBracket"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__SpectralEdgeReal",
+   "source": "DedekindReal",
+   "target": "SpectralEdgeReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "specEdge"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__SpectralEdgeReal",
+   "source": "DiagonalCStar",
+   "target": "SpectralEdgeReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "specEdge"
+    }
+   ]
+  },
+  {
+   "id": "SqrtReal__SpectralEdgeReal",
+   "source": "SqrtReal",
+   "target": "SpectralEdgeReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "specEdge"
+    }
+   ]
+  },
+  {
+   "id": "ReparamReal__SpectralEdgeReal",
+   "source": "ReparamReal",
+   "target": "SpectralEdgeReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "specEdge"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__AffineReal",
+   "source": "DedekindReal",
+   "target": "AffineReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "affine\u211d"
+    }
+   ]
+  },
+  {
+   "id": "ReparamReal__AffineReal",
+   "source": "ReparamReal",
+   "target": "AffineReal",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "affine\u211d"
+    }
+   ]
+  },
+  {
+   "id": "DiagonalCStar__SpectralCStar",
+   "source": "DiagonalCStar",
+   "target": "SpectralCStar",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "spectral2-cstar"
+    }
+   ]
+  },
+  {
+   "id": "OperatorNorm__SpectralCStar",
+   "source": "OperatorNorm",
+   "target": "SpectralCStar",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "spectral2-cstar"
+    }
+   ]
+  },
+  {
+   "id": "DedekindReal__GeomBeat",
+   "source": "DedekindReal",
+   "target": "GeomBeat",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "geom-beat"
+    }
+   ]
+  },
+  {
+   "id": "PowerScaffold__GeomBeat",
+   "source": "PowerScaffold",
+   "target": "GeomBeat",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "geom-beat"
+    }
+   ]
+  },
+  {
+   "id": "GeomGrowArch__GeomBeat",
+   "source": "GeomGrowArch",
+   "target": "GeomBeat",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "geom-beat"
+    }
+   ]
+  },
+  {
+   "id": "AdjointFormN__SpecRadiusFaithful",
+   "source": "AdjointFormN",
+   "target": "SpecRadiusFaithful",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "U-sound"
+    }
+   ]
+  },
+  {
+   "id": "CStarRay__SpecRadiusFaithful",
+   "source": "CStarRay",
+   "target": "SpecRadiusFaithful",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "U-sound"
+    }
+   ]
+  },
+  {
+   "id": "SpecCutDisjoint__SpecRadiusFaithful",
+   "source": "SpecCutDisjoint",
+   "target": "SpecRadiusFaithful",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "U-sound"
+    }
+   ]
+  },
+  {
+   "id": "PowerScaffold__SpecRadiusFaithful",
+   "source": "PowerScaffold",
+   "target": "SpecRadiusFaithful",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "U-sound"
+    }
+   ]
+  },
+  {
+   "id": "SpecLocated__SpecRadiusFaithful",
+   "source": "SpecLocated",
+   "target": "SpecRadiusFaithful",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "U-sound"
+    }
+   ]
+  },
+  {
+   "id": "BridgePrelude__InvolutionBorrow",
+   "source": "BridgePrelude",
+   "target": "InvolutionBorrow",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "borrowed-suc-transport-neg"
+    }
+   ]
+  },
+  {
+   "id": "IsoToEquiv__InvolutionBorrow",
+   "source": "IsoToEquiv",
+   "target": "InvolutionBorrow",
+   "relation": "construction",
+   "handles": [
+    {
+     "kernel": "agda",
+     "id": "borrowed-suc-transport-neg"
+    }
+   ]
+  }
+ ]
+}
