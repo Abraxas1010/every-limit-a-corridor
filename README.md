@@ -20,6 +20,13 @@
 
 <p><i>Replace the limit-as-a-dumb-point with a <b>corridor</b> — a two-sided bracket carried as data,<br/>narrowing at a forced golden rate — verifiable from primitives and lowered to bare metal.</i></p>
 
+<p>
+  <a href="https://abraxas1010.github.io/every-limit-a-corridor/"><img src="https://img.shields.io/badge/%E2%96%B6%20interactive%20certified%20atlas-LIVE-2ea44f?style=for-the-badge" alt="live interactive certified atlas"/></a>
+</p>
+
+<p><b><a href="https://abraxas1010.github.io/every-limit-a-corridor/">▶ Explore the interactive certified atlas →</a></b><br/>
+<sub>all 111 constructions as nodes bound to their Agda proofs — each with its statement (the kernel type) and source link — the 266 import/construction edges, a built-in explainer of the institution-theoretic foundation, and overview/focus/zoom. <b>FULLY CERTIFIED</b>, live in your browser.</sub></p>
+
 </div>
 
 ---
@@ -92,6 +99,8 @@ This bundle lets a professional **verify every claim from primitives** and
 ## What is here
 
 ```
+index.html       the interactive certified atlas (GitHub Pages: abraxas1010.github.io/every-limit-a-corridor)
+corridor_complete_atlas.{html,lea}   the same dashboard + the ledger that regenerates it
 verify.sh        re-checks everything from primitives (math + negative control + lane)
 agda/corpus/cubical_agda/   the genuine constructions, cubical Agda (--cubical --safe, no postulates)
   Foundations/FiniteCohesion.agda        faithful real-cohesion: shape != flat (Thm 3.1-3.2)
